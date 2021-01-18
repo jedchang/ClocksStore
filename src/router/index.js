@@ -25,75 +25,86 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index
+    component: Index,
+    meta: { title: 'Clocks' }
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: About,
+    meta: { title: 'Clocks | About' }
   },
   {
     path: '/watches',
     name: 'Products',
-    component: Products
+    component: Products,
+    meta: { title: 'Clocks | Products' }
   },
   {
     path: '/watches/:id?',
     name: 'ProductsDetails',
-    component: ProductsDetails
+    component: ProductsDetails,
+    meta: { title: 'Clocks | Products Details' }
   },
   {
     path: '/FAQ',
     name: 'Faq',
-    component: Faq
+    component: Faq,
+    meta: { title: 'Clocks | FAQ' }
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: Contact,
+    meta: { title: 'Clocks | Contact' }
   },
   {
     path: '/cart',
     name: 'Cart',
-    component: Cart
+    component: Cart,
+    meta: { title: 'Clocks | Cart' }
   },
   {
     path: '/wishlist',
     name: 'Wishlist',
-    component: Wishlist
+    component: Wishlist,
+    meta: { title: 'Clocks | Wishlist' }
   },
   {
     path: '/order',
     name: 'Order',
-    component: Order
+    component: Order,
+    meta: { title: 'Clocks | Order' }
   },
   {
     path: '/checkout/:orderId',
     name: 'Checkout',
-    component: Checkout
+    component: Checkout,
+    meta: { title: 'Clocks | Checkout' }
   },
   {
     path: '/admin',
     name: 'Dashboard',
     component: Dashboard,
+    meta: { title: 'Admin' },
     children: [
       {
         path: 'products',
         name: 'AdminProducts',
         component: AdminProducts,
-        meta: { requiresAuth: true }
+        meta: { requiresAuth: true, title: 'Admin | Products' }
       },
       {
         path: 'orders',
         name: 'AdminOrders',
         component: AdminOrders,
-        meta: { requiresAuth: true }
+        meta: { requiresAuth: true, title: 'Admin | Orders' }
       },
       {
         path: 'coupons',
         name: 'AdminCoupons',
         component: AdminCoupons,
-        meta: { requiresAuth: true }
+        meta: { requiresAuth: true, title: 'Admin | Coupons' }
       }
     ]
   }
