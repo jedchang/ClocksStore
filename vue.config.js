@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/ClicksStore/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/ClocksStore/' : '/',
   css: {
     loaderOptions: {
       sass: {
