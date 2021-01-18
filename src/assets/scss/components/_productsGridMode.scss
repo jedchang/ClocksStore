@@ -1,0 +1,484 @@
+.product-grid {
+  display: block;
+  padding: 24px 16px;
+  margin: 0 auto;
+  background: $primaryBgColor;
+  border-radius: 4px;
+  position: relative;
+  text-align: left;
+  position: relative;
+  transition: $setTransition;
+  z-index: 1;
+  animation: zoomIn 0.3s;
+  @include medium {
+    width: 90%;
+    padding: 20px 14px;
+  }
+  @include small {
+    width: 94%;
+    margin: 0 auto 30px auto;
+    padding: 24px 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  @include extraSmall {
+    width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 18px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  &:hover,
+  &.adding-status {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    .product-price-wrapper {
+      visibility: hidden;
+      opacity: 0;
+    }
+    .product-action {
+      top: 88%;
+      left: 0;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+    @include small {
+      width: 94%;
+      margin: 0 auto 30px auto;
+      padding: 24px 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      .product-price-wrapper {
+        visibility: visible;
+        opacity: 1;
+      }
+      .product-action {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+    @include extraSmall {
+      width: 100%;
+      margin: 0 auto 30px auto;
+      padding: 18px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      .product-price-wrapper {
+        visibility: visible;
+        opacity: 1;
+      }
+      .product-action {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
+  }
+  &.adding-status {
+    z-index: 900;
+  }
+  &.on-sale {
+    .product-img {
+      &:after {
+        top: 0;
+        right: 0;
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 0 65px 65px 0;
+        border-color: transparent #111523 transparent;
+        @include medium {
+          border-width: 0 65px 65px 0;
+        }
+        @include small {
+          border-width: 0 65px 65px 0;
+        }
+        @include extraSmall {
+          border-width: 0 25vmin 25vmin 0;
+        }
+      }
+      &:before {
+        color: $primaryColor;
+        content: 'SALE';
+        position: absolute;
+        text-align: right;
+        padding: 0;
+        top: 14px;
+        right: 6px;
+        display: block;
+        z-index: 5;
+        font-size: 13px;
+        font-weight: 500;
+        transform: rotate(45deg);
+        @include medium {
+          top: 14px;
+          right: 4px;
+          font-size: 13px;
+        }
+        @include small {
+          top: 14px;
+          right: 4px;
+          font-size: 13px;
+        }
+        @include extraSmall {
+          top: 7.5%;
+          right: 4%;
+          font-size: 4.5vmin;
+        }
+      }
+    }
+  }
+  &.sold-out {
+    .product-img {
+      cursor: default;
+      pointer-events: none;
+      position: relative;
+      .sold-out-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        .sold-out-text {
+          width: 105px;
+          text-align: center;
+          padding: 5px 10px;
+          font-size: 13px;
+          border-radius: 3px;
+          text-transform: uppercase;
+          color: #fff;
+          background-color: #ff3e55;
+          z-index: 3;
+          @include small {
+            width: 145px;
+          }
+          @include extraSmall {
+            width: auto;
+            padding: 2% 10%;
+            font-size: 5.2vmin;
+          }
+        }
+      }
+      img {
+        opacity: 0.5;
+      }
+    }
+    .name {
+      cursor: default;
+      pointer-events: none;
+    }
+    .btn-add-cart {
+      cursor: default;
+      pointer-events: none;
+      background-color: #0f111a !important;
+      color: #4f566f !important;
+      @include small {
+        background-color: #0f111a !important;
+      }
+      @include extraSmall {
+        background-color: #0f111a !important;
+      }
+    }
+  }
+
+  .product-img {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #222736;
+    transition: $setTransition;
+    &:hover {
+      border: 1px solid $primaryColor;
+      @include small {
+        border: 1px solid #222736;
+      }
+      @include extraSmall {
+        border: 1px solid #222736;
+      }
+    }
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .product-content {
+    padding: 4px 0 0;
+    text-align: center;
+    span {
+      color: #afafaf;
+      font-size: 14px;
+      margin: 16px 0 0 0;
+      display: inline-block;
+      @include extraSmall {
+        margin-bottom: 5px;
+        font-size: 5.2vmin;
+      }
+    }
+    h4 {
+      padding-bottom: 16px;
+      margin-bottom: 0;
+      background: url('~@/assets/images/product_line.png') no-repeat center
+        bottom;
+      .name {
+        font-size: 20px;
+        color: #fff;
+        text-transform: capitalize;
+        transition: $setTransition;
+        &:hover {
+          color: $primaryColor !important;
+          @include small {
+            color: #fff;
+          }
+          @include extraSmall {
+            color: #fff;
+          }
+        }
+        @include small {
+          font-size: 3.5vmin;
+        }
+        @include extraSmall {
+          font-size: 7.8vmin;
+        }
+      }
+    }
+    .product-price-wrapper {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: $setTransition;
+      @include small {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 55px;
+      }
+      @include extraSmall {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 55px;
+      }
+      .money {
+        color: $primaryColor;
+        margin: 0 2px;
+        font-size: 20px;
+        font-weight: 500;
+        @include small {
+          font-size: 3.6vmin;
+        }
+        @include extraSmall {
+          font-size: 7vmin;
+        }
+      }
+      .origin-price {
+        margin: 0 2px 0 6px;
+        .money {
+          text-decoration: line-through;
+          color: #afafaf;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .product-action {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 58%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 16px 32px;
+    border-radius: 0px 0px 4px 4px;
+    margin: 0;
+    background: $primaryBgColor;
+    transition: $setTransition;
+    @include medium {
+      padding: 0 14px 22px;
+    }
+    @include small {
+      position: relative;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      padding: 0;
+    }
+    @include extraSmall {
+      position: relative;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      padding: 0;
+    }
+    .product-desc {
+      color: #afafaf;
+      font-size: 14px;
+      font-weight: 300;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      background: url('~@/assets/images/product_line.png') no-repeat center
+        bottom;
+    }
+    .product-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include large {
+        justify-content: space-around;
+      }
+      @include medium {
+        justify-content: space-around;
+      }
+      @include small {
+        justify-content: space-between;
+      }
+      @include extraSmall {
+        justify-content: space-between;
+      }
+      .btn {
+        padding: 10px 15px;
+        color: $txtColor-light;
+        background-color: lighten($primaryBgColor, 5%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 3px;
+        border: none;
+        height: 40px;
+        @include large {
+          padding: 10px 12px;
+        }
+        @include medium {
+          padding: 10px 15px;
+        }
+        @include small {
+          padding: 10px 10px;
+          width: 100%;
+          background-color: #2c3246;
+        }
+        @include extraSmall {
+          padding: 14px 14px;
+          height: auto;
+          width: 100%;
+          background-color: #2c3246;
+        }
+        &:hover {
+          background-color: $primaryColor;
+        }
+        .text {
+          display: inline-block;
+        }
+      }
+      .btn-add-cart {
+        width: 130px;
+        background-color: lighten($primaryBgColor, 5%);
+        &:hover {
+          background-color: $primaryColor;
+        }
+        svg {
+          width: 16px;
+          margin-right: 5px;
+        }
+        @include small {
+          width: 145px;
+          height: 50px;
+          background-color: #2c3246;
+        }
+        @include extraSmall {
+          width: calc(100% - 50px - 10%);
+          height: 50px;
+          padding: 14px 35px;
+          background-color: #2c3246;
+        }
+      }
+      .btn-view-cart {
+        width: 130px;
+        padding: 10px 20px;
+        background-color: #151a2c;
+        color: #6c789c;
+        &:hover {
+          background-color: #151a2c;
+          color: $primaryColor;
+        }
+        svg {
+          width: 16px;
+          margin-right: 5px;
+        }
+        @include small {
+          width: 145px;
+          height: 50px;
+          padding: 10px 10px;
+        }
+        @include extraSmall {
+          width: calc(100% - 50px - 10%);
+          height: 50px;
+          padding: 14px 35px;
+        }
+      }
+      .btn-add-wishlist {
+        width: 46px;
+        @include small {
+          padding: 10px 10px;
+          width: 50px;
+          height: 50px;
+        }
+        @include extraSmall {
+          width: 50px;
+          height: 50px;
+        }
+        &:hover {
+          @include small {
+            color: $txtColor-light;
+            background-color: lighten($primaryBgColor, 5%);
+          }
+          @include extraSmall {
+            color: $txtColor-light;
+            background-color: lighten($primaryBgColor, 5%);
+          }
+        }
+        svg {
+          width: 16px;
+        }
+      }
+      .btn-wishlisted {
+        width: 46px;
+        color: #6c789c;
+        background-color: #151a2c;
+        @include small {
+          padding: 10px 10px;
+          width: 50px;
+          height: 50px;
+        }
+        @include extraSmall {
+          width: 50px;
+          height: 50px;
+        }
+        &:hover {
+          background-color: #151a2c;
+          color: $primaryColor;
+          @include small {
+            background-color: #151a2c;
+          }
+          @include extraSmall {
+            background-color: #151a2c;
+          }
+        }
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
+}

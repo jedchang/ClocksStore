@@ -1,0 +1,192 @@
+.contact-wrapper {
+  .breadcrumb-area {
+    &:before {
+      background-image: url('~@/assets/images/breadcrumb/breadcrumb_contact.jpg');
+    }
+  }
+
+  .page-container {
+    padding: 80px 0 140px 0;
+    @include medium {
+      padding: 80px 0 80px 0;
+    }
+    @include small {
+      padding: 60px 15px 30px 15px;
+    }
+    @include extraSmall {
+      padding: 60px 15px 30px 15px;
+    }
+
+    .border-right {
+      border-right: 1px solid #343b50 !important;
+      @include small {
+        border-right: none !important;
+      }
+      @include extraSmall {
+        border-right: none !important;
+      }
+    }
+    .border-bottom {
+      border-bottom: none !important;
+      @include small {
+        border-bottom: none !important;
+      }
+      @include extraSmall {
+        border-bottom: none !important;
+      }
+    }
+
+    .order-1 {
+      border-right: 1px solid #343b50 !important;
+    }
+    .order-2 {
+      border-right: 1px solid #343b50 !important;
+      @include small {
+        border-right: none !important;
+      }
+      @include extraSmall {
+        border-right: none !important;
+      }
+    }
+    .order-3 {
+      border-right: none !important;
+    }
+
+    @include small {
+      .border-bottom > .item {
+        border-bottom: none;
+      }
+      .order-1 {
+        border-right: 1px solid #343b50 !important;
+        .item {
+          border-bottom: 1px solid #343b50 !important;
+          height: 200px;
+        }
+      }
+      .order-2 {
+        .item {
+          height: 200px;
+          border-bottom: 1px solid #343b50 !important;
+        }
+      }
+      .order-3 {
+        .item {
+          margin-top: 15px;
+          border-bottom: 1px solid #343b50;
+        }
+      }
+    }
+    @include extraSmall {
+      .border-bottom > .item {
+        border-bottom: none;
+      }
+      .order-1 {
+        border-right: 1px solid #343b50 !important;
+        .item {
+          border-bottom: 1px solid #343b50 !important;
+          height: 200px;
+        }
+      }
+      .order-2 {
+        .item {
+          height: 200px;
+          border-bottom: 1px solid #343b50 !important;
+        }
+      }
+      .order-3 {
+        .item {
+          margin-top: 15px;
+          border-bottom: 1px solid #343b50;
+        }
+      }
+    }
+
+    .item {
+      text-align: center;
+      svg {
+        color: #fff;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      h4 {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 500;
+        @include medium {
+          font-size: 22px;
+        }
+        @include small {
+          color: #c7cde1;
+          font-size: 26px;
+        }
+        @include extraSmall {
+          color: #c7cde1;
+          font-size: 6.5vmin;
+        }
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        font-size: 16px;
+        color: #afafaf;
+        @include medium {
+          height: 21px;
+          line-height: 21px;
+        }
+        &.phone {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          @include small {
+            align-items: center;
+          }
+          @include extraSmall {
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+          }
+        }
+        a {
+          font-weight: 300;
+          color: #afafaf;
+          transition: $setTransition;
+          &:hover {
+            color: $primaryColor;
+          }
+          @include medium {
+            font-size: 14px;
+          }
+        }
+        p {
+          margin-bottom: 0;
+          font-weight: 300;
+          @include medium {
+            font-size: 14px;
+          }
+          @include small {
+            font-size: 14px;
+          }
+          @include extraSmall {
+            font-size: 14px;
+          }
+        }
+        span {
+          font-weight: 300;
+          margin-left: 5px;
+          @include medium {
+            font-size: 14px;
+          }
+          @include small {
+            margin-left: 0;
+          }
+          @include extraSmall {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

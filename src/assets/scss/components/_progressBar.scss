@@ -1,0 +1,151 @@
+.steps-wrapper {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  color: #afafaf;
+  position: relative;
+  @include small {
+    width: 90%;
+    margin: 0 auto 80px auto;
+  }
+  @include extraSmall {
+    width: 90%;
+    margin: 0 auto 80px auto;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    height: 4px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    height: 4px;
+    width: 0px;
+    background-color: $txtColor;
+    transform-origin: left center;
+    transition: $setTransition;
+  }
+  &.step-2 {
+    &:after {
+      width: 50%;
+      background-color: $primaryColor;
+    }
+  }
+  &.step-3 {
+    &:after {
+      width: 100%;
+      background-color: $primaryColor;
+    }
+  }
+
+  .step {
+    position: relative;
+    font-size: 16px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    line-height: 30px;
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    font-weight: 500;
+    z-index: 2;
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) perspective(1000px);
+      width: 36px;
+      height: 36px;
+      background-color: $primaryBgColor;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      transition: $setTransition;
+    }
+    &.step-3 {
+      .text {
+        @include medium {
+          padding-right: 5px;
+        }
+        @include small {
+          padding-right: 5px;
+        }
+        @include extraSmall {
+          padding-right: 5px;
+        }
+      }
+    }
+
+    .status {
+      .order {
+        display: block;
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .icon {
+        display: none;
+      }
+    }
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.25);
+      @include small {
+        font-size: 14px;
+      }
+      @include extraSmall {
+        font-size: 13px;
+      }
+    }
+
+    &.current {
+      border: 3px solid $txtColor;
+      .status {
+        .order {
+          color: $primaryColor;
+        }
+      }
+      .text {
+        color: $primaryColor;
+      }
+      &:after {
+        border: 3px solid $primaryColor;
+      }
+    }
+    &.valid {
+      &:after {
+        background-color: $primaryColor;
+        border: 3px solid $primaryColor;
+      }
+      .status {
+        .order {
+          display: none;
+        }
+        .icon {
+          display: block;
+          color: #ffffff;
+        }
+      }
+      .text {
+        color: $primaryColor;
+      }
+    }
+  }
+}

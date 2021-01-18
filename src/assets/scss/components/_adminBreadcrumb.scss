@@ -1,0 +1,114 @@
+.admin-breadcrumb {
+  padding: 40px 27px 35px 20px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  @include medium {
+    padding: 30px 15px 25px 15px;
+  }
+  @include small {
+    padding: 30px 0 40px 0;
+  }
+  @include extraSmall {
+    padding: 30px 0 40px 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 4px 4px 0 0;
+    @include small {
+      left: 0;
+      width: 100%;
+    }
+    @include extraSmall {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .breadcrumb-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    @include small {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include extraSmall {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .page-title {
+    font-size: 52px;
+    font-weight: 400;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    text-transform: uppercase;
+    @include medium {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    @include small {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+    @include extraSmall {
+      font-size: 10.2vmin;
+      margin-bottom: 8px;
+    }
+  }
+  .bread-crumb {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    li {
+      display: inline-block;
+      padding-right: 16px;
+      margin-right: 8px;
+      position: relative;
+      text-transform: uppercase;
+      &:after {
+        content: '/';
+        position: absolute;
+        right: 0;
+        top: 1px;
+        color: darken($txtColor-light, 20%) !important;
+      }
+      &:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        &:after {
+          content: none;
+        }
+      }
+      a {
+        color: darken($txtColor-light, 20%) !important;
+        transition: $setTransition;
+        &:hover {
+          color: #fff !important;
+        }
+      }
+      p {
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}

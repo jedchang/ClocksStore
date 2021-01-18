@@ -1,0 +1,12 @@
+.home-wrapper {
+  .banner-area {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+  }
+}

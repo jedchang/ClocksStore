@@ -1,0 +1,70 @@
+.pagination-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 18px 0 12px 0;
+  .pagination {
+    margin-bottom: 0px;
+    @include small {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include extraSmall {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .page-item {
+    @include small {
+      margin-bottom: 10px;
+    }
+    @include extraSmall {
+      margin-bottom: 10px;
+    }
+    &.active {
+      .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    .page-link {
+      border-radius: 30px !important;
+      margin: 0 6px;
+      border: none;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      text-align: center;
+      line-height: 32px;
+      color: #fff;
+      background-color: #363d50;
+      z-index: 1;
+      transition: $setTransition;
+      &:hover {
+        color: $primaryColor;
+        @include small {
+          color: #fff;
+        }
+        @include extraSmall {
+          color: #fff;
+        }
+      }
+      @include small {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+      }
+      @include extraSmall {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+      }
+    }
+  }
+}

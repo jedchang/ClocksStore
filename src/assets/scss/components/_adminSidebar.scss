@@ -1,0 +1,160 @@
+.sidebar-content {
+  width: 250px;
+  z-index: 1001;
+  background: #2a3042;
+  position: fixed;
+  bottom: 0;
+  top: 70px;
+  margin-top: 0;
+  box-shadow: 0 12px 24px rgba(18, 38, 63, 0.03);
+  transition: $setTransition;
+  @include medium {
+    width: 160px;
+  }
+  @include small {
+    display: none;
+  }
+  @include extraSmall {
+    display: none;
+  }
+}
+
+.simplebar {
+  max-height: 100%;
+}
+
+.menu-wrapper {
+  list-style: none;
+  padding: 16px 0;
+  .menu-title {
+    padding: 10px 20px !important;
+    letter-spacing: 0.3px;
+    pointer-events: none;
+    cursor: default;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #6a7187;
+    font-weight: 600;
+    background-color: #323748;
+    margin-bottom: 15px;
+    &.title-admin {
+      margin-top: 30px;
+    }
+  }
+  .menu-item {
+    display: block;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: $txtColor;
+    transition: $setTransition;
+    &:hover {
+      color: #fff;
+    }
+    .nav-link {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 24px;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: $setTransition;
+      @include medium {
+        padding: 10px 12px;
+      }
+      &:hover {
+        color: #fff;
+        text-shadow: 0px 0px 5px $primaryColor;
+        span,
+        svg {
+          color: #fff;
+        }
+      }
+      &.router-link-active {
+        pointer-events: none;
+        cursor: default;
+        span,
+        svg {
+          color: $primaryColor;
+        }
+      }
+      span {
+        font-size: 14px;
+        color: $txtColor;
+        transition: $setTransition;
+      }
+      svg {
+        font-size: 20px;
+        width: 30px;
+        margin-right: 10px;
+        color: #6a7187;
+        transition: $setTransition;
+        @include medium {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.simplebar-scrollbar {
+  &:before {
+    width: 4px;
+    background: #a2adb7;
+  }
+}
+
+.sidebar-enable {
+  .sidebar-content {
+    width: 70px !important;
+    position: fixed;
+    z-index: 5;
+    .menu-title {
+      display: none !important;
+    }
+    .menu-item {
+      position: relative;
+      white-space: nowrap;
+      &:hover {
+        .nav-link {
+          background: #2e3548;
+          color: #fff;
+          position: relative;
+          width: 260px;
+          z-index: 9999;
+          span {
+            display: inline;
+          }
+        }
+        .router-link-active {
+          pointer-events: auto;
+          cursor: default;
+        }
+      }
+      .nav-link {
+        padding: 15px 20px;
+        min-height: 55px;
+        span {
+          display: none;
+          padding-left: 25px;
+        }
+      }
+    }
+
+    .simplebar {
+      height: 100%;
+    }
+
+    .simplebar-mask {
+      overflow: visible !important;
+    }
+
+    .simplebar-content-wrapper {
+      overflow: visible !important;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.form-fields {
+  width: 100%;
+  margin: 40px 0;
+  @include small {
+    margin: 85px 0 40px 0;
+  }
+  @include extraSmall {
+    margin: 85px 0 40px 0;
+  }
+  .form-inner {
+    padding: 40px 30px 20px 30px;
+    border-top: 1px solid #343b50;
+    @include medium {
+      padding: 40px 0px 0px 0px;
+    }
+    @include small {
+      border-top: none;
+      padding: 0;
+    }
+    @include extraSmall {
+      border-top: none;
+      padding: 0;
+    }
+
+    .heading {
+      color: #fff;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      font-weight: 400;
+      font-size: 28px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 400px;
+      margin: 0 auto 30px auto;
+      position: relative;
+      @include small {
+        width: 100%;
+      }
+      @include extraSmall {
+        width: 100%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        border-bottom: 1px solid $primaryColor;
+      }
+    }
+
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      .action-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include small {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        @include extraSmall {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  .form-group {
+    @include small {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    @include extraSmall {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    label {
+      color: #c8d0dd;
+    }
+    .form-control {
+      padding: 12px;
+      height: auto;
+      color: #bfc8e2;
+      background-color: #39425a;
+      border: 1px solid #39425a;
+      font-size: 14px;
+    }
+    .form-message {
+      height: 209px;
+    }
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 14px 40px;
+  }
+
+  .btn-submit {
+    width: 50%;
+    margin-top: 10px;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    text-transform: uppercase;
+    @include medium {
+      width: 100%;
+    }
+    @include small {
+      width: 100%;
+      margin-right: -15px;
+      margin-left: -15px;
+      margin-top: 0;
+    }
+    @include extraSmall {
+      width: 100%;
+      margin-right: -15px;
+      margin-left: -15px;
+      margin-top: 0;
+    }
+    &:hover {
+      background-color: darken($primaryColor, 10);
+      border-color: darken($primaryColor, 10);
+    }
+    &.disabled {
+      pointer-events: none;
+      cursor: default;
+      color: #424b63;
+      background-color: #151a2c;
+      border-color: #151a2c;
+      @include small {
+        width: 100%;
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-top: 0;
+      }
+      @include extraSmall {
+        width: 100%;
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .text-danger {
+    font-size: 14px;
+    height: 17px;
+    margin-bottom: 17px;
+    display: block;
+  }
+}

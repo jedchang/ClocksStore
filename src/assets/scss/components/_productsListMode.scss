@@ -1,0 +1,446 @@
+.product-list {
+  display: flex;
+  padding: 24px;
+  margin: 0;
+  background: $primaryBgColor;
+  border-radius: 4px;
+  position: relative;
+  text-align: left;
+  position: relative;
+  transition: $setTransition;
+  z-index: 1;
+  animation: zoomIn 0.3s;
+  @include medium {
+    padding: 20px 15px;
+  }
+  @include small {
+    flex-direction: column;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  @include extraSmall {
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 18px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  &.on-sale {
+    .product-img {
+      &:after {
+        top: 0;
+        right: 0;
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 0 80px 80px 0;
+        border-color: transparent #111523 transparent;
+        @include medium {
+          border-width: 0 55px 55px 0;
+        }
+        @include small {
+          border-width: 0 120px 120px 0;
+        }
+        @include extraSmall {
+          border-width: 0 25vmin 25vmin 0;
+        }
+      }
+      &:before {
+        color: $primaryColor;
+        content: 'SALE';
+        position: absolute;
+        text-align: right;
+        padding: 0;
+        top: 18px;
+        right: 8px;
+        display: block;
+        z-index: 5;
+        font-size: 14px;
+        font-weight: 500;
+        transform: rotate(45deg);
+        @include medium {
+          top: 10px;
+          right: 3px;
+          font-size: 12px;
+        }
+        @include small {
+          top: 28px;
+          right: 18px;
+          font-size: 18px;
+        }
+        @include extraSmall {
+          top: 6.5%;
+          right: 3.2%;
+          font-size: 4.5vmin;
+        }
+      }
+    }
+  }
+  &.sold-out {
+    .product-img {
+      cursor: default;
+      pointer-events: none;
+      .sold-out-mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        .sold-out-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          padding: 5px 30px;
+          font-size: 13px;
+          border-radius: 3px;
+          text-transform: uppercase;
+          color: #fff;
+          background-color: #ff3e55;
+          z-index: 3;
+          @include small {
+            font-size: 4vmin;
+            padding: 5px 30px;
+          }
+          @include extraSmall {
+            width: auto;
+            padding: 2% 10%;
+            font-size: 4vmin;
+          }
+        }
+      }
+      img {
+        opacity: 0.5;
+      }
+    }
+    .name {
+      cursor: default;
+      pointer-events: none;
+    }
+    .btn-add-cart {
+      cursor: default;
+      pointer-events: none;
+      background-color: #0f111a !important;
+      color: #4f566f !important;
+      @include small {
+        background-color: #222838 !important;
+      }
+      @include extraSmall {
+        background-color: #222838 !important;
+      }
+    }
+  }
+
+  .product-img {
+    position: relative;
+    flex-basis: 40%;
+    display: inline-block;
+    border: 1px solid #222736;
+    transition: $setTransition;
+    @include medium {
+      flex-basis: 40%;
+    }
+    &:hover {
+      border: 1px solid $primaryColor;
+      @include small {
+        border: 1px solid #222736;
+      }
+      @include extraSmall {
+        border: 1px solid #222736;
+      }
+    }
+  }
+  .product-content {
+    flex-basis: 60%;
+    padding: 0 0 0 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    @include medium {
+      flex-basis: 60%;
+      padding: 0 0 0 30px;
+    }
+    @include small {
+      padding: 0;
+      margin-top: 20px;
+      align-items: center;
+    }
+    @include extraSmall {
+      padding: 0;
+      margin-top: 20px;
+      align-items: center;
+    }
+    span {
+      color: #afafaf;
+      font-size: 16px;
+      margin: 0 0 0 0;
+      display: inline-block;
+      @include medium {
+        font-size: 14px;
+      }
+      @include small {
+        margin-bottom: 5px;
+        font-size: 5.2vmin;
+      }
+      @include extraSmall {
+        margin-bottom: 0;
+        font-size: 5.2vmin;
+      }
+    }
+    h4 {
+      background: none;
+      padding-bottom: 0;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      @include medium {
+        margin-top: 0;
+      }
+      .name {
+        font-size: 26px;
+        color: #fff;
+        text-transform: capitalize;
+        transition: $setTransition;
+        @include medium {
+          font-size: 22px;
+        }
+        @include small {
+          font-size: 7.8vmin;
+        }
+        @include extraSmall {
+          font-size: 7.8vmin;
+        }
+        &:hover {
+          color: $primaryColor !important;
+        }
+      }
+    }
+    .product-rating {
+      @include medium {
+        margin-bottom: 0;
+      }
+    }
+    .product-desc {
+      color: #afafaf;
+      font-size: 16px;
+      font-weight: 300;
+      @include medium {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      @include small {
+        font-size: 5vmin;
+        margin-bottom: 0;
+      }
+      @include extraSmall {
+        font-size: 5vmin;
+        margin-bottom: 0;
+      }
+    }
+    .product-price-wrapper {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 10px;
+      transition: $setTransition;
+      @include medium {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      @include small {
+        margin-top: 0;
+      }
+      @include extraSmall {
+        margin-top: 0;
+      }
+      .money {
+        color: $primaryColor;
+        margin: 0 2px;
+        font-size: 26px;
+        font-weight: 500;
+        @include medium {
+          font-size: 20px;
+        }
+        @include small {
+          font-size: 7vmin;
+        }
+        @include extraSmall {
+          font-size: 7vmin;
+        }
+      }
+      .origin-price {
+        margin: 0 2px 0 6px;
+        .money {
+          text-decoration: line-through;
+          color: #afafaf;
+          font-size: 18px;
+          font-weight: 400;
+          @include medium {
+            font-size: 16px;
+          }
+          @include small {
+            font-size: 5vmin;
+          }
+          @include extraSmall {
+            font-size: 5vmin;
+          }
+        }
+      }
+    }
+    .product-action {
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      @include medium {
+        margin-top: 12px;
+      }
+      @include small {
+        width: 100%;
+        justify-content: space-between;
+      }
+      @include extraSmall {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .btn {
+        padding: 10px 15px;
+        color: $txtColor-light;
+        background-color: lighten($primaryBgColor, 5%);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        border-radius: 3px;
+        border: none;
+        height: 40px;
+        &:hover {
+          background-color: $primaryColor;
+        }
+        @include small {
+          padding: 14px 14px;
+          height: auto;
+          width: 100%;
+          background-color: #2c3246;
+        }
+        @include extraSmall {
+          padding: 14px 14px;
+          height: auto;
+          width: 100%;
+          background-color: #2c3246;
+        }
+      }
+      .btn-add-cart {
+        width: 160px;
+        order: 1;
+        margin-right: 20px;
+        background-color: lighten($primaryBgColor, 5%);
+        &:hover {
+          background-color: $primaryColor;
+        }
+        svg {
+          width: 16px;
+          margin-right: 5px;
+        }
+        @include small {
+          width: 85%;
+          height: 50px;
+          padding: 14px 35px;
+          margin-right: 0;
+          background-color: #2c3246;
+        }
+        @include extraSmall {
+          width: calc(100% - 50px - 10%);
+          height: 50px;
+          padding: 14px 35px;
+          margin-right: 0;
+          background-color: #2c3246;
+        }
+      }
+      .btn-view-cart {
+        width: 160px;
+        order: 1;
+        margin-right: 20px;
+        background-color: #151a2c;
+        color: #6c789c;
+        &:hover {
+          background-color: #151a2c;
+          color: $primaryColor;
+        }
+        svg {
+          width: 16px;
+          margin-right: 5px;
+        }
+        @include small {
+          width: 85%;
+          height: 50px;
+          margin-right: 0;
+          padding: 14px 35px;
+        }
+        @include extraSmall {
+          width: calc(100% - 50px - 10%);
+          height: 50px;
+          margin-right: 0;
+          padding: 14px 35px;
+        }
+      }
+      .btn-add-wishlist {
+        width: 46px;
+        order: 2;
+        @include small {
+          width: 11%;
+          height: 50px;
+        }
+        @include extraSmall {
+          width: 50px;
+          height: 50px;
+        }
+        &:hover {
+          @include small {
+            color: $txtColor-light;
+            background-color: lighten($primaryBgColor, 5%);
+          }
+          @include extraSmall {
+            color: $txtColor-light;
+            background-color: lighten($primaryBgColor, 5%);
+          }
+        }
+        svg {
+          width: 16px;
+        }
+      }
+      .btn-wishlisted {
+        width: 46px;
+        order: 2;
+        background-color: #151a2c;
+        @include small {
+          width: 11%;
+          height: 50px;
+        }
+        @include extraSmall {
+          width: 50px;
+          height: 50px;
+        }
+        &:hover {
+          background-color: #151a2c;
+          color: $primaryColor;
+          @include small {
+            background-color: #151a2c;
+          }
+          @include extraSmall {
+            color: #fff;
+            background-color: #151a2c;
+          }
+        }
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
+}

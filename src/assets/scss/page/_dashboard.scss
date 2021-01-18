@@ -1,0 +1,109 @@
+.dashboard-wrapper {
+  position: relative;
+  background-color: $primaryBgColor;
+}
+
+.main-content {
+  margin-left: 250px;
+  overflow: hidden;
+  background-color: $primaryBgColor;
+  color: #a6b0cf;
+  @include medium {
+    margin-left: 160px;
+  }
+  @include small {
+    margin-left: 0;
+  }
+  @include extraSmall {
+    margin-left: 0;
+  }
+}
+
+.admin-footer {
+  padding-top: 15px;
+  color: #a6b0cf;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 250px;
+  display: block;
+  @include medium {
+    left: 160px;
+  }
+  @include small {
+    position: relative;
+    left: 0;
+    height: auto;
+    padding-top: 0;
+  }
+  @include extraSmall {
+    position: relative;
+    left: 0;
+    height: auto;
+    padding-top: 0;
+  }
+  .container-fluid {
+    background-color: $primaryBgColor;
+  }
+  .footer-inner {
+    padding: 30px 0 15px 0;
+    text-align: center;
+    @include medium {
+      padding: 15px 0 15px 0;
+    }
+    @include small {
+      padding: 20px 0 15px 0;
+    }
+    @include extraSmall {
+      padding: 20px 0 15px 0;
+    }
+  }
+  .text {
+    text-align: center;
+    margin-bottom: 0;
+    color: $txtColor-dark;
+    font-size: 14px;
+    display: inline-block;
+    @include medium {
+      font-size: 12px;
+    }
+    @include small {
+      font-size: 14px;
+    }
+    @include extraSmall {
+      font-size: 3.5vmin;
+    }
+  }
+  .author {
+    @include small {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    @include extraSmall {
+      font-size: 3.5vmin;
+    }
+    a {
+      color: lighten($txtColor, 20%);
+      transition: $setTransition;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+}
+
+.sidebar-enable {
+  .main-content {
+    margin-left: 70px;
+    @include small {
+      margin-left: 0px;
+    }
+    @include extraSmall {
+      margin-left: 0px;
+    }
+  }
+  .bs-footer {
+    left: 70px;
+  }
+}

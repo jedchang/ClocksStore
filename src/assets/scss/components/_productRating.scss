@@ -1,0 +1,30 @@
+.product-rating {
+  margin-bottom: 15px;
+  @include small {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  @include extraSmall {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  span {
+    margin: 0 auto;
+  }
+  .star {
+    display: inline-block;
+    font-size: 13px;
+    color: #c7cde1;
+    margin-right: 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.fill,
+    &.half {
+      color: #c7cde1;
+    }
+    &.empty {
+      color: darken(#c7cde1, 40%);
+    }
+  }
+}

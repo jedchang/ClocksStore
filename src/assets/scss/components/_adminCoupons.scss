@@ -1,0 +1,14 @@
+.coupons-content {
+  padding: 94px 12px 60px;
+  @include small {
+    padding: 0;
+  }
+  @include extraSmall {
+    padding: 0;
+  }
+  .admin-breadcrumb {
+    &:before {
+      background-image: url('~@/assets/images/breadcrumb/breadcrumb_faq.jpg');
+    }
+  }
+}

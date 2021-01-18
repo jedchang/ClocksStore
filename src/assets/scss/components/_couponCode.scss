@@ -1,0 +1,97 @@
+.coupon-code {
+  padding: 20px;
+  margin-top: 30px;
+  border: 2px dashed #343b50;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include small {
+    flex-direction: column;
+  }
+  @include extraSmall {
+    flex-direction: column;
+  }
+  .input-coupon {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-size: 16px;
+    border: none;
+    outline: 0;
+    @include small {
+      width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+    @include extraSmall {
+      width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+    &.inputted-coupon {
+      color: #6c789c;
+      @include small {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+      }
+      @include extraSmall {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+      }
+    }
+  }
+  .btn {
+    width: 200px;
+    height: 50px;
+    padding: 12px 30px;
+    border-radius: 3px;
+    border: 1px solid $primaryColor;
+    line-height: 1.5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    transition: $setTransition;
+    @include small {
+      width: 100%;
+      margin-top: 25px;
+    }
+    @include extraSmall {
+      width: 100%;
+      margin-top: 25px;
+    }
+    &:hover {
+      background-color: $primaryColor;
+    }
+    p {
+      margin: 0;
+    }
+    &.use-coupon {
+      color: #6c789c;
+      background-color: #151a2c;
+      border: 1px solid #151a2c;
+      pointer-events: none;
+      cursor: default;
+      @include small {
+        width: 100%;
+        margin-top: 25px;
+      }
+      @include extraSmall {
+        width: 100%;
+        margin-top: 25px;
+      }
+    }
+  }
+}

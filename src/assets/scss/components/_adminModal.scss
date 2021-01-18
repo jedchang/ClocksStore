@@ -1,0 +1,162 @@
+#productModal,
+#removeProductModal,
+#orderModal,
+#couponModal,
+#removeCouponModal {
+  &.modal {
+    overflow: hidden;
+    @include small {
+      overflow: auto;
+    }
+    @include extraSmall {
+      overflow: auto;
+    }
+  }
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #2a3042;
+    background-clip: padding-box;
+    border: 1px solid #32394e;
+    border-radius: 0.4rem;
+    outline: 0;
+    .btn {
+      @include small {
+        width: 100%;
+        margin: 0;
+      }
+      @include extraSmall {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    .btn-confirm {
+      margin-left: 15px;
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+      &:hover {
+        background-color: darken($primaryColor, 10);
+        border-color: darken($primaryColor, 10);
+      }
+      @include small {
+        margin: 5px 0 15px 0;
+      }
+      @include extraSmall {
+        margin: 5px 0 15px 0;
+      }
+      .svg-inline--fa {
+        margin-right: 5px;
+      }
+    }
+  }
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #32394e;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+    .modal-title {
+      text-transform: uppercase;
+      color: #f6f6f6;
+    }
+  }
+  .modal-body {
+    color: #c8d0dd;
+    .form-group {
+      margin-bottom: 16px;
+      label {
+        color: #c8d0dd;
+        text-transform: uppercase;
+      }
+    }
+    .form-row > .form-group {
+      margin-bottom: 16px;
+    }
+    .img-fluid {
+      margin-bottom: 0;
+      @include medium {
+        margin-bottom: 16px;
+      }
+    }
+    .form-control {
+      color: #bfc8e2;
+      background-color: #39425a;
+      border: 1px solid #39425a;
+      font-size: 14px;
+      &::placeholder {
+        color: $txtColor-dark;
+      }
+    }
+    #content {
+      height: 120px;
+    }
+    hr {
+      border-top: 1px solid #32394e;
+    }
+    .form-check {
+      padding-left: 0;
+      .el-checkbox {
+        color: $txtColor;
+      }
+    }
+    .line {
+      text-align: center;
+      position: relative;
+      margin-bottom: 10px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 40%;
+        height: 1px;
+        background-color: #535d6d;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40%;
+        height: 1px;
+        background-color: #535d6d;
+      }
+    }
+    #customFile {
+      height: auto;
+      overflow: hidden;
+    }
+  }
+  .modal-footer {
+    border-top: 1px solid #32394e;
+    @include small {
+      flex-direction: column-reverse;
+      padding-bottom: 20px;
+    }
+    @include extraSmall {
+      flex-direction: column-reverse;
+      padding-bottom: 20px;
+    }
+  }
+
+  .text-danger {
+    height: 17px;
+    margin-bottom: 17px;
+    display: block;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 12px 40px;
+  }
+
+  .simplebar {
+    height: calc(100% - 63px - 80px);
+  }
+}

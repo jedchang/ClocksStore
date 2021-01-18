@@ -1,0 +1,141 @@
+#banner {
+  display: block;
+  @include small {
+    display: none;
+  }
+  @include extraSmall {
+    display: none;
+  }
+  /deep/ .swiper-slide {
+    height: auto;
+    .content {
+      position: absolute;
+      color: $txtColor;
+      .info-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        @include medium {
+          justify-content: flex-start;
+        }
+      }
+      h5 {
+        font-size: 18px;
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-weight: 400;
+        @include medium {
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+      }
+      h2 {
+        font-size: 42px;
+        font-weight: 600;
+        color: #fff;
+        @include large {
+          font-size: 38px;
+        }
+        @include medium {
+          font-size: 30px;
+          text-shadow: 0 0 5px #000;
+          margin-bottom: 15px;
+        }
+      }
+      p {
+        color: #afafaf;
+        width: 500px;
+        line-height: 1.3;
+        word-break: break-word;
+        @include medium {
+          display: none;
+        }
+      }
+      .btn-shop-now {
+        text-transform: uppercase;
+        @include btnCustom(transparent);
+        @include medium {
+          padding: 10px 30px;
+          font-size: 14px;
+        }
+      }
+    }
+    .content-left {
+      top: 50%;
+      left: 35%;
+      transform: translateX(-45%) translateY(-45%);
+      @include large {
+        left: 50%;
+        transform: translateX(-80%) translateY(-40%);
+      }
+      @include medium {
+        left: 50%;
+        transform: translateX(-85%) translateY(-30%);
+      }
+    }
+    .content-right {
+      top: 50%;
+      right: 35%;
+      transform: translateX(45%) translateY(-45%);
+      @include large {
+        right: 50%;
+        transform: translateX(80%) translateY(-40%);
+      }
+      @include medium {
+        right: 50%;
+        transform: translateX(75%) translateY(-30%);
+      }
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /deep/ .swiper-pagination {
+    .swiper-pagination-bullet {
+      width: 60px;
+      height: 4px;
+      border-radius: 0;
+      background: #bababa;
+      opacity: 1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+      &:hover {
+        background: #eeeeee;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background: $primaryColor;
+      opacity: 1;
+      &:hover {
+        background: $primaryColor;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  /deep/ .swiper-button-prev,
+  /deep/ .swiper-button-next {
+    opacity: 0;
+    width: 80px;
+    height: 100px;
+    margin-top: -50px;
+    color: $primaryColor;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    &:hover {
+      opacity: 1;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

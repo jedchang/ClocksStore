@@ -1,0 +1,483 @@
+.footer {
+  background-color: #161a2e;
+  height: auto;
+  position: relative;
+  left: 0;
+  padding: 60px 12px 20px 12px;
+  @include small {
+    padding: 50px 0 0 0;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -31px;
+      left: 50%;
+      background: #2c3654;
+      border-top-left-radius: 8px;
+      transform: translateX(-50%) rotate(45deg) skew(0deg);
+    }
+  }
+  @include extraSmall {
+    padding: 30px 0 0 0;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: -31px;
+      left: 50%;
+      background: #2c3654;
+      border-top-left-radius: 8px;
+      transform: translateX(-50%) rotate(45deg) skew(0deg);
+    }
+  }
+
+  .desktop-footer {
+    display: block;
+    @include small {
+      display: none;
+    }
+    @include extraSmall {
+      display: none;
+    }
+
+    .service-wrapper {
+      background: #1a1f32;
+      border: 1px solid #282f4b;
+      padding: 15px 10px 17px;
+      margin-bottom: 30px;
+    }
+
+    .service-content {
+      position: relative;
+      .service-feature {
+        background: url('~@/assets/images/shipping_icon.png') no-repeat scroll 0
+          0;
+        padding-left: 95px;
+        margin-left: 12px;
+        height: 76px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        @include medium {
+          padding-left: 82px;
+          margin-left: -8px;
+        }
+        @include small {
+          margin-left: 0;
+        }
+        @include extraSmall {
+          margin-left: 0;
+        }
+        &:before {
+          background-color: #282f4b;
+          content: '';
+          height: 56px;
+          position: absolute;
+          right: -20px;
+          top: auto;
+          width: 1px;
+          @include small {
+            content: none;
+          }
+          @include extraSmall {
+            content: none;
+          }
+        }
+      }
+      .feature1 {
+        background-position: 0px 2px;
+      }
+      .feature2 {
+        background-position: 5px -180px;
+      }
+      .feature3 {
+        background-position: 5px -360px;
+        &:before {
+          content: none;
+        }
+      }
+      h4 {
+        color: #fff;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 0 0 2px;
+        @include medium {
+          font-size: 15px;
+        }
+      }
+      p {
+        color: $txtColor;
+        margin-bottom: 0;
+        @include medium {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .info-wrapper {
+      padding: 30px 10px 20px 10px;
+      margin-top: 30px;
+      color: $txtColor;
+      border-bottom: 1px solid #282f4b;
+      @include small {
+        padding: 30px 0;
+        margin-top: 0;
+      }
+      @include extraSmall {
+        padding: 30px 0;
+        margin-top: 0;
+      }
+      .title {
+        font-size: 26px;
+        text-transform: uppercase;
+        @include medium {
+          font-size: 22px;
+        }
+      }
+      .about-area {
+        margin-left: 15px;
+        @include medium {
+          margin-left: 0;
+        }
+        @include small {
+          margin-left: 0;
+        }
+        @include extraSmall {
+          margin-left: 0;
+        }
+        p {
+          margin-top: 30px;
+        }
+      }
+      .contact-area {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include medium {
+          margin-left: 0;
+        }
+        @include small {
+          margin-left: 0;
+        }
+        @include extraSmall {
+          margin-left: 0;
+        }
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding-left: 0;
+          margin-top: 20px;
+          li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          svg {
+            font-size: 18px;
+            width: 20px;
+            margin-right: 10px;
+            color: #fff;
+          }
+          a {
+            color: #a6b0cf;
+            transition: $setTransition;
+            &:hover {
+              color: $primaryColor;
+            }
+          }
+        }
+      }
+      .share-area {
+        margin-left: 15px;
+        @include medium {
+          margin-left: 0;
+        }
+        @include small {
+          margin-left: 0;
+        }
+        @include extraSmall {
+          margin-left: 0;
+        }
+        p {
+          margin-top: 30px;
+        }
+        .info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          list-style: none;
+          padding-left: 0;
+          margin-bottom: 0;
+          width: 260px;
+          @include medium {
+            width: 100%;
+          }
+        }
+        a {
+          color: $txtColor-light;
+          font-size: 20px;
+          width: 50px;
+          height: 50px;
+          background-color: $primaryBgColor;
+          padding: 15px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: $setTransition;
+          @include medium {
+            width: 40px;
+            height: 40px;
+          }
+          &:hover {
+            color: #fff;
+            background-color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-footer {
+    display: none;
+    @include small {
+      display: flex;
+      flex-direction: column;
+    }
+    @include extraSmall {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-wrapper {
+      background: #1a1f32;
+    }
+
+    /deep/ .el-collapse {
+      border-top: none;
+      border-bottom: none;
+      .el-collapse-item__header {
+        background-color: #161a2e;
+        border-bottom: 1px solid #394465;
+        color: #c7cde1;
+        text-transform: uppercase;
+        font-size: 4vmin;
+        font-weight: 500;
+        height: 50px;
+        line-height: 50px;
+        @include small {
+          font-size: 20px;
+        }
+        @include extraSmall {
+          font-size: 5vmin;
+        }
+      }
+      .el-collapse-item__wrap {
+        background-color: #161a2e;
+        border-bottom: none;
+        .el-collapse-item__content {
+          font-size: 4vmin;
+        }
+      }
+    }
+
+    .service-area {
+      position: relative;
+      padding: 10px 0 0 0;
+      .service-feature {
+        background: url('~@/assets/images/shipping_icon.png') no-repeat scroll 0
+          0;
+        padding-left: 85px;
+        margin-left: 12px;
+        height: 76px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+        h4 {
+          color: #fff;
+          font-size: 14px;
+          font-weight: 500;
+          margin: 0 0 2px;
+          @include small {
+            font-size: 18px;
+          }
+          @include extraSmall {
+            font-size: 5.3vmin;
+          }
+        }
+        p {
+          color: $txtColor;
+          margin-bottom: 0;
+          @include small {
+            font-size: 16px;
+          }
+          @include extraSmall {
+            font-size: 4.5vmin;
+          }
+        }
+        &.feature1 {
+          background-position: 0px 2px;
+        }
+        &.feature2 {
+          background-position: 5px -180px;
+        }
+        &.feature3 {
+          background-position: 5px -360px;
+          &:before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    .info-area {
+      position: relative;
+      padding: 10px 0 0 0;
+      p {
+        color: #afafaf;
+        font-size: 16px;
+        @include small {
+          font-size: 16px;
+        }
+        @include extraSmall {
+          font-size: 4.5vmin;
+        }
+      }
+    }
+
+    .contact-area {
+      position: relative;
+      padding: 10px 0 0 0;
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 0;
+        margin-top: 5px;
+        margin-bottom: 0;
+        li {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #afafaf;
+          font-size: 16px;
+          @include small {
+            font-size: 16px;
+          }
+          @include extraSmall {
+            font-size: 4.5vmin;
+          }
+        }
+        svg {
+          font-size: 18px;
+          width: 20px;
+          margin-right: 10px;
+          color: #afafaf;
+        }
+        a {
+          color: #afafaf;
+          transition: $setTransition;
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+
+    .share-area {
+      position: relative;
+      padding: 40px 0 20px 0;
+      background-color: #161a2e;
+      @include extraSmall {
+        padding: 30px 0 0 0;
+      }
+      .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      a {
+        color: #161a2e;
+        font-size: 20px;
+        width: 50px;
+        background-color: #79829c;
+        padding: 15px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: $setTransition;
+        @include small {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+    .copyright {
+      font-size: 4.4vmin;
+    }
+  }
+
+  .footer-inner {
+    padding: 30px 0 15px 0;
+    text-align: center;
+    @include small {
+      padding: 40px 0 15px 0;
+    }
+    @include extraSmall {
+      padding: 40px 0 15px 0;
+    }
+  }
+  .text {
+    text-align: center;
+    margin-bottom: 0;
+    color: $txtColor-dark;
+    font-size: 14px;
+    display: inline-block;
+    @include medium {
+      font-size: 12px;
+    }
+    @include small {
+      font-size: 14px;
+    }
+    @include extraSmall {
+      font-size: 3.5vmin;
+    }
+  }
+  .author {
+    @include small {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+    @include extraSmall {
+      font-size: 3.5vmin;
+    }
+    a {
+      color: lighten($txtColor, 20%);
+      transition: $setTransition;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+}

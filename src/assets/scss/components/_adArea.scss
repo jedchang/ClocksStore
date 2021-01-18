@@ -1,0 +1,110 @@
+.ad-area {
+  padding: 100px 0;
+  background-color: #1a1f32;
+  background: url('~@/assets/images/ad_img.jpg') no-repeat center/cover;
+  @include small {
+    padding: 60px 0;
+  }
+  @include extraSmall {
+    padding: 60px 0;
+  }
+
+  .ad-box {
+    text-align: center;
+  }
+  .ad-label {
+    color: $primaryColor;
+    font-weight: 300;
+    font-size: 16px;
+    @include small {
+      font-size: 20px;
+    }
+    @include extraSmall {
+      font-size: 5vmin;
+      margin-bottom: 10px;
+    }
+  }
+  .ad-name {
+    color: #fff;
+    font-weight: 400;
+    font-size: 38px;
+    margin-bottom: 25px;
+    @include medium {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    @include small {
+      font-size: 36px;
+    }
+    @include extraSmall {
+      font-size: 7vmin;
+    }
+  }
+  .ad-text {
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #afafaf;
+    @include small {
+      font-size: 20px;
+    }
+    @include extraSmall {
+      font-size: 5vmin;
+    }
+  }
+  .btn-shop-now {
+    border-radius: 3px;
+    padding: 10px 45px;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: $setTransition;
+    @include btnCustom(transparent);
+  }
+  .btn-coupon {
+    width: 300px;
+    position: relative;
+    border-radius: 3px;
+    padding: 8px 45px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px dashed $txtColor;
+    border-radius: 3px;
+    padding: 12px 40px;
+    transition: $setTransition;
+    @include small {
+      width: 90%;
+    }
+    @include extraSmall {
+      width: 90%;
+    }
+    .text {
+      animation: twinkling 0.4s alternate infinite;
+    }
+
+    &:hover {
+      color: $primaryColor;
+      background-color: transparent;
+      border: 2px dashed $primaryColor;
+      .material-icons {
+        display: block;
+        position: absolute;
+        top: -12px;
+        right: -16px;
+        transform: rotate(-25deg) rotateY(180deg);
+        background-color: #0a0a12;
+        color: $primaryColor;
+      }
+    }
+    .material-icons {
+      display: block;
+      position: absolute;
+      top: -12px;
+      right: -16px;
+      transform: rotate(-25deg) rotateY(180deg);
+      background-color: #0a0a12;
+      color: $txtColor;
+      transition: $setTransition;
+    }
+  }
+}

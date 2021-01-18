@@ -1,0 +1,88 @@
+#mobile-banner {
+  display: none;
+  @include small {
+    display: block;
+  }
+  @include extraSmall {
+    display: block;
+  }
+  /deep/ .swiper-slide {
+    height: auto;
+    .content {
+      position: absolute;
+      color: $txtColor;
+      width: 100%;
+      height: 100%;
+      padding: 15px 20px;
+      h5 {
+        font-size: 3.3vmin;
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-weight: 400;
+        position: absolute;
+        top: 38px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+        @include extraSmall {
+          font-size: 4.5vmin;
+        }
+      }
+      h2 {
+        font-size: 7vmin;
+        font-weight: 600;
+        color: #fff;
+        position: absolute;
+        top: 62px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+        @include extraSmall {
+          font-size: 7.5vmin;
+        }
+      }
+      p {
+        display: none;
+        color: #afafaf;
+        width: 100%;
+        word-break: break-word;
+        font-size: 3.8vmin;
+      }
+    }
+    .content-left {
+      left: 0;
+      top: 50%;
+      transform: translateY(-45%);
+      @include extraSmall {
+        transform: translateY(-50%);
+      }
+    }
+    .content-right {
+      left: 0;
+      top: 50%;
+      transform: translateY(-45%);
+      @include extraSmall {
+        transform: translateY(-50%);
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  /deep/ .swiper-pagination-bullet {
+    background: #bababa;
+    &:focus {
+      outline: none;
+    }
+  }
+  /deep/ .swiper-pagination-bullet-active {
+    background: $primaryColor;
+    &:focus {
+      outline: none;
+    }
+  }
+}

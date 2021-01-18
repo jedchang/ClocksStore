@@ -1,0 +1,450 @@
+.cart {
+  #cart-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 9000;
+    color: $txtColor;
+    background-color: $primaryBgColor;
+    width: 320px;
+    transition: $setTransition;
+    transform: translate3d(320px, 0, 0);
+    @include small {
+      width: 100%;
+      transform: translate3d(100%, 0, 0);
+    }
+    @include extraSmall {
+      width: 100%;
+      transform: translate3d(100%, 0, 0);
+    }
+    &.open {
+      transform: none;
+      & + .cart-sidebar-overlay {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .cart-header {
+      position: relative;
+      padding: 20px 0 10px 0;
+      margin: 20px 20px 0 20px;
+      border-bottom: 4px solid #394465;
+      @include small {
+        margin: 0 15px;
+      }
+      @include extraSmall {
+        margin: 0 15px;
+      }
+      .cart-icon {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        background: url('~@/assets/images/icon_sprite@2x.png') no-repeat scroll
+          0 0 transparent;
+        height: 25px;
+        width: 25px;
+        background-size: 50px;
+        display: inline-block;
+        background-position: 0px -50px;
+        @include small {
+          margin-top: 25px;
+        }
+        @include extraSmall {
+          margin-top: 25px;
+        }
+        #cart-total {
+          background: $primaryColor;
+          border-radius: 100%;
+          color: #ffffff;
+          font-size: 8px;
+          font-weight: 400;
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          text-align: center;
+          text-transform: capitalize;
+          transition: $setTransition;
+          &.count {
+            animation: zoomOutIn 0.5s;
+          }
+        }
+      }
+      .cart-title {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 8px 0 0 45px;
+        color: #fff;
+        @include medium {
+          font-size: 22px;
+        }
+        @include small {
+          padding: 30px 0 0 45px;
+          font-size: 24px;
+        }
+        @include extraSmall {
+          padding: 30px 0 0 45px;
+          font-size: 7.2vmin;
+        }
+      }
+    }
+    .btn-close {
+      color: $txtColor-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      padding: 0;
+      font-size: 14px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: darken($primaryBgColor, 10%);
+      transition: $setTransition;
+      @include small {
+        display: none;
+      }
+      @include extraSmall {
+        display: none;
+      }
+      &:hover {
+        background-color: $primaryColor;
+      }
+    }
+
+    .btn-close-mobile {
+      display: none;
+      @include small {
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        right: -8px;
+        padding: 5px 0 0 0;
+      }
+      @include extraSmall {
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        right: -8px;
+        padding: 5px 0 0 0;
+      }
+      .hamburger {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transform: rotate(45deg);
+        .top {
+          stroke-dashoffset: -64px;
+          stroke-dasharray: 40 160;
+        }
+        .middle {
+          transform: rotate(90deg);
+          stroke-dasharray: 40 142;
+          transform-origin: 50%;
+          transition: transform 400ms;
+        }
+        .bottom {
+          stroke-dashoffset: -64px;
+          stroke-dasharray: 40 85;
+          transform-origin: 50%;
+          transition: transform 400ms, stroke-dashoffset 400ms;
+        }
+      }
+      .line {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: #ffffff;
+        stroke-width: 5.5;
+        stroke-linecap: round;
+      }
+    }
+
+    .cart-content {
+      padding: 20px 0px;
+      margin: 0 20px;
+      @include small {
+        margin: 0 15px;
+      }
+      @include extraSmall {
+        margin: 0 15px;
+      }
+      .cart-product-list {
+        list-style: none;
+        margin-bottom: 0;
+        padding: 0 0 20px 0;
+      }
+      .cart-product-item {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid #2b3656;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:last-child {
+          border-bottom: none;
+        }
+        &:hover {
+          box-shadow: none;
+        }
+      }
+      .cart-product-thumbnail {
+        width: 80px;
+        height: auto;
+        padding: 0;
+        padding: 12px 0;
+        transition: $setTransition;
+        &:hover {
+          img {
+            border: 1px solid $primaryColor;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          border: 1px solid #222736;
+        }
+        @include small {
+          width: 30%;
+        }
+        @include extraSmall {
+          width: 30%;
+        }
+      }
+      .cart-product-name {
+        padding: 12px 0;
+        margin: 0 0 0 12px;
+        @include small {
+          width: 50%;
+        }
+        @include extraSmall {
+          width: 50%;
+        }
+        h4 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          width: 160px;
+          font-size: 18px;
+          font-weight: 400;
+          @include small {
+            width: 100%;
+            font-size: 24px;
+          }
+          @include extraSmall {
+            width: 100%;
+            font-size: 5.7vmin;
+          }
+        }
+        .cart-model-name {
+          color: $txtColor-light;
+          transition: $setTransition;
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+        .qty-price {
+          font-size: 14px;
+          font-weight: 300;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          @include small {
+            font-size: 18px;
+            align-items: baseline;
+          }
+          @include extraSmall {
+            font-size: 4vmin;
+            align-items: baseline;
+          }
+          .qty {
+            margin-right: 3px;
+            @include small {
+              font-size: 18px;
+              align-items: baseline;
+            }
+            @include extraSmall {
+              font-size: 5vmin;
+              align-items: baseline;
+            }
+          }
+          .price {
+            color: $txtColor;
+            font-weight: 400;
+            margin-bottom: 0;
+            margin-left: 5px;
+            @include small {
+              font-size: 18px;
+              align-items: baseline;
+            }
+            @include extraSmall {
+              font-size: 5vmin;
+              align-items: baseline;
+            }
+          }
+        }
+      }
+      .cart-product-remove {
+        padding: 10px 0;
+        .btn-remove {
+          width: 42px;
+          height: 30px;
+          padding: 2px 12px;
+          color: lighten(#222736, 25%);
+          &:hover {
+            color: #ef3636;
+          }
+          @include small {
+            font-size: 20px;
+            height: auto;
+          }
+          @include extraSmall {
+            font-size: 5vmin;
+            height: auto;
+          }
+          .icon-spinner {
+            color: #ef3636;
+          }
+        }
+      }
+
+      .cart-actions {
+        padding: 20px 0px;
+        border-top: 4px solid #394465;
+        .total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .subtotal {
+          text-transform: uppercase;
+          font-weight: 400;
+          @include small {
+            font-size: 22px;
+          }
+          @include extraSmall {
+            font-size: 5vmin;
+          }
+        }
+        .amount {
+          color: #fff;
+          font-size: 24px;
+          @include medium {
+            font-size: 22px;
+          }
+          @include small {
+            font-size: 24px;
+          }
+          @include extraSmall {
+            font-size: 7vmin;
+          }
+        }
+      }
+
+      .buttons {
+        margin-top: 50px;
+        @include small {
+          margin-top: 70px;
+        }
+        @include extraSmall {
+          margin-top: 70px;
+        }
+        .btn {
+          padding: 12px 40px;
+          border-radius: 3px;
+          background-color: $primaryColor;
+          color: #fff;
+          width: 100%;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          &:hover {
+            background-color: darken($primaryColor, 10%);
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &.disabled {
+            background-color: #151a2c;
+            color: #6c789c;
+          }
+        }
+        .btn-checkout {
+          background-color: lighten(#282e3f, 5%);
+          &:hover {
+            background-color: lighten(#282e3f, 10%);
+          }
+          &.disabled {
+            background-color: #151a2c;
+            color: #6c789c;
+          }
+        }
+      }
+    }
+
+    .cart-content-empty {
+      padding: 60px 0 40px 0;
+      margin: 0 20px;
+      .empty-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        svg {
+          font-size: 82px;
+          color: #32384c;
+          margin-top: 20px;
+        }
+      }
+      .empty-img {
+        width: 140px;
+        height: 140px;
+        background: url('~@/assets/images/empty_shopping_bag.svg') no-repeat
+          center bottom;
+        opacity: 0.2;
+      }
+      .empty-text {
+        font-size: 24px;
+        max-width: 70%;
+        text-align: center;
+        margin: 30px auto 20px auto;
+        @include small {
+          font-size: 24px;
+        }
+        @include extraSmall {
+          font-size: 8vmin;
+        }
+      }
+    }
+  }
+
+  .cart-sidebar-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2001;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(8, 9, 14, 0.7);
+    transition: $setTransition;
+  }
+}

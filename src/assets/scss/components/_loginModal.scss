@@ -1,0 +1,194 @@
+#loginModal {
+  padding-right: 0 !important;
+  .modal-body {
+    padding: 0;
+  }
+}
+
+.modal {
+  z-index: 2001;
+  .modal-dialog {
+    @include large {
+      max-width: 800px;
+    }
+    @include medium {
+      max-width: 650px;
+    }
+  }
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #2a3042;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 8px;
+    outline: 0;
+    .btn-confirm {
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+      &:hover {
+        background-color: darken($primaryColor, 10);
+        border-color: darken($primaryColor, 10);
+      }
+    }
+    .modal-body {
+      color: #c8d0dd;
+      .form-loginIn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include extraSmall {
+          flex-direction: column;
+        }
+      }
+      .modal-title {
+        color: #f6f6f6;
+        font-size: 24px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .btn-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.5;
+        z-index: 2;
+        transition: $setTransition;
+        &:hover {
+          opacity: 1;
+        }
+        @include medium {
+          top: 16px;
+          right: 16px;
+          width: 35px;
+          height: 35px;
+        }
+        svg {
+          position: relative;
+          top: 0;
+          left: 0;
+          color: #fff;
+        }
+      }
+      .auth-box {
+        width: 50%;
+        height: 445px;
+        padding: 40px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        @include medium {
+          padding: 30px;
+        }
+      }
+      .ad-box {
+        width: 50%;
+        height: 445px;
+        padding: 40px;
+        background-color: #1a1f32;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        position: relative;
+        @include medium {
+          padding: 30px;
+        }
+        p {
+          font-size: 24px;
+          font-weight: bold;
+          color: #7d839a;
+          word-break: break-word;
+          margin-top: 30px;
+          z-index: 2;
+          letter-spacing: 0.6px;
+          line-height: 1.3;
+          position: relative;
+          span {
+            color: lighten(#7d839a, 30%);
+          }
+        }
+        .ad-img {
+          position: absolute;
+          right: -42px;
+          bottom: -45px;
+          @include medium {
+            right: -32px;
+            bottom: -35px;
+          }
+        }
+      }
+
+      .form-group label {
+        color: #c8d0dd;
+      }
+      .form-control {
+        color: #bfc8e2;
+        background-color: #39425a;
+        border: 1px solid #39425a;
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 3px !important;
+        height: auto;
+        &::placeholder {
+          color: $txtColor-dark;
+        }
+        &.form-control-username {
+          padding: 12px 12px 12px 42px;
+        }
+        &.form-control-password {
+          padding: 12px 12px 12px 42px;
+        }
+      }
+      .input-group {
+        margin-bottom: 20px;
+        &:first-child {
+          margin-top: 10px;
+        }
+      }
+      .svg-inline--fa {
+        position: absolute;
+        top: 14px;
+        left: 12px;
+        font-size: 18px;
+        z-index: 10;
+      }
+      .remember {
+        padding-left: 5px;
+      }
+      .form-check {
+        padding-left: 0;
+        .el-checkbox {
+          color: $txtColor;
+        }
+      }
+      .el-checkbox {
+        color: $txtColor;
+      }
+      .btn-login.disabled {
+        pointer-events: none;
+        cursor: default;
+        background-color: #3c455e;
+        border-color: #3c455e;
+      }
+      .btn-login {
+        margin-bottom: 32px;
+        font-size: 16px;
+        color: #fff;
+        text-transform: uppercase;
+        @include btnCustom;
+      }
+    }
+  }
+}

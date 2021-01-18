@@ -1,0 +1,36 @@
+@mixin btnCustom($backgroundColor: $primaryColor, $borderColor: $primaryColor) {
+  color: #fff;
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+  border-radius: 3px;
+  padding: 12px 40px;
+  &:hover {
+    background-color: darken($primaryColor, 10%);
+    border-color: darken($primaryColor, 10%);
+  }
+}
+@mixin extraSmall {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+@mixin small {
+  @media (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin medium {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin extraLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

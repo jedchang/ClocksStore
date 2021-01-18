@@ -1,0 +1,52 @@
+.orders-content {
+  padding: 94px 12px 60px;
+  @include small {
+    padding: 0;
+  }
+  @include extraSmall {
+    padding: 0;
+  }
+  .admin-breadcrumb {
+    &:before {
+      background-image: url('~@/assets/images/breadcrumb/breadcrumb_watches.jpg');
+    }
+  }
+
+  .btn-edit {
+    width: auto !important;
+  }
+  .list-unstyled {
+    margin-bottom: 0;
+    .title {
+      color: $txtColor-light;
+      width: 90px;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .qty,
+    .unit {
+      font-size: 14px;
+    }
+  }
+  .modal-dialog {
+    .validation-wrapper {
+      width: 100%;
+    }
+  }
+
+  .form-group {
+    .invalid {
+      border: 1px #dc3545 solid;
+      color: #dc3545;
+    }
+    .invalid input {
+      border: 1px #dc3545 solid;
+    }
+    .valid {
+      color: green;
+    }
+    .valid input {
+      border: 1px solid green;
+    }
+  }
+}

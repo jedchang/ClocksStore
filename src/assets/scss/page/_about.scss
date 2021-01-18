@@ -1,0 +1,241 @@
+.about-wrapper {
+  .breadcrumb-area {
+    &:before {
+      background-image: url('~@/assets/images/breadcrumb/breadcrumb_about.jpg');
+    }
+  }
+
+  .page-container {
+    padding: 80px 0;
+    @include medium {
+      padding: 80px 0 40px 0;
+    }
+    @include small {
+      padding: 60px 15px 30px 15px;
+    }
+    @include extraSmall {
+      padding: 60px 15px 30px 15px;
+    }
+
+    .about-img {
+      &:hover {
+        img {
+          opacity: 0.5;
+        }
+        @include small {
+          img {
+            opacity: 1;
+          }
+        }
+        @include extraSmall {
+          img {
+            opacity: 1;
+          }
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        opacity: 1;
+        transition: $setTransition;
+      }
+    }
+
+    .story {
+      margin-bottom: 75px;
+      @include small {
+        margin-bottom: 55px;
+      }
+      @include extraSmall {
+        margin-bottom: 55px;
+      }
+      .about-img {
+        overflow: hidden;
+        margin-bottom: 65px;
+        @include small {
+          margin-bottom: 25px;
+        }
+        @include extraSmall {
+          margin-bottom: 25px;
+        }
+      }
+      .story-txt {
+        text-align: center;
+        @include small {
+          text-align: left;
+        }
+        @include extraSmall {
+          text-align: left;
+        }
+        h3 {
+          color: #fff;
+          font-size: 40px;
+          padding-bottom: 25px;
+          margin-bottom: 25px;
+          position: relative;
+          @include medium {
+            font-size: 36px;
+          }
+          @include small {
+            font-size: 32px;
+            line-height: 1.3;
+          }
+          @include extraSmall {
+            font-size: 7.7vmin;
+            line-height: 1.3;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 59px;
+            border-bottom: 1px solid $primaryColor;
+            @include small {
+              width: 30%;
+              left: 0;
+              transform: none;
+            }
+            @include extraSmall {
+              width: 30%;
+              left: 0;
+              transform: none;
+            }
+          }
+        }
+        p {
+          color: #afafaf;
+          @include small {
+            font-size: 16px;
+            font-weight: 300;
+          }
+          @include extraSmall {
+            font-size: 3.8vmin;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+
+    .introduce {
+      margin-bottom: 7px;
+      .about-img {
+        padding-bottom: 70px;
+        @include small {
+          padding-bottom: 30px;
+        }
+        @include extraSmall {
+          padding-bottom: 30px;
+        }
+      }
+      .info {
+        padding-bottom: 70px;
+        @include small {
+          padding-bottom: 70px;
+        }
+        @include extraSmall {
+          padding-bottom: 70px;
+        }
+      }
+      .order-1 {
+        @include small {
+          order: 2;
+        }
+        @include extraSmall {
+          order: 2;
+        }
+        .about-img {
+          padding-bottom: 40px;
+        }
+        .info {
+          padding-bottom: 40px;
+          @include small {
+            padding-bottom: 40px;
+          }
+          @include extraSmall {
+            padding-bottom: 40px;
+          }
+        }
+      }
+      .order-2 {
+        @include small {
+          order: 1;
+        }
+        @include extraSmall {
+          order: 1;
+        }
+        .info {
+          padding-bottom: 40px;
+          @include small {
+            padding-bottom: 70px;
+          }
+          @include extraSmall {
+            padding-bottom: 70px;
+          }
+        }
+      }
+      h3 {
+        color: #fff;
+        font-size: 30px;
+        font-weight: 400;
+        position: relative;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        @include medium {
+          font-size: 28px;
+        }
+        @include small {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+        @include extraSmall {
+          font-size: 7.7vmin;
+          line-height: 1.3;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 59px;
+          border-bottom: 1px solid $primaryColor;
+          @include small {
+            width: 30%;
+            left: 0;
+            transform: none;
+          }
+          @include extraSmall {
+            width: 30%;
+            left: 0;
+            transform: none;
+          }
+        }
+      }
+      p {
+        color: #afafaf;
+        @include small {
+          font-size: 16px;
+          font-weight: 300;
+        }
+        @include extraSmall {
+          font-size: 3.8vmin;
+          font-weight: 300;
+        }
+      }
+      .btn {
+        text-transform: uppercase;
+        @include btnCustom(transparent);
+        margin-top: 30px;
+        @include small {
+          width: 100%;
+          margin-top: 10px;
+        }
+        @include extraSmall {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

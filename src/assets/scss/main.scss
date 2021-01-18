@@ -1,0 +1,212 @@
+html {
+  position: relative;
+  user-select: none;
+  .loading-txt {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: $primaryBgColor !important;
+  overflow-x: hidden;
+  color: #353c4e;
+  background-attachment: fixed;
+  &.sidebar-enable {
+    min-height: 1300px;
+  }
+  &.fixed-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.wrapper,
+.content-wrapper {
+  position: relative;
+  background-color: #222736;
+}
+
+#app {
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .clock {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      border: solid 5px $primaryColor;
+      .hours {
+        position: absolute;
+        width: 50px;
+        height: 5px;
+        top: 22.5px;
+        animation: clockRun 5s linear 0s infinite;
+        &:before {
+          content: '';
+          height: 5px;
+          width: 16px;
+          position: absolute;
+          right: 11px;
+          background: $primaryColor;
+          border-radius: 5px;
+        }
+      }
+      .minutes {
+        position: absolute;
+        width: 50px;
+        height: 5px;
+        top: 22.5px;
+        animation: clockRun 0.41s linear 0s infinite;
+        &:before {
+          content: '';
+          height: 5px;
+          width: 22px;
+          position: absolute;
+          right: 5px;
+          background: $primaryColor;
+          border-radius: 5px;
+        }
+      }
+    }
+    span {
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      color: #fff;
+      margin-top: 5px;
+      animation: twinkling 0.4s alternate infinite;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  button {
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+    &.close {
+      text-shadow: none;
+      color: $txtColor;
+    }
+  }
+  .form-control {
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  tbody {
+    .empty {
+      color: $emptyTxtColor;
+    }
+  }
+
+  .vld-overlay {
+    z-index: 9998;
+  }
+
+  .dashboard-content,
+  .customer-orders-content {
+    a.nav-link.router-link-exact-active.router-link-active {
+      color: #333333;
+      user-select: none;
+      font-weight: 600;
+      pointer-events: none;
+      cursor: default;
+    }
+    input {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .customer-orders-content {
+    .card {
+      height: 351px;
+    }
+  }
+
+  .simplebar {
+    height: 100%;
+  }
+  .simplebar-track.simplebar-horizontal {
+    height: 14px;
+    background-color: #333a4e;
+    .simplebar-scrollbar {
+      &:before {
+        width: 96%;
+        height: 7px;
+        top: 4px;
+        left: 2%;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.el-tooltip__popper.is-dark {
+  background: #000 !important;
+  z-index: 9001 !important;
+  .popper__arrow {
+    border-top-color: #000 !important;
+    &:after {
+      border-top-color: #000 !important;
+    }
+  }
+}
+
+.el-message {
+  z-index: 9999 !important;
+  @include small {
+    min-width: 90% !important;
+    .el-message__icon {
+      font-size: 18px !important;
+    }
+    .el-message__content {
+      font-size: 18px !important;
+    }
+    .el-message__closeBtn {
+      font-size: 18px !important;
+    }
+  }
+  @include extraSmall {
+    min-width: 90% !important;
+    .el-message__icon {
+      font-size: 4vmin !important;
+    }
+    .el-message__content {
+      font-size: 4vmin !important;
+    }
+    .el-message__closeBtn {
+      font-size: 4vmin !important;
+    }
+  }
+}
