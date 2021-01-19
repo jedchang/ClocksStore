@@ -3,7 +3,7 @@
 ![image](https://img.shields.io/badge/Vue-exercise-41B883.svg) 
 ![image](https://img.shields.io/badge/SCSS-exercise-CD6799.svg)
 
-![](https://images2.imgbox.com/5f/1a/EEx40tR5_o.jpg)
+![](https://images2.imgbox.com/18/63/j6WwFz1w_o.jpg)
 
 ## Demo
 https://jedchang.github.io/ClocksStore/
