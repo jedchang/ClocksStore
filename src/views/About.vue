@@ -125,9 +125,6 @@ export default {
     Footer,
     ScrollTop
   },
-  data() {
-    return {}
-  },
   computed: {
     ...mapState({
       isLoading: state => state.isLoading,

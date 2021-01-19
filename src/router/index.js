@@ -26,92 +26,90 @@ const routes = [
     path: '/',
     name: 'Index',
     component: Index,
-    meta: { title: 'Clocks' }
+    meta: { title: 'CLOCKS Store' }
   },
   {
     path: '/about',
     name: 'About',
     component: About,
-    meta: { title: 'Clocks | About' }
+    meta: { title: 'About | CLOCKS Store' }
   },
   {
     path: '/watches',
     name: 'Products',
     component: Products,
-    meta: { title: 'Clocks | Products' }
+    meta: { title: 'Watches | CLOCKS Store' }
   },
   {
     path: '/watches/:id?',
     name: 'ProductsDetails',
     component: ProductsDetails,
-    meta: { title: 'Clocks | Products Details' }
+    meta: { title: 'Watches Details | CLOCKS Store' }
   },
   {
     path: '/FAQ',
     name: 'Faq',
     component: Faq,
-    meta: { title: 'Clocks | FAQ' }
+    meta: { title: 'FAQ | CLOCKS Store' }
   },
   {
     path: '/contact',
     name: 'Contact',
     component: Contact,
-    meta: { title: 'Clocks | Contact' }
+    meta: { title: 'Contact | CLOCKS Store' }
   },
   {
     path: '/cart',
     name: 'Cart',
     component: Cart,
-    meta: { title: 'Clocks | Cart' }
+    meta: { title: 'Cart | CLOCKS Store' }
   },
   {
     path: '/wishlist',
     name: 'Wishlist',
     component: Wishlist,
-    meta: { title: 'Clocks | Wishlist' }
+    meta: { title: 'Wishlist | CLOCKS Store' }
   },
   {
     path: '/order',
     name: 'Order',
     component: Order,
-    meta: { title: 'Clocks | Order' }
+    meta: { title: 'Order | CLOCKS Store' }
   },
   {
     path: '/checkout/:orderId',
     name: 'Checkout',
     component: Checkout,
-    meta: { title: 'Clocks | Checkout' }
+    meta: { title: 'Checkout | CLOCKS Store' }
   },
   {
     path: '/admin',
     name: 'Dashboard',
     component: Dashboard,
-    meta: { title: 'Admin' },
     children: [
       {
         path: 'products',
         name: 'AdminProducts',
         component: AdminProducts,
-        meta: { requiresAuth: true, title: 'Admin | Products' }
+        meta: { requiresAuth: true, title: 'Products | Admin' }
       },
       {
         path: 'orders',
         name: 'AdminOrders',
         component: AdminOrders,
-        meta: { requiresAuth: true, title: 'Admin | Orders' }
+        meta: { requiresAuth: true, title: 'Orders | Admin' }
       },
       {
         path: 'coupons',
         name: 'AdminCoupons',
         component: AdminCoupons,
-        meta: { requiresAuth: true, title: 'Admin | Coupons' }
+        meta: { requiresAuth: true, title: 'Coupons | Admin' }
       }
     ]
   }
 ]
 
 const router = new VueRouter({
-  // mode: 'history',
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -120,6 +118,11 @@ const router = new VueRouter({
       return { x: 0, y: 0 }
     }
   }
+})
+
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
 })
 
 export default router

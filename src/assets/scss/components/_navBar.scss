@@ -89,6 +89,21 @@
           font-weight: 500;
         }
       }
+      &.menu-home {
+        width: 92px;
+      }
+      &.menu-about {
+        width: 95px;
+      }
+      &.menu-watches {
+        width: 112px;
+      }
+      &.menu-faq {
+        width: 75px;
+      }
+      &.menu-contact {
+        width: 112px;
+      }
     }
   }
   .other-menu {
@@ -117,6 +132,9 @@
       position: relative;
       &:first-child {
         margin-left: 0;
+      }
+      @include medium {
+        margin-left: 5px;
       }
     }
     .not-logined-icon {

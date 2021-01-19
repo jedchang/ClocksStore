@@ -1,5 +1,12 @@
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/ClocksStore/' : '/',
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      args[0].description =
+        'CLOCKS Store is a Modern Fully Responsive Retina Ready CLOCKS Store theme. Start your Store right away with CLOCKS Store.'
+      return args
+    })
+  },
   css: {
     loaderOptions: {
       sass: {

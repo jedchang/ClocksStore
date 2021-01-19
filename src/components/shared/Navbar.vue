@@ -13,23 +13,23 @@
             </div>
             <div class="col-lg-7 col-md-6 col-12">
               <div class="main-menu">
-                <router-link to="/" class="menu-item">
+                <router-link to="/" class="menu-home menu-item">
                   Home
                 </router-link>
-                <router-link to="/about" class="menu-item">
+                <router-link to="/about" class="menu-about menu-item">
                   About
                 </router-link>
                 <router-link
                   to="/watches"
-                  class="menu-item"
+                  class="menu-watches menu-item"
                   :class="{ 'router-link-exact-active': isActive }"
                 >
                   Watches
                 </router-link>
-                <router-link to="/FAQ" class="menu-item">
+                <router-link to="/FAQ" class="menu-faq menu-item">
                   FAQ
                 </router-link>
-                <router-link to="/contact" class="menu-item">
+                <router-link to="/contact" class="menu-contact menu-item">
                   Contact
                 </router-link>
               </div>
