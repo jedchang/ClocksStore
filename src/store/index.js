@@ -29,7 +29,7 @@ export default new Vuex.Store({
         title: 'An Extraordinary Classic',
         text:
           'This is the best in class effective watches from the luxury brand watch.co and Gizmo has put into. Lot of efforts put in these high quality watches.',
-        url: '/watches/-MJ_CAKg7a5U1v8FsxB0'
+        url: '/#/watches/-MJ_CAKg7a5U1v8FsxB0'
       },
       {
         direction: 'content-right',
@@ -39,7 +39,7 @@ export default new Vuex.Store({
         title: 'The Watch Everyone Desires!',
         text:
           'The best in class elegant watches from the luxury brand Swiss Eagle high-quality watches into which a lot of care has gone in.',
-        url: '/watches/-MJ_AKmOG6Ot3je6efEd'
+        url: '/#/watches/-MJ_AKmOG6Ot3je6efEd'
       },
       {
         direction: 'content-left',
@@ -49,7 +49,7 @@ export default new Vuex.Store({
         title: 'New Trending Collection',
         text:
           'Expanding the offering is the choice between a leather strap or a metal bracelet, bringing the total new look. ',
-        url: '/watches/-MJ_Co84DCHGIct5y1G1'
+        url: '/#/watches/-MJ_Co84DCHGIct5y1G1'
       },
       {
         direction: 'content-right',
@@ -59,7 +59,7 @@ export default new Vuex.Store({
         title: 'Stylish eternal wrist watches',
         text:
           'I did not even know that there were any better conditions to escape to, but I was  more than willing to take my chances.',
-        url: '/watches/-MJ_Cy9cuar1VTeittzV'
+        url: '/#/watches/-MJ_Cy9cuar1VTeittzV'
       }
     ]
   },
