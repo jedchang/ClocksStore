@@ -322,7 +322,7 @@ export default {
         this.tempCoupon = {}
         this.isNew = true
       } else {
-        this.tempCoupon = Object.assign({}, item)
+        this.tempCoupon = Object.assign({ ...item })
         this.isNew = false
       }
       $('#couponModal').modal('show')

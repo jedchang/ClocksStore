@@ -51,7 +51,7 @@
                   </li>
                   <li>
                     <font-awesome-icon :icon="['fas', 'phone-alt']" />
-                    0803 - 080 - 3081
+                    <a href="tel:0800123456">0800-123-456</a>
                   </li>
                   <li>
                     <font-awesome-icon :icon="['fas', 'envelope']" />
@@ -133,7 +133,7 @@
                       </li>
                       <li>
                         <font-awesome-icon :icon="['fas', 'phone-alt']" />
-                        0803 - 080 - 3081
+                        <a href="tel:0800123456">0800-123-456</a>
                       </li>
                       <li>
                         <font-awesome-icon :icon="['fas', 'envelope']" />
