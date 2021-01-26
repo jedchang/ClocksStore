@@ -100,8 +100,6 @@
       border-radius: 0;
       background: #bababa;
       opacity: 1;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
       transition: all 0.4s;
       &:hover {
         background: #eeeeee;
@@ -128,8 +126,6 @@
     height: 100px;
     margin-top: -50px;
     color: $primaryColor;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
     transition: all 0.4s;
     &:hover {
       opacity: 1;

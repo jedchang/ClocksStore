@@ -52,7 +52,12 @@
 
 <script>
 export default {
-  name: 'AdminSidebar'
+  name: 'AdminSidebar',
+  data() {
+    return {
+      current: ''
+    }
+  }
 }
 </script>
 
