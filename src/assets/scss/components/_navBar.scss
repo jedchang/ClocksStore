@@ -18,10 +18,12 @@
     border-bottom: 1px solid #2d3858;
     box-shadow: 0 0 10px rgba(4, 7, 14, 0.8);
     z-index: 999;
-    .menu-item {
-      padding: 13px 24px !important;
-      @include medium {
-        padding: 13px 12px !important;
+    .main {
+      .menu-item {
+        padding: 13px 24px;
+        @include medium {
+          padding: 13px 12px;
+        }
       }
     }
   }
@@ -63,7 +65,7 @@
         padding: 20px 12px;
       }
       &:hover {
-        color: #fff !important;
+        color: #fff;
         text-shadow: 0px 0px 5px #cb9400;
       }
       &:first-child {
@@ -80,7 +82,7 @@
       }
       &.router-link-exact-active {
         cursor: default;
-        color: $primaryColor !important;
+        color: $primaryColor;
         text-shadow: none;
         font-weight: 600;
         pointer-events: none;
@@ -260,29 +262,27 @@
           left: 50%;
           margin-right: 3px;
           border-top-width: 0;
-          border-bottom-color: #ebeef5;
           border-width: 6px;
+          border-style: solid;
+          border-color: transparent;
           filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03));
           position: absolute;
           display: block;
           width: 0;
           height: 0;
-          border-color: transparent;
-          border-style: solid;
           &:after {
             content: '';
             position: absolute;
             width: 0;
             height: 0;
-            top: -6px;
+            top: -7px;
             left: 0;
             border-width: 6px;
             margin-left: -6px;
             border-top-width: 0;
-            border-bottom-color: #e1e4ef !important;
-            display: block;
-            border-color: transparent;
             border-style: solid;
+            border-color: transparent transparent #e1e4ef transparent;
+            display: block;
           }
         }
       }
@@ -327,7 +327,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    z-index: 990;
+    z-index: 2002;
     position: relative;
     &.fixed {
       position: fixed;

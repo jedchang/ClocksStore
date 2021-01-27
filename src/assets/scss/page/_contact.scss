@@ -17,56 +17,56 @@
       padding: 60px 15px 30px 15px;
     }
 
-    .border-right {
-      border-right: 1px solid #343b50 !important;
+    .border-right-color {
+      border-right: 1px solid #343b50;
       @include small {
-        border-right: none !important;
+        border-right: none;
       }
       @include extraSmall {
-        border-right: none !important;
+        border-right: none;
       }
     }
-    .border-bottom {
-      border-bottom: none !important;
+    .border-bottom-color {
+      border-bottom: none;
       @include small {
-        border-bottom: none !important;
+        border-bottom: none;
       }
       @include extraSmall {
-        border-bottom: none !important;
+        border-bottom: none;
       }
     }
 
     .order-1 {
-      border-right: 1px solid #343b50 !important;
+      border-right: 1px solid #343b50;
     }
     .order-2 {
-      border-right: 1px solid #343b50 !important;
+      border-right: 1px solid #343b50;
       @include small {
-        border-right: none !important;
+        border-right: none;
       }
       @include extraSmall {
-        border-right: none !important;
+        border-right: none;
       }
     }
     .order-3 {
-      border-right: none !important;
+      border-right: none;
     }
 
     @include small {
-      .border-bottom > .item {
+      .border-bottom-color > .item {
         border-bottom: none;
       }
       .order-1 {
-        border-right: 1px solid #343b50 !important;
+        border-right: 1px solid #343b50;
         .item {
-          border-bottom: 1px solid #343b50 !important;
+          border-bottom: 1px solid #343b50;
           height: 200px;
         }
       }
       .order-2 {
         .item {
           height: 200px;
-          border-bottom: 1px solid #343b50 !important;
+          border-bottom: 1px solid #343b50;
         }
       }
       .order-3 {
@@ -77,20 +77,20 @@
       }
     }
     @include extraSmall {
-      .border-bottom > .item {
+      .border-bottom-color > .item {
         border-bottom: none;
       }
       .order-1 {
-        border-right: 1px solid #343b50 !important;
+        border-right: 1px solid #343b50;
         .item {
-          border-bottom: 1px solid #343b50 !important;
+          border-bottom: 1px solid #343b50;
           height: 200px;
         }
       }
       .order-2 {
         .item {
           height: 200px;
-          border-bottom: 1px solid #343b50 !important;
+          border-bottom: 1px solid #343b50;
         }
       }
       .order-3 {

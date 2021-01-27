@@ -85,16 +85,16 @@
             padding-right: 20px;
             display: table-cell;
             img {
-              width: 60% !important;
+              width: 60%;
               margin: 0 auto;
               @include medium {
-                width: 85% !important;
+                width: 85%;
               }
               @include small {
-                width: 85% !important;
+                width: 85%;
               }
               @include extraSmall {
-                width: 85% !important;
+                width: 85%;
               }
             }
           }
@@ -350,14 +350,14 @@
         text-align: center;
         width: 100%;
         img {
-          width: 80% !important;
+          width: 80%;
           margin-top: 10px;
           margin-bottom: 50px;
           @include small {
-            width: 85% !important;
+            width: 85%;
           }
           @include extraSmall {
-            width: 90% !important;
+            width: 90%;
           }
         }
         .order-id {

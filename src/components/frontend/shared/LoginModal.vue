@@ -1,9 +1,21 @@
 <template>
-  <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div
+    id="loginModal"
+    class="modal fade"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered modal-lg"
+      role="document"
+    >
       <div class="modal-content">
         <div class="modal-body">
-          <form class="form-loginIn" :model="user" @submit.prevent="login">
+          <form
+            class="form-loginIn"
+            :model="user"
+            @submit.prevent="login"
+          >
             <button
               type="button"
               class="btn-close"
@@ -16,7 +28,10 @@
               <h5 class="modal-title">Login</h5>
               <div class="input-group">
                 <font-awesome-icon :icon="['fas', 'user-circle']" />
-                <label for="inputEmail" class="sr-only">Email address</label>
+                <label
+                  for="inputEmail"
+                  class="sr-only"
+                >Email address</label>
                 <input
                   id="email"
                   v-model="user.username"
@@ -26,11 +41,14 @@
                   required
                   autofocus
                   autocomplete="off"
-                />
+                >
               </div>
               <div class="input-group">
                 <font-awesome-icon :icon="['fas', 'lock']" />
-                <label for="inputPassword" class="sr-only">Password</label>
+                <label
+                  for="inputPassword"
+                  class="sr-only"
+                >Password</label>
                 <input
                   id="password"
                   v-model="user.password"
@@ -39,7 +57,7 @@
                   placeholder="Password"
                   required
                   autocomplete="off"
-                />
+                >
               </div>
               <div class="remember text-left mt-3 mb-4">
                 <el-checkbox v-model="checked">Remember Me</el-checkbox>
@@ -62,7 +80,7 @@
                 class="ad-img"
                 src="~@/assets/images/login_ad.png"
                 alt="Advertising img"
-              />
+              >
             </div>
           </form>
         </div>
@@ -92,11 +110,11 @@ export default {
   },
   methods: {
     login() {
-      const api = `${process.env.VUE_APP_APIPATH}/admin/signin`
       const vm = this
-      this.$http.post(api, this.user).then(response => {
+      const api = `${process.env.VUE_APP_APIPATH}/admin/signin`
+      vm.$http.post(api, this.user).then((response) => {
         if (response.data.success) {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Already login',
             type: 'success'
@@ -107,15 +125,15 @@ export default {
           vm.$router.push('/admin/products')
           vm.isLoading = false
           $('#loginModal').modal('hide')
-          this.submitCookie()
+          vm.submitCookie()
         } else {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Login failed',
             type: 'error'
           })
-          this.user.username = ''
-          this.user.password = ''
+          vm.user.username = ''
+          vm.user.password = ''
         }
       })
     },

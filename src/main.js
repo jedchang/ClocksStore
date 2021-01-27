@@ -22,7 +22,6 @@ import {
   FontAwesomeLayers,
   FontAwesomeLayersText
 } from '@fortawesome/vue-fontawesome'
-library.add(fas, far, fab)
 
 import {
   Message,
@@ -40,6 +39,27 @@ import {
   InputNumber
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
+import simplebar from 'simplebar-vue'
+import 'simplebar-vue/dist/simplebar.min.css'
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+
+import {
+  ValidationObserver,
+  ValidationProvider,
+  extend,
+  localize,
+  configure
+} from 'vee-validate'
+
+import { required, email, numeric } from 'vee-validate/dist/rules'
+import TW from 'vee-validate/dist/locale/zh_TW.json'
+
+import VuePictureSwipe from 'vue-picture-swipe'
+import VueClipboard from 'vue-clipboard2'
+library.add(fas, far, fab)
 Vue.prototype.$message = Message
 Vue.use(Radio)
 Vue.use(RadioGroup)
@@ -53,21 +73,6 @@ Vue.use(DropdownItem)
 Vue.use(Collapse)
 Vue.use(CollapseItem)
 Vue.use(InputNumber)
-
-import simplebar from 'simplebar-vue'
-import 'simplebar-vue/dist/simplebar.min.css'
-
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
-
-import { ValidationObserver, ValidationProvider, extend } from 'vee-validate'
-import { localize } from 'vee-validate'
-import { required, email, numeric } from 'vee-validate/dist/rules'
-import TW from 'vee-validate/dist/locale/zh_TW.json'
-import { configure } from 'vee-validate'
-
-import VuePictureSwipe from 'vue-picture-swipe'
-import VueClipboard from 'vue-clipboard2'
 
 localize('zh_TW', TW)
 extend('email', email)

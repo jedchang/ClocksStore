@@ -49,11 +49,10 @@
       }
     }
   }
-  .pswp__bg {
+  /deep/ .pswp__bg {
     background: #161a2e;
-    opacity: 0.85 !important;
   }
-  .pswp__ui--fit .pswp__top-bar {
+  /deep/ .pswp__ui--fit .pswp__top-bar {
     background-color: rgba(0, 0, 0, 0);
   }
 }

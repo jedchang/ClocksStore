@@ -1,4 +1,3 @@
 {
-  // vetur 設定
   "include": ["./src/*"]
 }

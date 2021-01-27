@@ -9,22 +9,22 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-6 border-right order-1">
+          <div class="col-lg-4 col-md-4 col-6 border-right-color order-1">
             <div class="item">
               <font-awesome-icon :icon="['fas', 'phone-alt']" />
               <h4>Talk to us</h4>
@@ -40,25 +40,27 @@
               </ul>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-12 border-right order-3">
+          <div class="col-lg-4 col-md-4 col-12 border-right-color order-3">
             <div class="item">
               <font-awesome-icon :icon="['fas', 'envelope-open-text']" />
               <h4>Contact us</h4>
               <ul>
                 <li>
-                  <a href="mailto://march.24@gmail.com" target="_blank"
-                    >march.24@gmail.com</a
-                  >
+                  <a
+                    href="mailto://march.24@gmail.com"
+                    target="_blank"
+                  >march.24@gmail.com</a>
                 </li>
                 <li>
-                  <a href="mailto://march.24@gmail.com" target="_blank"
-                    >support@gmail.com</a
-                  >
+                  <a
+                    href="mailto://march.24@gmail.com"
+                    target="_blank"
+                  >support@gmail.com</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-4 col-md-4 col-6 border-bottom order-2">
+          <div class="col-lg-4 col-md-4 col-6 border-bottom-color order-2">
             <div class="item">
               <font-awesome-icon :icon="['fas', 'location-arrow']" />
               <h4>Location</h4>
@@ -73,14 +75,14 @@
             </div>
           </div>
           <div class="col-lg-10 col-md-12 mx-auto col-12 order-4">
-            <ContactForm></ContactForm>
+            <ContactForm />
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
@@ -113,8 +115,8 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   created() {

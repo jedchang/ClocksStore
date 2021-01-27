@@ -87,7 +87,6 @@
             cursor: default;
             pointer-events: none;
             position: relative;
-
             img {
               opacity: 0.5;
             }
@@ -96,16 +95,16 @@
             cursor: default;
             pointer-events: none;
           }
-          .btn-add-cart {
+          td.product-cart > .btn-add-cart {
             cursor: default;
             pointer-events: none;
-            background-color: #0f111a !important;
-            color: #4f566f !important;
+            background-color: #0f111a;
+            color: #4f566f;
             @include small {
-              background-color: #222838 !important;
+              background-color: #222838;
             }
             @include extraSmall {
-              background-color: #222838 !important;
+              background-color: #222838;
             }
           }
         }

@@ -9,15 +9,15 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <AdminBreadcrumb :title-name="titleName"></AdminBreadcrumb>
+    <AdminBreadcrumb :title-name="titleName" />
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
@@ -37,7 +37,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in orders" :key="item.id">
+                    <tr
+                      v-for="item in orders"
+                      :key="item.id"
+                    >
                       <td class="order-number">
                         {{ item.id }}
                       </td>
@@ -73,11 +76,11 @@
                         <span
                           v-if="item.is_paid"
                           class="badge badge-pill badge-success"
-                          >Payment completed</span
-                        >
-                        <span v-else class="badge badge-pill badge-danger"
-                          >Not yet paid</span
-                        >
+                        >Payment completed</span>
+                        <span
+                          v-else
+                          class="badge badge-pill badge-danger"
+                        >Not yet paid</span>
                       </td>
                       <td class="options-order">
                         <el-tooltip
@@ -85,7 +88,6 @@
                           effect="dark"
                           content="Edit"
                           placement="top"
-                          :visible-arrow="visibleArrow"
                         >
                           <a
                             href="#"
@@ -103,12 +105,17 @@
               <Pagination
                 :paging-content="pagination"
                 @changePaging="getOrders"
-              ></Pagination>
+              />
             </div>
           </div>
         </div>
       </div>
-      <div id="orderModal" class="modal fade" tabindex="-1" role="dialog">
+      <div
+        id="orderModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+      >
         <div
           class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
           role="document"
@@ -123,7 +130,10 @@
               @submit.prevent="handleSubmit(updateOrder)"
             >
               <div class="modal-header">
-                <h5 id="orderModalLabel" class="modal-title">
+                <h5
+                  id="orderModalLabel"
+                  class="modal-title"
+                >
                   Change Order
                 </h5>
                 <button
@@ -145,7 +155,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Please enter purchase time"
-                    />
+                    >
                   </div>
                 </div>
                 <div class="form-row">
@@ -165,7 +175,7 @@
                           placeholder="Please enter name"
                           required
                           :class="classes"
-                        />
+                        >
                         <span class="text-danger"> {{ errors[0] }} </span>
                       </ValidationProvider>
                     </div>
@@ -184,7 +194,7 @@
                           placeholder="Please enter tel"
                           required
                           :class="classes"
-                        />
+                        >
                         <span class="text-danger"> {{ errors[0] }} </span>
                       </ValidationProvider>
                     </div>
@@ -205,7 +215,7 @@
                           placeholder="Please enter email"
                           required
                           :class="classes"
-                        />
+                        >
                         <span class="text-danger">{{ errors[0] }} </span>
                       </ValidationProvider>
                     </div>
@@ -224,7 +234,7 @@
                           placeholder="Please enter address"
                           required
                           :class="classes"
-                        />
+                        >
                         <span class="text-danger"> {{ errors[0] }} </span>
                       </ValidationProvider>
                     </div>
@@ -287,14 +297,13 @@ export default {
           tel: ''
         }
       },
-      isNew: false,
-      visibleArrow: false
+      isNew: false
     }
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   created() {
@@ -309,7 +318,7 @@ export default {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/orders?page=${page}`
       this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then(response => {
+      this.$http.get(api).then((response) => {
         vm.orders = response.data.orders
         vm.pagination = response.data.pagination
         this.$store.commit('LOADING', false, { root: true })
@@ -328,8 +337,8 @@ export default {
     },
     updateOrder() {
       const vm = this
-      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/order/${vm.tempOrder.id}`
-      this.$http.put(api, { data: vm.tempOrder }).then(response => {
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/order/${vm.tempOrder.id}`
+      this.$http.put(api, { data: vm.tempOrder }).then((response) => {
         if (response.data.success) {
           this.$message({
             showClose: true,
@@ -337,7 +346,7 @@ export default {
             type: 'success'
           })
           $('#orderModal').modal('hide')
-          let tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = this.pagination.current_page
           vm.getOrders(tempCurrentPage)
         } else {
           this.$message({

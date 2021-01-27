@@ -177,16 +177,16 @@
       cursor: default;
       pointer-events: none;
     }
-    .btn-add-cart {
+    .product-action > .product-btn > .btn-add-cart {
       cursor: default;
       pointer-events: none;
-      background-color: #0f111a !important;
-      color: #4f566f !important;
+      background-color: #0f111a;
+      color: #4f566f;
       @include small {
-        background-color: #0f111a !important;
+        background-color: #0f111a;
       }
       @include extraSmall {
-        background-color: #0f111a !important;
+        background-color: #0f111a;
       }
     }
   }
@@ -234,7 +234,7 @@
         text-transform: capitalize;
         transition: $setTransition;
         &:hover {
-          color: $primaryColor !important;
+          color: $primaryColor;
           @include small {
             color: #fff;
           }

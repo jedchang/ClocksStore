@@ -60,7 +60,7 @@
     color: $txtColor;
     height: auto;
     padding-left: 27px;
-    box-shadow: none !important;
+    box-shadow: none;
     border: 0;
     border-radius: 0;
     transition: $setTransition;
@@ -73,7 +73,7 @@
 .sidebar-enable {
   .navbar-content {
     .navbar-brand-box {
-      width: 70px !important;
+      width: 70px;
       .logo-sm {
         display: block;
         img {

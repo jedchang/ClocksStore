@@ -10,7 +10,7 @@
   transform: translateX(100%);
   background: #222736;
   box-shadow: none;
-  z-index: 999;
+  z-index: 2003;
   transition: opacity 0.3s, visibility 0.3s,
     transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   &.open {
@@ -82,7 +82,7 @@
     background-color: #39425a;
     border: 1px solid #39425a;
     font-size: 16px;
-    border-radius: 3px !important;
+    border-radius: 3px;
     height: auto;
     &::placeholder {
       color: $txtColor-dark;
@@ -160,7 +160,7 @@
   transform: translateX(-100%);
   background: #222736;
   box-shadow: none;
-  z-index: 990;
+  z-index: 2001;
   transition: opacity 0.3s, visibility 0.3s,
     transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
@@ -199,7 +199,7 @@
       }
       &.router-link-exact-active {
         cursor: default;
-        color: #fff !important;
+        color: #fff;
         text-shadow: none;
         font-weight: 500;
         pointer-events: none;

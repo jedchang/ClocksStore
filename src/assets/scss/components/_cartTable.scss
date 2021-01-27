@@ -285,8 +285,8 @@
         }
         .is-checked {
           .el-radio__inner {
-            border-color: $primaryColor !important;
-            background: $primaryColor !important;
+            border-color: $primaryColor;
+            background: $primaryColor;
           }
         }
         .el-radio__inner {

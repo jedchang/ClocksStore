@@ -9,15 +9,15 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <AdminBreadcrumb :title-name="titleName"></AdminBreadcrumb>
+    <AdminBreadcrumb :title-name="titleName" />
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
@@ -48,7 +48,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in products" :key="item.id">
+                    <tr
+                      v-for="item in products"
+                      :key="item.id"
+                    >
                       <td class="product-category">{{ item.category }}</td>
                       <td class="product-name">{{ item.title }}</td>
                       <td
@@ -57,24 +60,33 @@
                       >
                         {{ item.origin_price | currency }}
                       </td>
-                      <td v-else class="product-original-price empty">
+                      <td
+                        v-else
+                        class="product-original-price empty"
+                      >
                         N/A
                       </td>
-                      <td v-if="item.price" class="product-price">
+                      <td
+                        v-if="item.price"
+                        class="product-price"
+                      >
                         {{ item.price | currency }}
                       </td>
-                      <td v-else class="product-price empty">
+                      <td
+                        v-else
+                        class="product-price empty"
+                      >
                         N/A
                       </td>
                       <td class="product-state">
                         <span
                           v-if="item.is_enabled"
                           class="badge badge-pill badge-success"
-                          >Enable</span
-                        >
-                        <span v-else class="badge badge-pill badge-danger"
-                          >Disable</span
-                        >
+                        >Enable</span>
+                        <span
+                          v-else
+                          class="badge badge-pill badge-danger"
+                        >Disable</span>
                       </td>
                       <td class="product-options">
                         <el-tooltip
@@ -113,19 +125,27 @@
               <Pagination
                 :paging-content="pagination"
                 @changePaging="getProducts"
-              ></Pagination>
+              />
             </div>
           </div>
         </div>
       </div>
-      <div id="productModal" class="modal fade" tabindex="-1" role="dialog">
+      <div
+        id="productModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+      >
         <div
           class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
           role="document"
         >
           <div class="modal-content">
             <div class="modal-header">
-              <h5 id="productModalLabel" class="modal-title">
+              <h5
+                id="productModalLabel"
+                class="modal-title"
+              >
                 New Product
               </h5>
               <button
@@ -149,11 +169,14 @@
                         type="text"
                         class="form-control"
                         placeholder="Please enter the image link"
-                      />
+                      >
                     </div>
                     <div class="form-group">
                       <div class="line">or</div>
-                      <label for="customFile" class="custom-file-upload">
+                      <label
+                        for="customFile"
+                        class="custom-file-upload"
+                      >
                         Upload image
                         <font-awesome-icon
                           v-if="status.fileUploading"
@@ -167,13 +190,12 @@
                         type="file"
                         class="form-control"
                         @change="uploadFile"
-                      />
+                      >
                     </div>
                     <img
                       :src="tempProduct.imageUrl"
                       class="img-fluid"
-                      alt="Upload File"
-                    />
+                    >
                   </div>
                   <div class="col-lg-7 col-md-12 col-sm-7 col-12">
                     <div class="form-group">
@@ -184,7 +206,7 @@
                         type="text"
                         class="form-control"
                         placeholder="Please enter title"
-                      />
+                      >
                     </div>
                     <div class="form-row">
                       <div class="form-group col-lg-6 col-md-12 col-12">
@@ -195,7 +217,7 @@
                           type="text"
                           class="form-control"
                           placeholder="Please enter category"
-                        />
+                        >
                       </div>
                       <div class="form-group col-lg-6 col-md-12 col-12">
                         <label for="price">Unit</label>
@@ -205,7 +227,7 @@
                           type="unit"
                           class="form-control"
                           placeholder="Please enter unit"
-                        />
+                        >
                       </div>
                     </div>
                     <div class="form-row">
@@ -217,7 +239,7 @@
                           type="number"
                           class="form-control"
                           placeholder="Please enter original price"
-                        />
+                        >
                       </div>
                       <div class="form-group col-lg-6 col-md-12 col-12">
                         <label for="price">Price</label>
@@ -227,10 +249,10 @@
                           type="number"
                           class="form-control"
                           placeholder="Please enter price"
-                        />
+                        >
                       </div>
                     </div>
-                    <hr />
+                    <hr>
                     <div class="form-group">
                       <label for="description">Description</label>
                       <textarea
@@ -258,8 +280,7 @@
                           v-model="tempProduct.is_enabled"
                           :true-label="1"
                           :false-label="0"
-                          >Enable</el-checkbox
-                        >
+                        >Enable</el-checkbox>
                       </div>
                     </div>
                   </div>
@@ -292,10 +313,16 @@
         tabindex="-1"
         role="dialog"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div
+          class="modal-dialog modal-dialog-centered"
+          role="document"
+        >
           <div class="modal-content">
             <div class="modal-header">
-              <h5 id="removeProductLabel" class="modal-title">
+              <h5
+                id="removeProductLabel"
+                class="modal-title"
+              >
                 Remove Product
               </h5>
               <button
@@ -365,8 +392,8 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   created() {
@@ -381,7 +408,7 @@ export default {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`
       this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then(response => {
+      this.$http.get(api).then((response) => {
         vm.products = response.data.products
         vm.pagination = response.data.pagination
         this.$store.commit('LOADING', false, { root: true })
@@ -390,10 +417,10 @@ export default {
     openProductModal(isNew, item) {
       if (isNew) {
         $('#customFile').val('')
-        ;(this.tempProduct = {
+        this.tempProduct = {
           is_enabled: false
-        }),
-          (this.isNew = true)
+        }
+        this.isNew = true
       } else {
         this.tempProduct = Object.assign({ ...item })
         this.isNew = false
@@ -409,7 +436,7 @@ export default {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`
         httpMethod = 'put'
       }
-      this.$http[httpMethod](api, { data: vm.tempProduct }).then(response => {
+      this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
         if (response.data.success) {
           this.$message({
             showClose: true,
@@ -417,7 +444,7 @@ export default {
             type: 'success'
           })
           $('#productModal').modal('hide')
-          let tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = this.pagination.current_page
           vm.getProducts(tempCurrentPage)
         } else {
           this.$message({
@@ -438,7 +465,7 @@ export default {
     removeProduct() {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`
-      this.$http.delete(api).then(response => {
+      this.$http.delete(api).then((response) => {
         if (response.data.success) {
           this.$message({
             showClose: true,
@@ -471,7 +498,7 @@ export default {
             'Content-Type': 'multipart/form-data'
           }
         })
-        .then(response => {
+        .then((response) => {
           vm.status.fileUploading = false
           if (response.data.success) {
             vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl)

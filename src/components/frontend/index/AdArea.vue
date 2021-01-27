@@ -6,9 +6,7 @@
           <div class="ad-box">
             <div class="ad-label">Exclusive Deal</div>
             <h2 class="ad-name">25% Off on All products at CLOCKS Store</h2>
-            <p class="ad-text">
-              Get an incredible 25% discount on all types of watches at CLOCKS
-              Store. Only for single use.
+            <p class="ad-text">Get an incredible 25% discount on all types of watches at CLOCKS Store. Only for single use.
             </p>
             <button
               v-clipboard:copy="couponCode"
@@ -18,9 +16,7 @@
               class="btn btn-coupon"
             >
               <span class="text">Get Coupon Code</span>
-              <span class="material-icons">
-                content_cut
-              </span>
+              <span class="material-icons">content_cut</span>
             </button>
           </div>
         </div>
@@ -49,7 +45,7 @@ export default {
         { root: true }
       )
     },
-    onError: function() {
+    onError: function () {
       this.$store.dispatch(
         'alertModules/pushMessages',
         this.$message({

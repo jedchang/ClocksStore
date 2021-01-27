@@ -88,7 +88,7 @@
         position: absolute;
         right: 0;
         top: 1px;
-        color: darken($txtColor-light, 20%) !important;
+        color: darken($txtColor-light, 20%);
       }
       &:last-child {
         padding-right: 0;
@@ -98,10 +98,10 @@
         }
       }
       a {
-        color: darken($txtColor-light, 20%) !important;
+        color: darken($txtColor-light, 20%);
         transition: $setTransition;
         &:hover {
-          color: #fff !important;
+          color: #fff;
         }
       }
       p {

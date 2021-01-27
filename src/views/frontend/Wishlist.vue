@@ -9,19 +9,19 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-12">
@@ -62,7 +62,10 @@
                           class="product-img"
                           title="View"
                         >
-                          <img :src="product.imageUrl" alt="Product img" />
+                          <img
+                            :src="product.imageUrl"
+                            alt="Product img"
+                          >
                         </router-link>
                       </td>
                       <td class="product-name">
@@ -72,8 +75,7 @@
                             params: { id: product.id }
                           }"
                           class="name"
-                          >{{ product.title }}</router-link
-                        >
+                        >{{ product.title }}</router-link>
                       </td>
                       <td class="product-price">
                         <span> {{ product.price | currency }} </span>
@@ -85,7 +87,10 @@
                         >
                           in stock
                         </span>
-                        <span v-else class="out-stock badge badge-pill">
+                        <span
+                          v-else
+                          class="out-stock badge badge-pill"
+                        >
                           out stock
                         </span>
                       </td>
@@ -144,10 +149,16 @@
                     </tr>
                   </tbody>
                 </table>
-                <div v-else class="wishlist-table-empty">
-                  <div class="empty-img"></div>
+                <div
+                  v-else
+                  class="wishlist-table-empty"
+                >
+                  <div class="empty-img" />
                   <p class="empty-text">Your wishlist is currently empty.</p>
-                  <router-link to="/watches" class="btn-action btn-continue">
+                  <router-link
+                    to="/watches"
+                    class="btn-action btn-continue"
+                  >
                     <font-awesome-icon :icon="['fas', 'chevron-left']" />
                     Continue Shopping
                   </router-link>
@@ -157,10 +168,10 @@
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
@@ -195,15 +206,15 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      status: state => state.status,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      status: (state) => state.status,
+      setOpacity: (state) => state.setOpacity
     }),
     ...mapState('cartModules', {
-      cart: state => state.cart
+      cart: (state) => state.cart
     }),
     ...mapState('wishlistModules', {
-      wishlist: state => state.wishlist
+      wishlist: (state) => state.wishlist
     }),
     ...mapGetters('cartModules', ['filterAddedCart']),
     ...mapGetters('wishlistModules', ['wishlistProducts'])

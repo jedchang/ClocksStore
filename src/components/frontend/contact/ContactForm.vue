@@ -27,7 +27,7 @@
                   placeholder="Please enter Name"
                   required
                   :class="classes"
-                />
+                >
                 <span class="text-danger"> {{ errors[0] }} </span>
               </ValidationProvider>
             </div>
@@ -45,7 +45,7 @@
                   placeholder="Please enter Email"
                   required
                   :class="classes"
-                />
+                >
                 <span class="text-danger">{{ errors[0] }} </span>
               </ValidationProvider>
             </div>
@@ -63,7 +63,7 @@
                   placeholder="Please enter Phone"
                   required
                   :class="classes"
-                />
+                >
                 <span class="text-danger"> {{ errors[0] }} </span>
               </ValidationProvider>
             </div>
@@ -83,7 +83,7 @@
                   placeholder="Please enter Message"
                   required
                   :class="classes"
-                ></textarea>
+                />
                 <span class="text-danger"> {{ errors[0] }} </span>
               </ValidationProvider>
             </div>

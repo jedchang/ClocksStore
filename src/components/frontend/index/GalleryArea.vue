@@ -13,9 +13,10 @@
               :options="{
                 shareEl: false,
                 zoomEl: false,
-                fullscreenEl: false
+                fullscreenEl: false,
+                bgOpacity:0.85
               }"
-            ></vue-picture-swipe>
+            />
           </div>
         </div>
       </div>

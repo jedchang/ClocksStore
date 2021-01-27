@@ -9,15 +9,15 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <AdminBreadcrumb :title-name="titleName"></AdminBreadcrumb>
+    <AdminBreadcrumb :title-name="titleName" />
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-12">
@@ -47,7 +47,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="item in coupons" :key="item.id">
+                    <tr
+                      v-for="item in coupons"
+                      :key="item.id"
+                    >
                       <td class="coupon-name">{{ item.title }}</td>
                       <td class="discount-percent">{{ item.percent }}%</td>
                       <td class="expiry-date">{{ item.due_date | date }}</td>
@@ -55,11 +58,11 @@
                         <span
                           v-if="item.is_enabled"
                           class="badge badge-pill badge-success"
-                          >Enable</span
-                        >
-                        <span v-else class="badge badge-pill badge-danger"
-                          >Disable</span
-                        >
+                        >Enable</span>
+                        <span
+                          v-else
+                          class="badge badge-pill badge-danger"
+                        >Disable</span>
                       </td>
                       <td class="options">
                         <el-tooltip
@@ -67,7 +70,6 @@
                           effect="dark"
                           content="Edit"
                           placement="top"
-                          :visible-arrow="visibleArrow"
                         >
                           <a
                             href="#"
@@ -82,7 +84,6 @@
                           effect="dark"
                           content="Remove"
                           placement="top"
-                          :visible-arrow="visibleArrow"
                         >
                           <a
                             href="#"
@@ -100,20 +101,28 @@
               <Pagination
                 :paging-content="pagination"
                 @changePaging="getCoupons"
-              ></Pagination>
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="couponModal" class="modal fade" tabindex="-1" role="dialog">
+    <div
+      id="couponModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
       <div
         class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
         role="document"
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 id="couponModalLabel" class="modal-title">
+            <h5
+              id="couponModalLabel"
+              class="modal-title"
+            >
               New coupon
             </h5>
             <button
@@ -136,7 +145,7 @@
                     type="text"
                     class="form-control"
                     placeholder="Please enter coupon mame"
-                  />
+                  >
                 </div>
                 <div class="form-group">
                   <label for="coupon-code">Coupon Code</label>
@@ -146,7 +155,7 @@
                     type="text"
                     class="form-control"
                     placeholder="Please enter coupon code"
-                  />
+                  >
                 </div>
               </div>
               <div class="col-lg-6 col-md-12 col-12">
@@ -157,7 +166,7 @@
                     v-model="due_date"
                     type="date"
                     class="form-control"
-                  />
+                  >
                 </div>
                 <div class="form-group">
                   <label for="price">Discount percentage</label>
@@ -167,7 +176,7 @@
                     type="number"
                     class="form-control"
                     placeholder="Please enter discount percentage"
-                  />
+                  >
                 </div>
               </div>
               <div class="col-lg-12 col-md-12 col-12">
@@ -178,8 +187,7 @@
                       v-model="tempCoupon.is_enabled"
                       :true-value="1"
                       :false-value="0"
-                      >Enable</el-checkbox
-                    >
+                    >Enable</el-checkbox>
                   </div>
                 </div>
               </div>
@@ -205,14 +213,22 @@
         </div>
       </div>
     </div>
-    <div id="removeCouponModal" class="modal fade" tabindex="-1" role="dialog">
+    <div
+      id="removeCouponModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
       <div
         class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
         role="document"
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 id="removeCouponLabel" class="modal-title">
+            <h5
+              id="removeCouponLabel"
+              class="modal-title"
+            >
               Remove Coupon
             </h5>
             <button
@@ -282,14 +298,13 @@ export default {
       status: {
         fileUploading: false
       },
-      due_date: formatDate(),
-      visibleArrow: false
+      due_date: formatDate()
     }
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   watch: {
@@ -311,7 +326,7 @@ export default {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?page=${page}`
       this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then(response => {
+      this.$http.get(api).then((response) => {
         vm.coupons = response.data.coupons
         vm.pagination = response.data.pagination
         this.$store.commit('LOADING', false, { root: true })
@@ -336,10 +351,10 @@ export default {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`
         httpMethod = 'put'
       }
-      this.$http[httpMethod](api, { data: vm.tempCoupon }).then(response => {
+      this.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
         if (response.data.success) {
           $('#couponModal').modal('hide')
-          let tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = this.pagination.current_page
           vm.getCoupons(tempCurrentPage)
         } else {
           $('#couponModal').modal('hide')
@@ -355,7 +370,7 @@ export default {
     removeCoupon() {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`
-      this.$http.delete(api).then(response => {
+      this.$http.delete(api).then((response) => {
         if (response.data.success) {
           this.$message({
             showClose: true,

@@ -1,8 +1,48 @@
 html {
   position: relative;
   user-select: none;
+  background-color: $primaryBgColor;
   .loading-txt {
     font-size: 12px;
+  }
+
+  // Element-ui Tooltip
+  .el-tooltip__popper.is-dark {
+    background: #000;
+    z-index: 9001;
+    .popper__arrow {
+      border-top-color: #000;
+      &:after {
+        border-top-color: #000;
+      }
+    }
+  }
+  // Element-ui Message
+  .el-message {
+    @include small {
+      min-width: 90%;
+      .el-message__icon {
+        font-size: 18px;
+      }
+      .el-message__content {
+        font-size: 18px;
+      }
+      .el-message__closeBtn {
+        font-size: 18px;
+      }
+    }
+    @include extraSmall {
+      min-width: 90%;
+      .el-message__icon {
+        font-size: 4vmin;
+      }
+      .el-message__content {
+        font-size: 4vmin;
+      }
+      .el-message__closeBtn {
+        font-size: 4vmin;
+      }
+    }
   }
 }
 
@@ -11,7 +51,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
-  background-color: $primaryBgColor !important;
+  background-color: $primaryBgColor;
   overflow-x: hidden;
   color: #353c4e;
   background-attachment: fixed;
@@ -114,9 +154,9 @@ body {
     }
   }
 
-  img {
-    width: 100%;
-  }
+  // img {
+  //   width: 100%;
+  // }
 
   tbody {
     .empty {
@@ -170,43 +210,4 @@ body {
 
 input[type='number']::-webkit-inner-spin-button {
   appearance: none;
-}
-
-.el-tooltip__popper.is-dark {
-  background: #000 !important;
-  z-index: 9001 !important;
-  .popper__arrow {
-    border-top-color: #000 !important;
-    &:after {
-      border-top-color: #000 !important;
-    }
-  }
-}
-
-.el-message {
-  z-index: 9999 !important;
-  @include small {
-    min-width: 90% !important;
-    .el-message__icon {
-      font-size: 18px !important;
-    }
-    .el-message__content {
-      font-size: 18px !important;
-    }
-    .el-message__closeBtn {
-      font-size: 18px !important;
-    }
-  }
-  @include extraSmall {
-    min-width: 90% !important;
-    .el-message__icon {
-      font-size: 4vmin !important;
-    }
-    .el-message__content {
-      font-size: 4vmin !important;
-    }
-    .el-message__closeBtn {
-      font-size: 4vmin !important;
-    }
-  }
 }

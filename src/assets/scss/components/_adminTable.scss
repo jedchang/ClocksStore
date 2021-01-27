@@ -232,23 +232,23 @@
   }
 
   .btn-edit {
-    color: #556ee6 !important;
+    color: #556ee6;
     width: 34px;
     display: flex;
     justify-content: center;
     display: inline-block;
     text-align: center;
     &:hover {
-      color: #1f3dd0 !important;
+      color: #1f3dd0;
     }
   }
   .btn-remove {
-    color: #f46a6a !important;
+    color: #f46a6a;
     width: 34px;
     display: inline-block;
     text-align: center;
     &:hover {
-      color: #ef2323 !important;
+      color: #ef2323;
     }
     @include medium {
       width: 20px;
