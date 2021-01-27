@@ -2,6 +2,7 @@
   <div class="mobile-scroll-wrap">
     <a
       id="mobile-scroll-top"
+      class="mobile-scroll-top"
       href="#"
       title="Scroll to top"
       @click.prevent="scrollTop"
@@ -9,7 +10,7 @@
       <span class="material-icons">
         keyboard_arrow_up
       </span>
-      <div class="bg"></div>
+      <div class="bg" />
     </a>
   </div>
 </template>

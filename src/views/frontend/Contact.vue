@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'

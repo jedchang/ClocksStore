@@ -112,7 +112,7 @@
       </div>
       <div
         id="orderModal"
-        class="modal fade"
+        class="orderModal modal fade"
         tabindex="-1"
         role="dialog"
       >
@@ -132,7 +132,7 @@
               <div class="modal-header">
                 <h5
                   id="orderModalLabel"
-                  class="modal-title"
+                  class="orderModalLabel modal-title"
                 >
                   Change Order
                 </h5>
@@ -161,13 +161,13 @@
                 <div class="form-row">
                   <div class="col-lg-4 col-md-12 col-12">
                     <div class="form-group">
-                      <label for="username">Name</label>
+                      <label for="user-name">Name</label>
                       <ValidationProvider
                         v-slot="{ errors, classes }"
                         rules="name-required"
                       >
                         <input
-                          id="username"
+                          id="user-name"
                           v-model="tempOrder.user.name"
                           type="text"
                           class="form-control"
@@ -180,13 +180,13 @@
                       </ValidationProvider>
                     </div>
                     <div class="form-group">
-                      <label for="usertel">Tel</label>
+                      <label for="user-tel">Tel</label>
                       <ValidationProvider
                         v-slot="{ errors, classes }"
                         rules="numeric"
                       >
                         <input
-                          id="usertel"
+                          id="user-tel"
                           v-model="tempOrder.user.tel"
                           type="tel"
                           class="form-control"
@@ -201,13 +201,13 @@
                   </div>
                   <div class="col-lg-8 col-md-12 col-12">
                     <div class="form-group">
-                      <label for="email">Email</label>
+                      <label for="user-email">Email</label>
                       <ValidationProvider
                         v-slot="{ errors, classes }"
                         rules="email-required"
                       >
                         <input
-                          id="useremail"
+                          id="user-email"
                           v-model="tempOrder.user.email"
                           type="email"
                           class="form-control"
@@ -220,13 +220,13 @@
                       </ValidationProvider>
                     </div>
                     <div class="form-group">
-                      <label for="useraddress">Address</label>
+                      <label for="user-address">Address</label>
                       <ValidationProvider
                         v-slot="{ errors, classes }"
                         rules="addr-required"
                       >
                         <input
-                          id="useraddress"
+                          id="user-address"
                           v-model="tempOrder.user.address"
                           type="text"
                           class="form-control"
@@ -317,11 +317,11 @@ export default {
     getOrders(page = 1) {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/orders?page=${page}`
-      this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then((response) => {
+      vm.$store.commit('LOADING', true, { root: true })
+      vm.$http.get(api).then((response) => {
         vm.orders = response.data.orders
         vm.pagination = response.data.pagination
-        this.$store.commit('LOADING', false, { root: true })
+        vm.$store.commit('LOADING', false, { root: true })
       })
     },
     openModal(isNew, item) {
@@ -338,18 +338,18 @@ export default {
     updateOrder() {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/order/${vm.tempOrder.id}`
-      this.$http.put(api, { data: vm.tempOrder }).then((response) => {
+      vm.$http.put(api, { data: vm.tempOrder }).then((response) => {
         if (response.data.success) {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Order information updated',
             type: 'success'
           })
           $('#orderModal').modal('hide')
-          const tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = vm.pagination.current_page
           vm.getOrders(tempCurrentPage)
         } else {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Update failed!',
             type: 'error'

@@ -9,40 +9,40 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12">
             <ProgressBar
               :current-progress="progressStatus"
               :current-valid="validStatus"
-            ></ProgressBar>
+            />
           </div>
-          <CartTable></CartTable>
+          <CartTable />
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -78,8 +78,8 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   mounted() {

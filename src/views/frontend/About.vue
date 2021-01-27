@@ -9,25 +9,28 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-12">
             <div class="story">
               <div class="about-img">
-                <img src="~@/assets/images/about_img_01.jpg" alt="About img" />
+                <img
+                  src="~@/assets/images/about_img_01.jpg"
+                  alt="About img"
+                >
               </div>
               <div class="story-txt">
                 <h3>Our Story Is Your Story</h3>
@@ -50,7 +53,7 @@
                     <img
                       src="~@/assets/images/about_img_02.jpg"
                       alt="About img"
-                    />
+                    >
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
@@ -62,9 +65,10 @@
                       build upon our collaborative community and provide a
                       platform to share the stories of passionate creators.
                     </p>
-                    <router-link to="/watches" class="btn btn-shop-now"
-                      >Shop Now</router-link
-                    >
+                    <router-link
+                      to="/watches"
+                      class="btn btn-shop-now"
+                    >Shop Now</router-link>
                   </div>
                 </div>
               </div>
@@ -74,7 +78,7 @@
                     <img
                       src="~@/assets/images/about_img_03.jpg"
                       alt="About img"
-                    />
+                    >
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 order-1 col-12">
@@ -87,9 +91,10 @@
                       aims to spark and encourage cultivated conversation while
                       building a versatile and spirited community.
                     </p>
-                    <router-link to="/watches" class="btn btn-shop-now"
-                      >Shop Now</router-link
-                    >
+                    <router-link
+                      to="/watches"
+                      class="btn btn-shop-now"
+                    >Shop Now</router-link>
                   </div>
                 </div>
               </div>
@@ -97,16 +102,16 @@
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -131,8 +136,8 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     })
   },
   created() {

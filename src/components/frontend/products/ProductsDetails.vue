@@ -9,19 +9,22 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar :active-state="true" @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar
+        :active-state="true"
+        @open-modal="openModal"
+      />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="products-spec">
           <div class="row">
@@ -32,16 +35,17 @@
                   'on-sale': newProduct.origin_price !== newProduct.price
                 }"
               >
-                <img :src="newProduct.imageUrl" alt="Product img" />
+                <img
+                  :src="newProduct.imageUrl"
+                  alt="Product img"
+                >
               </div>
             </div>
             <div class="col-lg-6 col-md-7 col-12">
               <div class="details-content">
                 <div class="details-top">
                   <h2 class="name">{{ newProduct.title }}</h2>
-                  <ProductRating
-                    :product-stars="newProduct.stars"
-                  ></ProductRating>
+                  <ProductRating :product-stars="newProduct.stars" />
                   <ul class="details-list">
                     <li>
                       <span>Brand :</span>
@@ -79,7 +83,7 @@
                       }"
                       :min="1"
                       :max="99"
-                    ></el-input-number>
+                    />
                     <div class="details-action-btns">
                       <router-link
                         v-if="filterAddedCart.includes(newProduct.id)"
@@ -117,7 +121,10 @@
                           :icon="['fas', 'spinner']"
                           spin
                         />
-                        <font-awesome-icon v-else :icon="['fas', 'heart']" />
+                        <font-awesome-icon
+                          v-else
+                          :icon="['fas', 'heart']"
+                        />
                       </a>
                       <a
                         v-else
@@ -130,7 +137,10 @@
                           :icon="['fas', 'spinner']"
                           spin
                         />
-                        <font-awesome-icon v-else :icon="['far', 'heart']" />
+                        <font-awesome-icon
+                          v-else
+                          :icon="['far', 'heart']"
+                        />
                       </a>
                     </div>
                   </div>
@@ -180,20 +190,20 @@
             </div>
           </div>
         </div>
-        <ProductsTab :new-product="newProduct"></ProductsTab>
-        <ProductsRelated></ProductsRelated>
+        <ProductsTab :new-product="newProduct" />
+        <ProductsRelated />
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -232,27 +242,27 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      status: state => state.status,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      status: (state) => state.status,
+      setOpacity: (state) => state.setOpacity
     }),
     ...mapState('cartModules', {
-      cart: state => state.cart
+      cart: (state) => state.cart
     }),
     ...mapState('productsModules', {
-      product: state => state.product,
-      newProducts: state => state.newProducts,
-      productTitle: state => state.productTitle
+      product: (state) => state.product,
+      newProducts: (state) => state.newProducts,
+      productTitle: (state) => state.productTitle
     }),
     ...mapState('wishlistModules', {
-      wishlist: state => state.wishlist
+      wishlist: (state) => state.wishlist
     }),
     ...mapGetters('productsModules', ['newProducts']),
     ...mapGetters('cartModules', ['filterAddedCart']),
 
     newProduct() {
-      let newObj = {}
-      let key = 'stars'
+      const newObj = {}
+      const key = 'stars'
       let value = this.productTitle.substr(8, 1)
       if (value === '1' || value === '8') {
         value = 3

@@ -1,22 +1,38 @@
 <template>
   <header class="header-wrap">
-    <div id="desktop-header" class="header navbar">
+    <div
+      id="desktop-header"
+      class="desktop-header header navbar"
+    >
       <div class="container">
         <div class="header-inner">
           <div class="row main">
             <div class="col-lg-3 col-md-3 col-6">
               <div class="navbar-header">
-                <router-link to="/" class="navbar-brand">
-                  <img class="logo" src="~@/assets/images/logo.svg" alt="Logo"
-                /></router-link>
+                <router-link
+                  to="/"
+                  class="navbar-brand"
+                >
+                  <img
+                    class="logo"
+                    src="~@/assets/images/logo.svg"
+                    alt="Logo"
+                  >
+                </router-link>
               </div>
             </div>
             <div class="col-lg-7 col-md-6 col-12">
               <div class="main-menu">
-                <router-link to="/" class="menu-home menu-item">
+                <router-link
+                  to="/"
+                  class="menu-home menu-item"
+                >
                   Home
                 </router-link>
-                <router-link to="/about" class="menu-about menu-item">
+                <router-link
+                  to="/about"
+                  class="menu-about menu-item"
+                >
                   About
                 </router-link>
                 <router-link
@@ -26,10 +42,16 @@
                 >
                   Watches
                 </router-link>
-                <router-link to="/FAQ" class="menu-faq menu-item">
+                <router-link
+                  to="/FAQ"
+                  class="menu-faq menu-item"
+                >
                   FAQ
                 </router-link>
-                <router-link to="/contact" class="menu-contact menu-item">
+                <router-link
+                  to="/contact"
+                  class="menu-contact menu-item"
+                >
                   Contact
                 </router-link>
               </div>
@@ -41,13 +63,16 @@
                   href="#"
                   class="not-logined-icon icon"
                   @click.prevent="openModal"
-                ></a>
-                <div v-else class="dropdown">
+                />
+                <div
+                  v-else
+                  class="dropdown"
+                >
                   <a
                     href="#"
                     class="logged-icon icon"
                     data-toggle="dropdown"
-                  ></a>
+                  />
                   <ul class="dropdown-menu">
                     <li>
                       <a
@@ -69,16 +94,29 @@
                         <span>Logout</span>
                       </a>
                     </li>
-                    <div class="arrow"></div>
+                    <div class="arrow" />
                   </ul>
                 </div>
-                <router-link class="wishlist-icon icon" to="/wishlist">
-                  <span v-if="wishlist.length > 0" class="wishlist-total count">
+                <router-link
+                  class="wishlist-icon icon"
+                  to="/wishlist"
+                >
+                  <span
+                    v-if="wishlist.length > 0"
+                    class="wishlist-total count"
+                  >
                     {{ wishlist.length }}
                   </span>
                 </router-link>
-                <a href="#" class="cart-icon icon" @click.prevent="openCart">
-                  <span v-if="cart.carts.length > 0" class="cart-total count">
+                <a
+                  href="#"
+                  class="cart-icon icon"
+                  @click.prevent="openCart"
+                >
+                  <span
+                    v-if="cart.carts.length > 0"
+                    class="cart-total count"
+                  >
                     {{ cart.carts.length }}
                   </span>
                 </a>
@@ -88,26 +126,52 @@
         </div>
       </div>
     </div>
-    <div id="mobile-header">
-      <a href="#" class="navbar-toggle" @click.prevent="toggleMenu">
-        <svg class="hamburger" viewBox="0 0 100 100">
+    <div
+      id="mobile-header"
+      class="mobile-header"
+    >
+      <a
+        href="#"
+        class="navbar-toggle"
+        @click.prevent="toggleMenu"
+      >
+        <svg
+          class="hamburger"
+          viewBox="0 0 100 100"
+        >
           <path
             class="line top"
             d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
           />
-          <path class="line middle" d="m 30,50 h 40" />
+          <path
+            class="line middle"
+            d="m 30,50 h 40"
+          />
           <path
             class="line bottom"
             d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
           />
         </svg>
       </a>
-      <router-link to="/" class="navbar-brand">
-        <img class="logo" src="~@/assets/images/logo.svg" alt="Logo" />
+      <router-link
+        to="/"
+        class="navbar-brand"
+      >
+        <img
+          class="logo"
+          src="~@/assets/images/logo.svg"
+          alt="Logo"
+        >
       </router-link>
       <div class="other-menu">
-        <router-link class="navbar-wishlist wishlist-icon icon" to="/wishlist">
-          <span v-if="wishlist.length > 0" class="wishlist-total count">
+        <router-link
+          class="navbar-wishlist wishlist-icon icon"
+          to="/wishlist"
+        >
+          <span
+            v-if="wishlist.length > 0"
+            class="wishlist-total count"
+          >
             {{ wishlist.length }}
           </span>
         </router-link>
@@ -116,7 +180,10 @@
           class="navbar-cart cart-icon icon"
           @click.prevent="openCart"
         >
-          <span v-if="cart.carts.length > 0" class="cart-total count">
+          <span
+            v-if="cart.carts.length > 0"
+            class="cart-total count"
+          >
             {{ cart.carts.length }}
           </span>
         </a>
@@ -130,7 +197,7 @@ import $ from 'jquery'
 import { setCookie, getCookie, clearCookie } from '@/utils/cookie.js'
 import { mapState, mapGetters } from 'vuex'
 
-$(window).on('scroll', function() {
+$(window).on('scroll', function () {
   if ($('#desktop-header').length > 0) {
     if ($(this).scrollTop() > 0) {
       $('#desktop-header').addClass('sticky-header')
@@ -160,11 +227,11 @@ export default {
   },
   computed: {
     ...mapState('cartModules', {
-      cart: state => state.cart,
-      isOpen: state => state.isOpen
+      cart: (state) => state.cart,
+      isOpen: (state) => state.isOpen
     }),
     ...mapState('wishlistModules', {
-      wishlist: state => state.wishlist
+      wishlist: (state) => state.wishlist
     }),
     ...mapGetters('productsModules', ['products'])
   },
@@ -188,7 +255,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/logout`
       const vm = this
       vm.isLoading = true
-      this.$http.post(api).then(response => {
+      this.$http.post(api).then((response) => {
         if (response.data.success) {
           this.$message({
             showClose: true,

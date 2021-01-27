@@ -1,16 +1,34 @@
 <template>
-  <swiper id="mobile-banner" ref="swiperMobile" :options="swiperMobile">
-    <swiper-slide v-for="(banner, index) in bannersData" :key="index">
-      <a :href="banner.url" :class="banner.direction" class="content">
+  <swiper
+    id="mobile-banner"
+    ref="swiperMobile"
+    class="mobile-banner"
+    :options="swiperMobile"
+  >
+    <swiper-slide
+      v-for="(banner, index) in bannersData"
+      :key="index"
+    >
+      <a
+        :href="banner.url"
+        :class="banner.direction"
+        class="content"
+      >
         <h5>{{ banner.subtitle }}</h5>
         <h2>{{ banner.title }}</h2>
         <p>
           {{ banner.text }}
         </p>
       </a>
-      <img :src="banner.mobile_img" alt="Banner" />
+      <img
+        :src="banner.mobile_img"
+        alt="Banner"
+      >
     </swiper-slide>
-    <div slot="pagination" class="swiper-pagination"></div>
+    <div
+      slot="pagination"
+      class="swiper-pagination"
+    />
   </swiper>
 </template>
 

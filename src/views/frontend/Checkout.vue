@@ -9,19 +9,19 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12">
@@ -29,13 +29,19 @@
               v-if="order.is_paid === false"
               :current-progress="progressStatus"
               :current-valid="validStatus"
-            ></ProgressBar>
+            />
           </div>
           <div class="col-lg-12 col-md-12 col-12">
             <div class="cart-inner">
-              <form v-if="order.is_paid === false" @submit.prevent="payOrder">
+              <form
+                v-if="order.is_paid === false"
+                @submit.prevent="payOrder"
+              >
                 <simplebar class="simplebar">
-                  <table class="shop-table" cellspacing="0">
+                  <table
+                    class="shop-table"
+                    cellspacing="0"
+                  >
                     <thead>
                       <tr class="line">
                         <th class="product-thumbnail-thead">Product</th>
@@ -55,7 +61,10 @@
                         class="cart-item"
                       >
                         <td class="product-thumbnail">
-                          <img :src="item.product.imageUrl" alt="Product img" />
+                          <img
+                            :src="item.product.imageUrl"
+                            alt="Product img"
+                          >
                         </td>
                         <td class="product-name">
                           {{ item.product.title }}
@@ -73,7 +82,10 @@
                     </tbody>
                     <tfoot>
                       <tr class="cart-total">
-                        <th class="cart-total-thead" colspan="4">Total</th>
+                        <th
+                          class="cart-total-thead"
+                          colspan="4"
+                        >Total</th>
                         <td>
                           <span class="price-amount">{{
                             order.total | currency
@@ -83,7 +95,10 @@
                     </tfoot>
                   </table>
                 </simplebar>
-                <table class="info-table" cellspacing="0">
+                <table
+                  class="info-table"
+                  cellspacing="0"
+                >
                   <tbody>
                     <tr class="info-item">
                       <th class="info-email-thead">Email</th>
@@ -107,8 +122,7 @@
                         <span
                           v-if="!order.is_paid"
                           class="badge badge-pill badge-danger"
-                          >Not yet paid</span
-                        >
+                        >Not yet paid</span>
                       </td>
                     </tr>
                   </tbody>
@@ -132,9 +146,12 @@
                   </button>
                 </div>
               </form>
-              <div v-if="order.is_paid === true" class="completed-wrap">
+              <div
+                v-if="order.is_paid === true"
+                class="completed-wrap"
+              >
                 <div class="completed">
-                  <img src="~@/assets/images/completed_thanks_text.svg" />
+                  <img src="~@/assets/images/completed_thanks_text.svg">
                   <div class="order-id">
                     <p>
                       Order: <span>{{ orderId }} </span>
@@ -142,8 +159,7 @@
                     <span
                       v-if="order.is_paid"
                       class="badge badge-pill badge-success"
-                      >Payment completed</span
-                    >
+                    >Payment completed</span>
                   </div>
                   <ul class="thanks-text">
                     <li>Thanks for being awesome,</li>
@@ -164,16 +180,16 @@
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -207,12 +223,12 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      status: state => state.status,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      status: (state) => state.status,
+      setOpacity: (state) => state.setOpacity
     }),
     ...mapState('orderModules', {
-      order: state => state.order
+      order: (state) => state.order
     })
   },
   created() {

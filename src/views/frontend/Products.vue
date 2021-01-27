@@ -9,19 +9,19 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar :filter-added="filterAddedCart"></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar :filter-added="filterAddedCart" />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-3 col-md-4 col-12">
@@ -36,8 +36,7 @@
                         class="btn-category"
                         :class="{ current: filterText === 'All' }"
                         @click.prevent="changeCategory('All')"
-                        >All Watches<span>({{ newProducts.length }})</span></a
-                      >
+                      >All Watches<span>({{ newProducts.length }})</span></a>
                     </li>
                     <li>
                       <a
@@ -45,10 +44,7 @@
                         class="btn-category"
                         :class="{ current: filterText === 'Casual' }"
                         @click.prevent="changeCategory('Casual')"
-                        >Casual series<span
-                          >({{ getCasualNum.length }})</span
-                        ></a
-                      >
+                      >Casual series<span>({{ getCasualNum.length }})</span></a>
                     </li>
                     <li>
                       <a
@@ -56,10 +52,7 @@
                         class="btn-category"
                         :class="{ current: filterText === 'Stylish' }"
                         @click.prevent="changeCategory('Stylish')"
-                        >Stylish series<span
-                          >({{ getStylishNum.length }})</span
-                        ></a
-                      >
+                      >Stylish series<span>({{ getStylishNum.length }})</span></a>
                     </li>
                     <li>
                       <a
@@ -67,10 +60,7 @@
                         class="btn-category"
                         :class="{ current: filterText === 'Classic' }"
                         @click.prevent="changeCategory('Classic')"
-                        >Classic series<span
-                          >({{ getClassicNum.length }})</span
-                        ></a
-                      >
+                      >Classic series<span>({{ getClassicNum.length }})</span></a>
                     </li>
                     <li>
                       <a
@@ -78,10 +68,7 @@
                         class="btn-category"
                         :class="{ current: filterText === 'Luxury' }"
                         @click.prevent="changeCategory('Luxury')"
-                        >Luxury series<span
-                          >({{ getLuxuryNum.length }})</span
-                        ></a
-                      >
+                      >Luxury series<span>({{ getLuxuryNum.length }})</span></a>
                     </li>
                   </ul>
                 </div>
@@ -94,7 +81,7 @@
                   <img
                     src="~@/assets/images/watches_sidebar_ad.jpg"
                     alt="Advertising img"
-                  />
+                  >
                 </router-link>
               </div>
             </div>
@@ -137,27 +124,27 @@
                 <ProductsGridMode
                   v-if="currentMode === 'grid'"
                   :product-data="product"
-                ></ProductsGridMode>
+                />
                 <ProductsListMode
                   v-if="currentMode === 'list'"
                   :product-data="product"
-                ></ProductsListMode>
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
 import $ from 'jquery'
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -191,11 +178,11 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity
     }),
     ...mapState('productsModules', {
-      filterText: state => state.filterText
+      filterText: (state) => state.filterText
     }),
     ...mapGetters('productsModules', [
       'newProducts',
@@ -232,13 +219,9 @@ export default {
     toggleViewMode(view) {
       this.currentMode = view
       if (this.currentMode === 'grid') {
-        $('.products-lists-wrap')
-          .removeClass('list-view')
-          .addClass('grid-view')
+        $('.products-lists-wrap').removeClass('list-view').addClass('grid-view')
       } else if (this.currentMode === 'list') {
-        $('.products-lists-wrap')
-          .removeClass('grid-view')
-          .addClass('list-view')
+        $('.products-lists-wrap').removeClass('grid-view').addClass('list-view')
       }
     }
   }

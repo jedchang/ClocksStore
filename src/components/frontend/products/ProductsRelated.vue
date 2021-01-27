@@ -9,10 +9,14 @@
           <swiper
             id="swiper-related"
             ref="swiperOptions"
+            class="swiper-related"
             :options="swiperOptions"
           >
             <div slot="btn">按鈕</div>
-            <swiper-slide v-for="product in filterCategory" :key="product.id">
+            <swiper-slide
+              v-for="product in filterCategory"
+              :key="product.id"
+            >
               <li
                 :id="product.id"
                 class="product-item"
@@ -28,10 +32,16 @@
                   @click.prevent="changeProduct(product)"
                 >
                   <!-- Sold out -->
-                  <div v-if="!product.is_enabled" class="sold-out-mask">
+                  <div
+                    v-if="!product.is_enabled"
+                    class="sold-out-mask"
+                  >
                     <div class="sold-out-text">Sold out</div>
                   </div>
-                  <img :src="product.imageUrl" alt="Product img" />
+                  <img
+                    :src="product.imageUrl"
+                    alt="Product img"
+                  >
                 </a>
                 <div class="product-content">
                   <span> {{ product.category }} </span>
@@ -40,8 +50,7 @@
                       href="#"
                       class="name"
                       @click.prevent="changeProduct(product)"
-                      >{{ product.title }}</a
-                    >
+                    >{{ product.title }}</a>
                   </h4>
                   <div class="product-price-wrapper">
                     <span class="money">{{ product.price | currency }}</span>
@@ -57,7 +66,7 @@
                   </div>
                 </div>
                 <div class="product-action">
-                  <ProductRating :product-stars="product.stars"></ProductRating>
+                  <ProductRating :product-stars="product.stars" />
                   <p class="product-desc">
                     {{ product.description }}
                   </p>
@@ -100,7 +109,10 @@
                         :icon="['fas', 'spinner']"
                         spin
                       />
-                      <font-awesome-icon v-else :icon="['fas', 'heart']" />
+                      <font-awesome-icon
+                        v-else
+                        :icon="['fas', 'heart']"
+                      />
                     </a>
                     <a
                       v-else
@@ -113,14 +125,23 @@
                         :icon="['fas', 'spinner']"
                         spin
                       />
-                      <font-awesome-icon v-else :icon="['far', 'heart']" />
+                      <font-awesome-icon
+                        v-else
+                        :icon="['far', 'heart']"
+                      />
                     </a>
                   </div>
                 </div>
               </li>
             </swiper-slide>
-            <div slot="button-prev" class="swiper-button-prev"></div>
-            <div slot="button-next" class="swiper-button-next"></div>
+            <div
+              slot="button-prev"
+              class="swiper-button-prev"
+            />
+            <div
+              slot="button-next"
+              class="swiper-button-next"
+            />
           </swiper>
         </div>
       </div>
@@ -176,14 +197,14 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      status: state => state.status
+      isLoading: (state) => state.isLoading,
+      status: (state) => state.status
     }),
     ...mapState('cartModules', {
-      cart: state => state.cart
+      cart: (state) => state.cart
     }),
     ...mapState('wishlistModules', {
-      wishlist: state => state.wishlist
+      wishlist: (state) => state.wishlist
     }),
     ...mapGetters('productsModules', ['filterCategory']),
     ...mapGetters('cartModules', ['filterAddedCart'])

@@ -132,7 +132,7 @@
       </div>
       <div
         id="productModal"
-        class="modal fade"
+        class="productModal modal fade"
         tabindex="-1"
         role="dialog"
       >
@@ -144,7 +144,7 @@
             <div class="modal-header">
               <h5
                 id="productModalLabel"
-                class="modal-title"
+                class="productModalLabel modal-title"
               >
                 New Product
               </h5>
@@ -174,7 +174,7 @@
                     <div class="form-group">
                       <div class="line">or</div>
                       <label
-                        for="customFile"
+                        for="custom-file"
                         class="custom-file-upload"
                       >
                         Upload image
@@ -185,10 +185,10 @@
                         />
                       </label>
                       <input
-                        id="customFile"
+                        id="custom-file"
                         ref="files"
                         type="file"
-                        class="form-control"
+                        class="form-control custom-file"
                         @change="uploadFile"
                       >
                     </div>
@@ -220,7 +220,7 @@
                         >
                       </div>
                       <div class="form-group col-lg-6 col-md-12 col-12">
-                        <label for="price">Unit</label>
+                        <label for="unit">Unit</label>
                         <input
                           id="unit"
                           v-model="tempProduct.unit"
@@ -232,9 +232,9 @@
                     </div>
                     <div class="form-row">
                       <div class="form-group col-lg-6 col-md-12 col-12">
-                        <label for="origin_price">Original price</label>
+                        <label for="origin-price">Original price</label>
                         <input
-                          id="origin_price"
+                          id="origin-price"
                           v-model="tempProduct.origin_price"
                           type="number"
                           class="form-control"
@@ -269,14 +269,14 @@
                         id="content"
                         v-model="tempProduct.content"
                         type="text"
-                        class="form-control"
+                        class="form-control content"
                         placeholder="Please enter content"
                       />
                     </div>
                     <div class="form-group">
                       <div class="form-check">
                         <el-checkbox
-                          id="is_enabled"
+                          id="is-enabled"
                           v-model="tempProduct.is_enabled"
                           :true-label="1"
                           :false-label="0"
@@ -309,7 +309,7 @@
       </div>
       <div
         id="removeProductModal"
-        class="modal fade"
+        class="removeProductModal modal fade"
         tabindex="-1"
         role="dialog"
       >
@@ -321,7 +321,7 @@
             <div class="modal-header">
               <h5
                 id="removeProductLabel"
-                class="modal-title"
+                class="removeProductLabel modal-title"
               >
                 Remove Product
               </h5>
@@ -407,11 +407,11 @@ export default {
     getProducts(page = 1) {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`
-      this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then((response) => {
+      vm.$store.commit('LOADING', true, { root: true })
+      vm.$http.get(api).then((response) => {
         vm.products = response.data.products
         vm.pagination = response.data.pagination
-        this.$store.commit('LOADING', false, { root: true })
+        vm.$store.commit('LOADING', false, { root: true })
       })
     },
     openProductModal(isNew, item) {
@@ -436,18 +436,18 @@ export default {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`
         httpMethod = 'put'
       }
-      this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
+      vm.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
         if (response.data.success) {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Product updated',
             type: 'success'
           })
           $('#productModal').modal('hide')
-          const tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = vm.pagination.current_page
           vm.getProducts(tempCurrentPage)
         } else {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Update failed!',
             type: 'error'
@@ -465,9 +465,9 @@ export default {
     removeProduct() {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`
-      this.$http.delete(api).then((response) => {
+      vm.$http.delete(api).then((response) => {
         if (response.data.success) {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Product removed',
             type: 'success'
@@ -475,7 +475,7 @@ export default {
           $('#removeProductModal').modal('hide')
           vm.getProducts()
         } else {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Product removal failed',
             type: 'error'
@@ -487,12 +487,12 @@ export default {
     },
     uploadFile() {
       const vm = this
-      const uploadedFile = this.$refs.files.files[0]
+      const uploadedFile = vm.$refs.files.files[0]
       const formData = new FormData()
       formData.append('file-to-upload', uploadedFile)
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/upload`
       vm.status.fileUploading = true
-      this.$http
+      vm.$http
         .post(url, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -503,7 +503,7 @@ export default {
           if (response.data.success) {
             vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl)
           } else {
-            this.$message({
+            vm.$message({
               showClose: true,
               message: response.data.message,
               type: 'error'

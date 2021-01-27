@@ -1,5 +1,5 @@
 .cart {
-  #cart-sidebar {
+  .cart-sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -58,7 +58,7 @@
         @include extraSmall {
           margin-top: 25px;
         }
-        #cart-total {
+        .cart-total {
           background: $primaryColor;
           border-radius: 100%;
           color: #ffffff;

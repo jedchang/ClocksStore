@@ -1,23 +1,47 @@
 <template>
-  <swiper id="banner" ref="swiperDesktop" :options="swiperDesktop">
-    <swiper-slide v-for="(banner, index) in bannersData" :key="index">
-      <div :class="banner.direction" class="content">
+  <swiper
+    id="banner"
+    ref="swiperDesktop"
+    class="banner"
+    :options="swiperDesktop"
+  >
+    <swiper-slide
+      v-for="(banner, index) in bannersData"
+      :key="index"
+    >
+      <div
+        :class="banner.direction"
+        class="content"
+      >
         <h5>{{ banner.subtitle }}</h5>
         <h2>{{ banner.title }}</h2>
         <div class="info-wrap">
           <p>
             {{ banner.text }}
           </p>
-          <a :href="banner.url" class="btn btn-bordered btn-shop-now"
-            >Shop Now</a
-          >
+          <a
+            :href="banner.url"
+            class="btn btn-bordered btn-shop-now"
+          >Shop Now</a>
         </div>
       </div>
-      <img :src="banner.img" alt="Banner" />
+      <img
+        :src="banner.img"
+        alt="Banner"
+      >
     </swiper-slide>
-    <div slot="pagination" class="swiper-pagination"></div>
-    <div slot="button-prev" class="swiper-button-prev"></div>
-    <div slot="button-next" class="swiper-button-next"></div>
+    <div
+      slot="pagination"
+      class="swiper-pagination"
+    />
+    <div
+      slot="button-prev"
+      class="swiper-button-prev"
+    />
+    <div
+      slot="button-next"
+      class="swiper-button-next"
+    />
   </swiper>
 </template>
 

@@ -9,36 +9,36 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
       <div class="banner-area">
-        <Banner :banners-data="banners"></Banner>
-        <MobileBanner :banners-data="banners"></MobileBanner>
+        <Banner :banners-data="banners" />
+        <MobileBanner :banners-data="banners" />
       </div>
-      <SaleArea></SaleArea>
-      <PromoArea></PromoArea>
-      <AdArea></AdArea>
-      <GalleryArea></GalleryArea>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <SaleArea />
+      <PromoArea />
+      <AdArea />
+      <GalleryArea />
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import LoginModal from '@/components/frontend/shared/LoginModal'
@@ -76,12 +76,12 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      setOpacity: state => state.setOpacity,
-      banners: state => state.banners
+      isLoading: (state) => state.isLoading,
+      setOpacity: (state) => state.setOpacity,
+      banners: (state) => state.banners
     }),
     ...mapState('productsModules', {
-      productCategory: state => state.productCategory
+      productCategory: (state) => state.productCategory
     })
   },
   created() {

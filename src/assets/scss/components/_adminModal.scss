@@ -1,8 +1,8 @@
-#productModal,
-#removeProductModal,
-#orderModal,
-#couponModal,
-#removeCouponModal {
+.productModal,
+.removeProductModal,
+.orderModal,
+.couponModal,
+.removeCouponModal {
   &.modal {
     overflow: hidden;
     @include small {
@@ -92,7 +92,7 @@
         color: $txtColor-dark;
       }
     }
-    #content {
+    .content {
       height: 120px;
     }
     hr {
@@ -127,7 +127,7 @@
         background-color: #535d6d;
       }
     }
-    #customFile {
+    .custom-file {
       height: auto;
       overflow: hidden;
     }

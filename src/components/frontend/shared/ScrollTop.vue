@@ -1,5 +1,11 @@
 <template>
-  <a id="scroll-top" href="#" title="Scroll to top" @click.prevent="scrollTop">
+  <a
+    id="scroll-top"
+    class="scroll-top"
+    href="#"
+    title="Scroll to top"
+    @click.prevent="scrollTop"
+  >
     <font-awesome-icon :icon="['fas', 'chevron-up']" />
   </a>
 </template>

@@ -109,7 +109,7 @@
     </div>
     <div
       id="couponModal"
-      class="modal fade"
+      class="couponModal modal fade"
       tabindex="-1"
       role="dialog"
     >
@@ -121,7 +121,7 @@
           <div class="modal-header">
             <h5
               id="couponModalLabel"
-              class="modal-title"
+              class="couponModalLabel modal-title"
             >
               New coupon
             </h5>
@@ -183,7 +183,7 @@
                 <div class="form-group">
                   <div class="form-check">
                     <el-checkbox
-                      id="is_enabled"
+                      id="is-enabled"
                       v-model="tempCoupon.is_enabled"
                       :true-value="1"
                       :false-value="0"
@@ -215,7 +215,7 @@
     </div>
     <div
       id="removeCouponModal"
-      class="modal fade"
+      class="removeCouponModal modal fade"
       tabindex="-1"
       role="dialog"
     >
@@ -227,7 +227,7 @@
           <div class="modal-header">
             <h5
               id="removeCouponLabel"
-              class="modal-title"
+              class="removeCouponLabel modal-title"
             >
               Remove Coupon
             </h5>
@@ -325,11 +325,11 @@ export default {
     getCoupons(page = 1) {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?page=${page}`
-      this.$store.commit('LOADING', true, { root: true })
-      this.$http.get(api).then((response) => {
+      vm.$store.commit('LOADING', true, { root: true })
+      vm.$http.get(api).then((response) => {
         vm.coupons = response.data.coupons
         vm.pagination = response.data.pagination
-        this.$store.commit('LOADING', false, { root: true })
+        vm.$store.commit('LOADING', false, { root: true })
       })
     },
     openCouponModal(isNew, item) {
@@ -351,10 +351,10 @@ export default {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`
         httpMethod = 'put'
       }
-      this.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
+      vm.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
         if (response.data.success) {
           $('#couponModal').modal('hide')
-          const tempCurrentPage = this.pagination.current_page
+          const tempCurrentPage = vm.pagination.current_page
           vm.getCoupons(tempCurrentPage)
         } else {
           $('#couponModal').modal('hide')
@@ -370,9 +370,9 @@ export default {
     removeCoupon() {
       const vm = this
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`
-      this.$http.delete(api).then((response) => {
+      vm.$http.delete(api).then((response) => {
         if (response.data.success) {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Coupon removed',
             type: 'success'
@@ -380,7 +380,7 @@ export default {
           $('#removeCouponModal').modal('hide')
           vm.getCoupons()
         } else {
-          this.$message({
+          vm.$message({
             showClose: true,
             message: 'Coupon removal failed',
             type: 'error'

@@ -87,7 +87,7 @@
   }
 }
 
-#desktop-admin-navbar {
+.desktop-admin-navbar {
   display: block;
   @include small {
     display: none;
@@ -97,7 +97,7 @@
   }
 }
 
-#mobile-admin-navbar {
+.mobile-admin-navbar {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -115,7 +115,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    z-index: 990;
+    z-index: 2002;
     position: relative;
     &.fixed {
       position: fixed;

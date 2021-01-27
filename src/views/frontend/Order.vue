@@ -9,29 +9,29 @@
         <template slot="default">
           <div class="inner">
             <div class="clock">
-              <div class="minutes"></div>
-              <div class="hours"></div>
+              <div class="minutes" />
+              <div class="hours" />
             </div>
             <span>LOADING</span>
           </div>
         </template>
       </loading>
     </div>
-    <MobileSideMenu></MobileSideMenu>
+    <MobileSideMenu />
     <div class="content-wrapper">
-      <CartSideBar></CartSideBar>
-      <Navbar @open-modal="openModal"></Navbar>
-      <Breadcrumb></Breadcrumb>
+      <CartSideBar />
+      <Navbar @open-modal="openModal" />
+      <Breadcrumb />
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12">
             <ProgressBar
               :current-progress="progressStatus"
               :current-valid="validStatus"
-            ></ProgressBar>
+            />
           </div>
           <div class="col-lg-12 col-md-12 col-12">
-            <UserCoupon></UserCoupon>
+            <UserCoupon />
           </div>
         </div>
         <div class="row">
@@ -50,9 +50,7 @@
                     <div class="order-form">
                       <h2 class="order-title">Billing Details</h2>
                       <div class="form-group">
-                        <label for="useremail"
-                          >Email <span class="required">*</span></label
-                        >
+                        <label for="useremail">Email <span class="required">*</span></label>
                         <ValidationProvider
                           v-slot="{ errors, classes }"
                           rules="email-required"
@@ -66,14 +64,12 @@
                             placeholder="Please enter Email"
                             required
                             :class="classes"
-                          />
+                          >
                           <span class="text-danger">{{ errors[0] }} </span>
                         </ValidationProvider>
                       </div>
                       <div class="form-group">
-                        <label for="username"
-                          >Name <span class="required">*</span></label
-                        >
+                        <label for="username">Name <span class="required">*</span></label>
                         <ValidationProvider
                           v-slot="{ errors, classes }"
                           rules="name-required"
@@ -87,14 +83,12 @@
                             placeholder="Please enter Name"
                             required
                             :class="classes"
-                          />
+                          >
                           <span class="text-danger"> {{ errors[0] }} </span>
                         </ValidationProvider>
                       </div>
                       <div class="form-group">
-                        <label for="usertel"
-                          >Phone <span class="required">*</span></label
-                        >
+                        <label for="usertel">Phone <span class="required">*</span></label>
                         <ValidationProvider
                           v-slot="{ errors, classes }"
                           rules="numeric"
@@ -108,14 +102,12 @@
                             placeholder="Please enter Phone"
                             required
                             :class="classes"
-                          />
+                          >
                           <span class="text-danger"> {{ errors[0] }} </span>
                         </ValidationProvider>
                       </div>
                       <div class="form-group">
-                        <label for="useraddress"
-                          >Address <span class="required">*</span></label
-                        >
+                        <label for="useraddress">Address <span class="required">*</span></label>
                         <ValidationProvider
                           v-slot="{ errors, classes }"
                           rules="addr-required"
@@ -129,7 +121,7 @@
                             placeholder="Please enter Address"
                             required
                             :class="classes"
-                          />
+                          >
                           <span class="text-danger"> {{ errors[0] }} </span>
                         </ValidationProvider>
                       </div>
@@ -142,7 +134,7 @@
                           class="form-control"
                           cols="30"
                           rows="7"
-                        ></textarea>
+                        />
                       </div>
                     </div>
                   </div>
@@ -169,9 +161,7 @@
                             >
                               <td class="product-name">
                                 {{ item.product.title }}
-                                <span class="product-quantity"
-                                  >x <span>{{ item.qty }}</span></span
-                                >
+                                <span class="product-quantity">x <span>{{ item.qty }}</span></span>
                               </td>
                               <td class="product-subtotal">
                                 {{ item.total | currency }}
@@ -192,14 +182,17 @@
                               <td>
                                 <ul class="shipping-method">
                                   <li>
-                                    <el-radio v-model="radio" label="1"
-                                      >Free Shipping</el-radio
-                                    >
+                                    <el-radio
+                                      v-model="radio"
+                                      label="1"
+                                    >Free Shipping</el-radio>
                                   </li>
                                   <li>
-                                    <el-radio v-model="radio" disabled label="2"
-                                      >Flat Rate：$100</el-radio
-                                    >
+                                    <el-radio
+                                      v-model="radio"
+                                      disabled
+                                      label="2"
+                                    >Flat Rate：$100</el-radio>
                                   </li>
                                 </ul>
                               </td>
@@ -237,8 +230,11 @@
                             </tr>
                           </tfoot>
                         </table>
-                        <div v-else class="order-table-empty">
-                          <div class="empty-img"></div>
+                        <div
+                          v-else
+                          class="order-table-empty"
+                        >
+                          <div class="empty-img" />
                           <p class="empty-text">
                             Your cart is currently empty.
                           </p>
@@ -267,16 +263,16 @@
           </div>
         </div>
       </div>
-      <MobileScrollTop></MobileScrollTop>
-      <Footer></Footer>
-      <ScrollTop></ScrollTop>
-      <LoginModal></LoginModal>
+      <MobileScrollTop />
+      <Footer />
+      <ScrollTop />
+      <LoginModal />
     </div>
   </div>
 </template>
 
 <script>
-import CartSideBar from '@/components/frontend/cart/CartSideBar'
+import CartSideBar from '@/components/frontend/shared/CartSideBar'
 import Navbar from '@/components/frontend/shared/Navbar'
 import MobileSideMenu from '@/components/frontend/shared/MobileSideMenu'
 import Breadcrumb from '@/components/frontend/shared/Breadcrumb'
@@ -322,12 +318,12 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      status: state => state.status,
-      setOpacity: state => state.setOpacity
+      isLoading: (state) => state.isLoading,
+      status: (state) => state.status,
+      setOpacity: (state) => state.setOpacity
     }),
     ...mapState('cartModules', {
-      cart: state => state.cart
+      cart: (state) => state.cart
     })
   },
   mounted() {

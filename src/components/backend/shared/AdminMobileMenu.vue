@@ -4,17 +4,29 @@
       <div class="container">
         <div class="navbar-panel">
           <div class="navbar-wrap">
-            <router-link to="/admin/products" class="navbar-item">
+            <router-link
+              to="/admin/products"
+              class="navbar-item"
+            >
               Products
             </router-link>
-            <router-link to="/admin/orders" class="navbar-item">
+            <router-link
+              to="/admin/orders"
+              class="navbar-item"
+            >
               Orders
             </router-link>
-            <router-link to="/admin/coupons" class="navbar-item">
+            <router-link
+              to="/admin/coupons"
+              class="navbar-item"
+            >
               Coupons
             </router-link>
-            <a href="#" class="navbar-item btn-logout" @click.prevent="logout"
-              >Logout
+            <a
+              href="#"
+              class="navbar-item btn-logout"
+              @click.prevent="logout"
+            >Logout
             </a>
           </div>
         </div>

@@ -295,7 +295,7 @@
   }
 }
 
-#desktop-header {
+.desktop-header {
   display: flex;
   @include small {
     display: none;
@@ -305,7 +305,7 @@
   }
 }
 
-#mobile-header {
+.mobile-header {
   display: none;
   @include small {
     display: flex;
