@@ -29,7 +29,7 @@ export default {
       state.titleName = payload
     },
     PRODUCTS_ARRAY(state, payload) {
-      let productsArray = Object.values(payload).map(item => {
+      const productsArray = Object.values(payload).map(item => {
         return item
       })
       state.productCategory = productsArray
@@ -148,7 +148,7 @@ export default {
     },
 
     filterCategory(state) {
-      let filter = state.newProducts.filter(item => {
+      const filter = state.newProducts.filter(item => {
         return (
           item.category === state.product.category &&
           item.title.indexOf(state.productTitle)
@@ -186,6 +186,7 @@ export default {
         } else if (state.filterText === 'Luxury') {
           return item.category === state.filterText
         }
+        return false
       })
     },
     getCasualNum(state) {

@@ -1,6 +1,6 @@
 .ad-area {
   padding: 100px 0;
-  background-color: #1a1f32;
+  background-color: $areaBgColor-dark;
   background: url('~@/assets/images/ad_img.jpg') no-repeat center/cover;
   @include small {
     padding: 60px 0;
@@ -14,8 +14,9 @@
   }
   .ad-label {
     color: $primaryColor;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
+    text-transform: uppercase;
     @include small {
       font-size: 20px;
     }
@@ -43,7 +44,7 @@
   .ad-text {
     font-size: 16px;
     margin-bottom: 40px;
-    color: #afafaf;
+    color: $primaryTxtColor;
     @include small {
       font-size: 20px;
     }
@@ -92,7 +93,7 @@
         top: -12px;
         right: -16px;
         transform: rotate(-25deg) rotateY(180deg);
-        background-color: #0a0a12;
+        background-color: darken($btnColor-dark, 5%);
         color: $primaryColor;
       }
     }
@@ -102,7 +103,7 @@
       top: -12px;
       right: -16px;
       transform: rotate(-25deg) rotateY(180deg);
-      background-color: #0a0a12;
+      background-color: darken($btnColor-dark, 5%);
       color: $txtColor;
       transition: $setTransition;
     }

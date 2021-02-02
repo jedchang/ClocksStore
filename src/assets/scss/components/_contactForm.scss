@@ -9,7 +9,7 @@
   }
   .form-inner {
     padding: 40px 30px 20px 30px;
-    border-top: 1px solid #343b50;
+    border-top: 1px solid $adminModalTxtBgColor;
     @include medium {
       padding: 40px 0px 0px 0px;
     }
@@ -80,14 +80,14 @@
       margin-right: -15px;
     }
     label {
-      color: #c8d0dd;
+      color: $adminModalTxtColor;
     }
     .form-control {
       padding: 12px;
       height: auto;
-      color: #bfc8e2;
-      background-color: #39425a;
-      border: 1px solid #39425a;
+      color: $adminModalTxtColor;
+      background-color: $adminModalTxtBgColor;
+      border: 1px solid $adminModalTxtBgColor;
       font-size: 14px;
     }
     .form-message {
@@ -128,9 +128,9 @@
     &.disabled {
       pointer-events: none;
       cursor: default;
-      color: #424b63;
-      background-color: #151a2c;
-      border-color: #151a2c;
+      color: $tableBorderColor-dark;
+      background-color: $btnColor-view;
+      border-color: $btnColor-view;
       @include small {
         width: 100%;
         margin-right: -15px;

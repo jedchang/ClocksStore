@@ -1,12 +1,12 @@
 .sidebar-content {
   width: 250px;
   z-index: 1001;
-  background: #2a3042;
+  background: $adminPrimaryBgColor;
   position: fixed;
   bottom: 0;
   top: 70px;
   margin-top: 0;
-  box-shadow: 0 12px 24px rgba(18, 38, 63, 0.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   transition: $setTransition;
   @include medium {
     width: 160px;
@@ -29,9 +29,9 @@
     cursor: default;
     font-size: 13px;
     text-transform: uppercase;
-    color: #6a7187;
+    color: darken($txtColor-dark, 10%);
+    background-color: darken($adminModalTxtBgColor, 4%);
     font-weight: 600;
-    background-color: #323748;
     margin-bottom: 15px;
     &.title-admin {
       margin-top: 30px;
@@ -86,7 +86,7 @@
         font-size: 20px;
         width: 30px;
         margin-right: 10px;
-        color: #6a7187;
+        color: darken($txtColor, 5%);
         transition: $setTransition;
         @include medium {
           font-size: 18px;
@@ -108,14 +108,15 @@
     .menu-item {
       position: relative;
       white-space: nowrap;
-      &:hover {
+      &:hover,
+      &:focus {
         .nav-link {
-          background: #2e3548;
+          background: darken($adminPrimaryBgColor, 1%);
           color: #fff;
           position: relative;
           width: 260px;
           z-index: 9999;
-          box-shadow: 4px 2px 15px rgba(0, 0, 0, 0.4);
+          @include menuBoxShadow;
           span {
             display: inline;
           }

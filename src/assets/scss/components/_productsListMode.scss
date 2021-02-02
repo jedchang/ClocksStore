@@ -33,7 +33,7 @@
         position: absolute;
         border-style: solid;
         border-width: 0 80px 80px 0;
-        border-color: transparent #111523 transparent;
+        border-color: transparent $btnColor-dark transparent;
         @include medium {
           border-width: 0 55px 55px 0;
         }
@@ -97,7 +97,7 @@
           border-radius: 3px;
           text-transform: uppercase;
           color: #fff;
-          background-color: #ff3e55;
+          background-color: darken($badgeColor-danger, 5%);
           z-index: 3;
           @include small {
             font-size: 4vmin;
@@ -121,13 +121,13 @@
     .product-content > .product-action > .btn-add-cart {
       cursor: default;
       pointer-events: none;
-      background-color: #0f111a;
-      color: #4f566f;
+      background-color: $btnColor-dark;
+      color: darken($txtColor-dark, 20%);
       @include small {
-        background-color: #222838;
+        background-color: $btnColor-dark;
       }
       @include extraSmall {
-        background-color: #222838;
+        background-color: $btnColor-dark;
       }
     }
   }
@@ -136,7 +136,7 @@
     position: relative;
     flex-basis: 40%;
     display: inline-block;
-    border: 1px solid #222736;
+    border: 1px solid $primaryBgColor;
     transition: $setTransition;
     @include medium {
       flex-basis: 40%;
@@ -144,10 +144,10 @@
     &:hover {
       border: 1px solid $primaryColor;
       @include small {
-        border: 1px solid #222736;
+        border: 1px solid $primaryBgColor;
       }
       @include extraSmall {
-        border: 1px solid #222736;
+        border: 1px solid $primaryBgColor;
       }
     }
   }
@@ -173,7 +173,7 @@
       align-items: center;
     }
     span {
-      color: #afafaf;
+      color: $primaryTxtColor;
       font-size: 16px;
       margin: 0 0 0 0;
       display: inline-block;
@@ -222,7 +222,7 @@
       }
     }
     .product-desc {
-      color: #afafaf;
+      color: $primaryTxtColor;
       font-size: 16px;
       font-weight: 300;
       @include medium {
@@ -274,7 +274,7 @@
         margin: 0 2px 0 6px;
         .money {
           text-decoration: line-through;
-          color: #afafaf;
+          color: $primaryTxtColor;
           font-size: 18px;
           font-weight: 400;
           @include medium {
@@ -326,13 +326,13 @@
           padding: 14px 14px;
           height: auto;
           width: 100%;
-          background-color: #2c3246;
+          background-color: $btnColor-add;
         }
         @include extraSmall {
           padding: 14px 14px;
           height: auto;
           width: 100%;
-          background-color: #2c3246;
+          background-color: $btnColor-add;
         }
       }
       .btn-add-cart {
@@ -352,24 +352,24 @@
           height: 50px;
           padding: 14px 35px;
           margin-right: 0;
-          background-color: #2c3246;
+          background-color: $btnColor-add;
         }
         @include extraSmall {
           width: calc(100% - 50px - 10%);
           height: 50px;
           padding: 14px 35px;
           margin-right: 0;
-          background-color: #2c3246;
+          background-color: $btnColor-add;
         }
       }
       .btn-view-cart {
         width: 160px;
         order: 1;
         margin-right: 20px;
-        background-color: #151a2c;
-        color: #6c789c;
+        background-color: $btnColor-view;
+        color: lighten($btnColor-view, 50%);
         &:hover {
-          background-color: #151a2c;
+          background-color: $btnColor-view;
           color: $primaryColor;
         }
         svg {
@@ -417,7 +417,7 @@
       .btn-wishlisted {
         width: 46px;
         order: 2;
-        background-color: #151a2c;
+        background-color: $btnColor-view;
         @include small {
           width: 11%;
           height: 50px;
@@ -427,14 +427,14 @@
           height: 50px;
         }
         &:hover {
-          background-color: #151a2c;
+          background-color: $btnColor-view;
           color: $primaryColor;
           @include small {
-            background-color: #151a2c;
+            background-color: $btnColor-view;
           }
           @include extraSmall {
             color: #fff;
-            background-color: #151a2c;
+            background-color: $btnColor-view;
           }
         }
         svg {

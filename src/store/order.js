@@ -47,7 +47,7 @@ export default {
               { root: true }
             )
             context.commit('LOADING_COUPON', '', { root: true })
-            reject()
+            reject(new Error(response))
           }
         })
       })
@@ -82,7 +82,7 @@ export default {
               { root: true }
             )
             context.commit('LOADING_ORDER', '', { root: true })
-            reject()
+            reject(new Error(response))
           }
         })
       })
@@ -126,7 +126,7 @@ export default {
               { root: true }
             )
             context.commit('LOADING_ORDER', '', { root: true })
-            reject()
+            reject(new Error(response))
           }
         })
       })

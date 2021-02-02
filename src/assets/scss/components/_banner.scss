@@ -44,7 +44,7 @@
         }
       }
       p {
-        color: #afafaf;
+        color: $primaryTxtColor;
         width: 500px;
         line-height: 1.3;
         word-break: break-word;
@@ -98,11 +98,11 @@
       width: 60px;
       height: 4px;
       border-radius: 0;
-      background: #bababa;
+      background: $primaryTxtColor;
       opacity: 1;
       transition: all 0.4s;
       &:hover {
-        background: #eeeeee;
+        background: $txtColor-light;
       }
       &:focus {
         outline: none;

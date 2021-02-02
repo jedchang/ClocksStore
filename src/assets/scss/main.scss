@@ -71,7 +71,7 @@ body {
 .wrapper,
 .content-wrapper {
   position: relative;
-  background-color: #222736;
+  background-color: $primaryBgColor;
 }
 
 #app {
@@ -142,6 +142,14 @@ body {
       box-shadow: none;
       outline: none;
     }
+    &:active {
+      box-shadow: none;
+      outline: none;
+    }
+    &:not(:disabled) {
+      box-shadow: none;
+      outline: none;
+    }
     &.close {
       text-shadow: none;
       color: $txtColor;
@@ -154,9 +162,9 @@ body {
     }
   }
 
-  // img {
-  //   width: 100%;
-  // }
+  img {
+    width: 100%;
+  }
 
   tbody {
     .empty {
@@ -190,9 +198,6 @@ body {
     }
   }
 
-  // .simplebar {
-  //   height: 100%;
-  // }
   .simplebar-track.simplebar-horizontal {
     height: 14px;
     background-color: #333a4e;

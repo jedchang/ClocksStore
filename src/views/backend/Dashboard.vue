@@ -1,11 +1,11 @@
 <template>
   <div class="dashboard-wrapper">
-    <AdminMobileMenu></AdminMobileMenu>
-    <AdminNavbar></AdminNavbar>
-    <AlertMessage></AlertMessage>
-    <AdminSidebar></AdminSidebar>
+    <AdminMobileMenu />
+    <AdminNavbar />
+    <AlertMessage />
+    <AdminSidebar />
     <div class="main-content">
-      <router-view></router-view>
+      <router-view />
     </div>
     <footer class="admin-footer">
       <div class="container-fluid">
@@ -17,9 +17,10 @@
               </p>
               <p class="text author">
                 Develop by
-                <a href="mailto://march.24@gmail.com" target="_blank"
-                  >Jed Chang</a
-                >
+                <a
+                  href="mailto://march.24@gmail.com"
+                  target="_blank"
+                >Jed Chang</a>
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 .footer {
-  background-color: #161a2e;
+  background-color: $tableBgColor;
   height: auto;
   position: relative;
   left: 0;
@@ -13,7 +13,7 @@
       height: 60px;
       top: -31px;
       left: 50%;
-      background: #2c3654;
+      background: $txtColor-dark-blue;
       border-top-left-radius: 8px;
       transform: translateX(-50%) rotate(45deg) skew(0deg);
     }
@@ -27,7 +27,7 @@
       height: 60px;
       top: -31px;
       left: 50%;
-      background: #2c3654;
+      background: $txtColor-dark-blue;
       border-top-left-radius: 8px;
       transform: translateX(-50%) rotate(45deg) skew(0deg);
     }
@@ -43,8 +43,8 @@
     }
 
     .service-wrapper {
-      background: #1a1f32;
-      border: 1px solid #282f4b;
+      background: $areaBgColor-dark;
+      border: 1px solid $txtColor-dark-blue;
       padding: 15px 10px 17px;
       margin-bottom: 30px;
     }
@@ -72,7 +72,7 @@
           margin-left: 0;
         }
         &:before {
-          background-color: #282f4b;
+          background-color: $txtColor-dark-blue;
           content: '';
           height: 56px;
           position: absolute;
@@ -121,7 +121,7 @@
       padding: 30px 10px 20px 10px;
       margin-top: 30px;
       color: $txtColor;
-      border-bottom: 1px solid #282f4b;
+      border-bottom: 1px solid $txtColor-dark-blue;
       @include small {
         padding: 30px 0;
         margin-top: 0;
@@ -188,7 +188,7 @@
             color: #fff;
           }
           a {
-            color: #a6b0cf;
+            color: $txtColor;
             transition: $setTransition;
             &:hover {
               color: $primaryColor;
@@ -260,16 +260,16 @@
     }
 
     .service-wrapper {
-      background: #1a1f32;
+      background: $areaBgColor-dark;
     }
 
     /deep/ .el-collapse {
       border-top: none;
       border-bottom: none;
       .el-collapse-item__header {
-        background-color: #161a2e;
-        border-bottom: 1px solid #394465;
-        color: #c7cde1;
+        background-color: $tableBgColor;
+        border-bottom: 1px solid $adminModalTxtBgColor;
+        color: darken($txtColor-light, 15%);
         text-transform: uppercase;
         font-size: 4vmin;
         font-weight: 500;
@@ -283,7 +283,7 @@
         }
       }
       .el-collapse-item__wrap {
-        background-color: #161a2e;
+        background-color: $tableBgColor;
         border-bottom: none;
         .el-collapse-item__content {
           font-size: 4vmin;
@@ -346,7 +346,7 @@
       position: relative;
       padding: 10px 0 0 0;
       p {
-        color: #afafaf;
+        color: $primaryTxtColor;
         font-size: 16px;
         @include small {
           font-size: 16px;
@@ -374,7 +374,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          color: #afafaf;
+          color: $primaryTxtColor;
           font-size: 16px;
           @include small {
             font-size: 16px;
@@ -387,10 +387,10 @@
           font-size: 18px;
           width: 20px;
           margin-right: 10px;
-          color: #afafaf;
+          color: $primaryTxtColor;
         }
         a {
-          color: #afafaf;
+          color: $primaryTxtColor;
           transition: $setTransition;
           &:hover {
             color: $primaryColor;
@@ -402,7 +402,7 @@
     .share-area {
       position: relative;
       padding: 40px 0 20px 0;
-      background-color: #161a2e;
+      background-color: $tableBgColor;
       @include extraSmall {
         padding: 30px 0 0 0;
       }
@@ -416,10 +416,10 @@
         margin-bottom: 0;
       }
       a {
-        color: #161a2e;
+        color: $tableBgColor;
         font-size: 20px;
         width: 50px;
-        background-color: #79829c;
+        background-color: $txtColor-dark;
         padding: 15px;
         height: 50px;
         border-radius: 50%;

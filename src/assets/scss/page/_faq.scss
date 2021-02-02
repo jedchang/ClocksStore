@@ -31,7 +31,7 @@
       }
     }
     .description {
-      color: #afafaf;
+      color: $primaryTxtColor;
       margin-bottom: 20px;
       font-size: 16px;
       @include small {
@@ -68,7 +68,7 @@
       color: #fff;
       line-height: 30px;
       height: auto;
-      background-color: #2e354a;
+      background-color: $btnColor-add;
       border-bottom: 1px solid $primaryBgColor;
       padding: 14px 16px 14px 30px;
       display: flex;
@@ -102,7 +102,7 @@
         font-weight: 400;
         margin: 0 0 0 5px;
         width: 100%;
-        color: #afafaf;
+        color: $primaryTxtColor;
         transition: $setTransition;
         &:hover {
           color: #fff;
@@ -127,7 +127,7 @@
       svg {
         font-size: 20px;
         margin-right: 10px;
-        color: #afafaf;
+        color: $primaryTxtColor;
         @include small {
           font-size: 32px;
           margin-right: 15px;
@@ -139,11 +139,11 @@
       }
     }
     /deep/ .el-collapse-item__wrap {
-      background-color: #2e354a;
+      background-color: $btnColor-add;
       border-bottom: none;
       .el-collapse-item__content {
         font-size: 16px;
-        color: #afafaf;
+        color: $primaryTxtColor;
         padding: 24px 16px 24px 40px;
         @include small {
           padding: 24px 16px;

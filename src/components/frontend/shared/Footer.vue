@@ -66,22 +66,34 @@
                 <p class="">Special offers on social networks</p>
                 <ul class="info">
                   <li class="github">
-                    <a href="https://github.com/jedchang" target="_blank">
+                    <a
+                      href="https://github.com/jedchang"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'github']" />
                     </a>
                   </li>
                   <li class="codepen">
-                    <a href="https://codepen.io/jedchang" target="_blank">
+                    <a
+                      href="https://codepen.io/jedchang"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'codepen']" />
                     </a>
                   </li>
                   <li class="facebook">
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'facebook-f']" />
                     </a>
                   </li>
                   <li class="youtube">
-                    <a href="https://www.youtube.com/" target="_blank">
+                    <a
+                      href="https://www.youtube.com/"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'youtube']" />
                     </a>
                   </li>
@@ -137,9 +149,9 @@
                       </li>
                       <li>
                         <font-awesome-icon :icon="['fas', 'envelope']" />
-                        <a href="mailto://march.24@gmail.com"
-                          >march.24@gmail.com</a
-                        >
+                        <a
+                          href="mailto://march.24@gmail.com"
+                        >march.24@gmail.com</a>
                       </li>
                     </ul>
                   </div>
@@ -148,22 +160,34 @@
               <div class="share-area">
                 <ul class="info">
                   <li class="github">
-                    <a href="https://github.com/jedchang" target="_blank">
+                    <a
+                      href="https://github.com/jedchang"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'github']" />
                     </a>
                   </li>
                   <li class="codepen">
-                    <a href="https://codepen.io/jedchang" target="_blank">
+                    <a
+                      href="https://codepen.io/jedchang"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'codepen']" />
                     </a>
                   </li>
                   <li class="facebook">
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'facebook-f']" />
                     </a>
                   </li>
                   <li class="youtube">
-                    <a href="https://www.youtube.com/" target="_blank">
+                    <a
+                      href="https://www.youtube.com/"
+                      target="_blank"
+                    >
                       <font-awesome-icon :icon="['fab', 'youtube']" />
                     </a>
                   </li>
@@ -181,7 +205,10 @@
             </p>
             <p class="text author">
               Develop by
-              <a href="https://www.jedchang.tw" target="_blank">Jed Chang</a>
+              <a
+                href="https://www.jedchang.tw"
+                target="_blank"
+              >Jed Chang</a>
             </p>
           </div>
         </div>

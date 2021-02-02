@@ -84,7 +84,7 @@
           position: absolute;
           border-style: solid;
           border-width: 0 60px 60px 0;
-          border-color: transparent #111523 transparent;
+          border-color: transparent $btnColor-dark transparent;
           @include large {
             border-width: 0 55px 55px 0;
           }
@@ -156,7 +156,7 @@
             border-radius: 3px;
             text-transform: uppercase;
             color: #fff;
-            background-color: #ff3e55;
+            background-color: darken($badgeColor-danger, 5%);
             width: 70%;
             text-align: center;
             z-index: 3;
@@ -175,7 +175,7 @@
     .product-img {
       position: relative;
       display: inline-block;
-      border: 1px solid #222736;
+      border: 1px solid $primaryBgColor;
       transition: $setTransition;
       &:hover {
         border: 1px solid $primaryColor;
@@ -190,13 +190,13 @@
       text-align: center;
       background-color: transparent;
       @include small {
-        background-color: #222736;
+        background-color: $primaryBgColor;
       }
       @include extraSmall {
-        background-color: #222736;
+        background-color: $primaryBgColor;
       }
       span {
-        color: #afafaf;
+        color: $primaryTxtColor;
         font-size: 14px;
         margin: 16px 0 0 0;
         display: inline-block;
@@ -280,7 +280,7 @@
         margin: 0 2px 0 6px;
         .money {
           text-decoration: line-through;
-          color: #afafaf;
+          color: $primaryTxtColor;
           font-size: 14px;
           font-weight: 400;
           @include large {

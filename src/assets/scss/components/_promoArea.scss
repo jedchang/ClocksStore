@@ -79,7 +79,7 @@
     line-height: 47px;
     font-weight: 400;
     font-size: 16px;
-    color: #7482ab;
+    color: darken($txtColor, 15%);
     margin: 0 3px;
     transition: $setTransition;
     z-index: 1;
@@ -95,7 +95,7 @@
     }
     .item-title {
       padding: 12px 45px;
-      border: 2px solid #394465;
+      border: 2px solid $adminModalTxtBgColor;
       background-color: $primaryBgColor;
     }
   }

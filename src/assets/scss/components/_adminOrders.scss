@@ -38,17 +38,17 @@
 
   .form-group {
     .invalid {
-      border: 1px #dc3545 solid;
-      color: #dc3545;
+      border: 1px solid $txtColor-required;
+      color: $txtColor-required;
     }
     .invalid input {
-      border: 1px #dc3545 solid;
+      border: 1px solid $txtColor-required;
     }
     .valid {
-      color: green;
+      color: $txtColor-success;
     }
     .valid input {
-      border: 1px solid green;
+      border: 1px solid $txtColor-success;
     }
   }
 }

@@ -1,5 +1,8 @@
 <template>
-  <div v-if="cart.carts.length !== 0" class="user-coupon">
+  <div
+    v-if="cart.carts.length !== 0"
+    class="user-coupon"
+  >
     <el-collapse accordion>
       <el-collapse-item>
         <template slot="title">
@@ -8,14 +11,14 @@
               src="~@/assets/images/icon_coupon.svg"
               alt="Coupon icon"
               class="icon-coupon"
-            />
+            >
             <h3>
               <span class="main-text">Have A Coupon?</span>
               <span class="text">Click Here To Enter Your Code.</span>
             </h3>
           </div>
         </template>
-        <CouponCode></CouponCode>
+        <CouponCode />
       </el-collapse-item>
     </el-collapse>
   </div>

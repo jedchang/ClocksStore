@@ -1,8 +1,8 @@
 export default function(time) {
-  let date = new Date(time * 1000)
-  let yyyy = date.getFullYear()
-  let mm = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)
-  let dd = (date.getDate() < 10 ? '0' : '') + date.getDate()
-  let dateValue = yyyy + '-' + mm + '-' + dd
+  const date = new Date(time * 1000)
+  const yyyy = date.getFullYear()
+  const mm = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)
+  const dd = (date.getDate() < 10 ? '0' : '') + date.getDate()
+  const dateValue = yyyy + '-' + mm + '-' + dd
   return dateValue
 }

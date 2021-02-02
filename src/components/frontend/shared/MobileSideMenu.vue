@@ -2,7 +2,11 @@
   <div class="mobile-side-menu">
     <div class="login-panel">
       <div class="container">
-        <form class="form-loginIn" :model="user" @submit.prevent="login">
+        <form
+          class="form-loginIn"
+          :model="user"
+          @submit.prevent="login"
+        >
           <div class="header-box">
             <a
               href="#"
@@ -18,7 +22,10 @@
           <div class="auth-box">
             <div class="input-group">
               <font-awesome-icon :icon="['fas', 'user-circle']" />
-              <label for="inputEmail" class="sr-only">Email address</label>
+              <label
+                for="inputEmail"
+                class="sr-only"
+              >Email address</label>
               <input
                 id="email-mobile"
                 v-model="user.username"
@@ -28,11 +35,14 @@
                 required
                 autofocus
                 autocomplete="off"
-              />
+              >
             </div>
             <div class="input-group">
               <font-awesome-icon :icon="['fas', 'lock']" />
-              <label for="inputPassword" class="sr-only">Password</label>
+              <label
+                for="inputPassword"
+                class="sr-only"
+              >Password</label>
               <input
                 id="password-mobile"
                 v-model="user.password"
@@ -41,7 +51,7 @@
                 placeholder="Password"
                 required
                 autocomplete="off"
-              />
+              >
             </div>
             <div class="remember text-left mt-3 mb-4">
               <el-checkbox v-model="checked">Remember Me</el-checkbox>
@@ -62,7 +72,7 @@
             class="ad-img"
             src="~@/assets/images/login_ad_mobile.jpg"
             alt="Login advertising img"
-          />
+          >
         </form>
       </div>
     </div>
@@ -70,10 +80,16 @@
       <div class="container">
         <div class="navbar-panel">
           <div class="navbar-wrap">
-            <router-link to="/" class="navbar-item">
+            <router-link
+              to="/"
+              class="navbar-item"
+            >
               Home
             </router-link>
-            <router-link to="/about" class="navbar-item">
+            <router-link
+              to="/about"
+              class="navbar-item"
+            >
               About
             </router-link>
             <router-link
@@ -83,10 +99,16 @@
             >
               Watches
             </router-link>
-            <router-link to="/FAQ" class="navbar-item">
+            <router-link
+              to="/FAQ"
+              class="navbar-item"
+            >
               FAQ
             </router-link>
-            <router-link to="/contact" class="navbar-item">
+            <router-link
+              to="/contact"
+              class="navbar-item"
+            >
               Contact Us
             </router-link>
             <a
@@ -97,7 +119,10 @@
             >
               Login
             </a>
-            <div v-else class="login-wrap">
+            <div
+              v-else
+              class="login-wrap"
+            >
               <a
                 href="#"
                 class="navbar-item btn-dashboard"

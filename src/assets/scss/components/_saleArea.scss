@@ -188,13 +188,13 @@
         @include small {
           padding: 8px 16px;
           width: 45%;
-          background: #7482ab;
+          background: darken($txtColor, 15%);
           font-size: 16px;
         }
         @include extraSmall {
           padding: 8px 16px;
           width: 45%;
-          background: #7482ab;
+          background: darken($txtColor, 15%);
           font-size: 4vmin;
         }
       }
@@ -239,7 +239,7 @@
         }
         @include small {
           opacity: 1;
-          color: #afafaf;
+          color: $primaryTxtColor;
           padding: 10px 0 0px;
           font-size: 22px;
           &:before {
@@ -248,7 +248,7 @@
         }
         @include extraSmall {
           opacity: 1;
-          color: #afafaf;
+          color: $primaryTxtColor;
           padding: 10px 0 0px;
           font-size: 5.2vmin;
           &:before {

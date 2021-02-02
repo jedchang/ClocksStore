@@ -3,14 +3,20 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-12">
         <el-tabs v-model="activeName">
-          <el-tab-pane label="Content" name="content">
+          <el-tab-pane
+            label="Content"
+            name="content"
+          >
             <div class="content-inner">
               <h4>
                 {{ newProduct.content }}
               </h4>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="Information" name="info">
+          <el-tab-pane
+            label="Information"
+            name="info"
+          >
             <div class="content-inner">
               <table class="shop_attributes">
                 <tbody>
@@ -26,7 +32,10 @@
               </table>
             </div>
           </el-tab-pane>
-          <el-tab-pane label="Shipping details" name="details">
+          <el-tab-pane
+            label="Shipping details"
+            name="details"
+          >
             <div class="content-inner">
               <h4>What is a Shipping Policy</h4>
               <p>

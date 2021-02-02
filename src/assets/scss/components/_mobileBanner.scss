@@ -45,7 +45,7 @@
       }
       p {
         display: none;
-        color: #afafaf;
+        color: $primaryTxtColor;
         width: 100%;
         word-break: break-word;
         font-size: 3.8vmin;
@@ -74,7 +74,7 @@
   }
 
   /deep/ .swiper-pagination-bullet {
-    background: #bababa;
+    background: $primaryTxtColor;
     &:focus {
       outline: none;
     }

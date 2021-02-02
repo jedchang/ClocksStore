@@ -7,7 +7,10 @@
             <div class="page-title">
               {{ titleName }}
             </div>
-            <ul v-if="this.$route.params.id" class="bread-crumb">
+            <ul
+              v-if="this.$route.params.id"
+              class="bread-crumb"
+            >
               <li>
                 <router-link to="/">
                   Home
@@ -18,14 +21,23 @@
                   Watches
                 </router-link>
               </li>
-              <li v-if="titleName !== 'Watches Details'" class="current">
+              <li
+                v-if="titleName !== 'Watches Details'"
+                class="current"
+              >
                 <p>{{ titleName }}</p>
               </li>
-              <li v-else class="current">
+              <li
+                v-else
+                class="current"
+              >
                 <p>{{ productTitle }}</p>
               </li>
             </ul>
-            <ul v-else class="bread-crumb">
+            <ul
+              v-else
+              class="bread-crumb"
+            >
               <li>
                 <router-link to="/">
                   Administrator

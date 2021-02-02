@@ -4,9 +4,7 @@
   right: 0;
   left: 0;
   z-index: 1002;
-  background-color: #262b3c;
-  box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
-
+  background-color: darken($tableBorderColor, 2%);
   .navbar-topbar {
     display: flex;
     justify-content: space-between;
@@ -16,7 +14,7 @@
     padding: 0 12px 0 0;
     .nav-link {
       font-weight: 400;
-      color: #bfc8e2;
+      color: $adminModalTxtColor;
       transition: $setTransition;
       &:hover {
         color: $txtColor-light;
@@ -25,7 +23,7 @@
   }
 
   .navbar-brand-box {
-    background: #2a3042;
+    background: $adminPrimaryBgColor;
     padding: 0 20px;
     text-align: center;
     width: 250px;
@@ -101,7 +99,7 @@
   display: none;
   justify-content: space-between;
   align-items: center;
-  background-color: #151a2c;
+  background-color: $btnColor-view;
   height: 65px;
   @include small {
     display: flex;

@@ -3,9 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-4 col-12">
-          <router-link to="/watches/-MJ_EJ0YFCTPzaRW1Uw_" class="item">
+          <router-link
+            to="/watches/-MJ_EJ0YFCTPzaRW1Uw_"
+            class="item"
+          >
             <div class="item-img">
-              <img src="~@/assets/images/promo_img_01.jpg" alt="Promo img" />
+              <img
+                src="~@/assets/images/promo_img_01.jpg"
+                alt="Promo img"
+              >
             </div>
             <div class="item-inner">
               <p class="badge">Most Popular</p>
@@ -15,9 +21,15 @@
           </router-link>
         </div>
         <div class="col-lg-4 col-md-4 col-12">
-          <router-link to="/watches/-MJ_Dupud6EqdnCfMcQG" class="item">
+          <router-link
+            to="/watches/-MJ_Dupud6EqdnCfMcQG"
+            class="item"
+          >
             <div class="item-img">
-              <img src="~@/assets/images/promo_img_02.jpg" alt="Promo img" />
+              <img
+                src="~@/assets/images/promo_img_02.jpg"
+                alt="Promo img"
+              >
             </div>
             <div class="item-inner">
               <p class="badge">Watch Sale</p>
@@ -32,7 +44,10 @@
             class="item item-large"
           >
             <div class="item-img">
-              <img src="~@/assets/images/promo_img_03.jpg" alt="Promo img" />
+              <img
+                src="~@/assets/images/promo_img_03.jpg"
+                alt="Promo img"
+              >
             </div>
             <div class="item-inner">
               <p class="badge">Hot Styles</p>

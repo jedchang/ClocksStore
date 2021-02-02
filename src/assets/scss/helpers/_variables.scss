@@ -6,15 +6,41 @@
 // Custom Color
 $primaryColor: #cb9400;
 $primaryBgColor: #222736;
+$primaryTxtColor: #afafaf;
+
 $txtColor: #a6b0cf;
 $txtColor-light: #eff2f7;
 $txtColor-dark: #79829c;
+$txtColor-dark-blue: #2d3858;
+$txtColor-success: #008000;
+$txtColor-required: #dc3545;
+
+$btnColor-add: #2c3246;
+$btnColor-view: #151a2c;
+$btnColor-remove: #ef2323;
+$btnColor-dark: #0f111a;
+
+$badgeColor-normal: #556ee6;
+$badgeColor-danger: #f46a6a;
+$badgeBgColor-danger: rgba(244, 106, 106, 0.18);
+$badgeColor-success: #34c38f;
+$badgeBgColor-success: rgba(52, 195, 143, 0.18);
+
+$tableBgColor: #1e2230;
+$tableBorderColor: #2b3042;
+$tableBorderColor-dark: #4e556f;
+
+$adminPrimaryBgColor: #2a3042;
+$adminModalTxtColor: #c8d0dd;
+$adminModalTxtBgColor: #39425a;
+
+$dropdownMenuColor: #e1e4ef;
+$areaBgColor-dark: #1a1f32;
 
 $emptyTxtColor: #cecece;
 $setTransition: all 0.3s;
 
 // Color system
-
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;

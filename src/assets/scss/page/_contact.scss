@@ -18,7 +18,8 @@
     }
 
     .border-right-color {
-      border-right: 1px solid #343b50;
+      border-right: 1px solid $adminModalTxtBgColor;
+      // border-right: 1px solid  $adminModalTxtBgColor;
       @include small {
         border-right: none;
       }
@@ -37,10 +38,10 @@
     }
 
     .order-1 {
-      border-right: 1px solid #343b50;
+      border-right: 1px solid $adminModalTxtBgColor;
     }
     .order-2 {
-      border-right: 1px solid #343b50;
+      border-right: 1px solid $adminModalTxtBgColor;
       @include small {
         border-right: none;
       }
@@ -57,22 +58,22 @@
         border-bottom: none;
       }
       .order-1 {
-        border-right: 1px solid #343b50;
+        border-right: 1px solid $adminModalTxtBgColor;
         .item {
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
           height: 200px;
         }
       }
       .order-2 {
         .item {
           height: 200px;
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
         }
       }
       .order-3 {
         .item {
           margin-top: 15px;
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
         }
       }
     }
@@ -81,22 +82,22 @@
         border-bottom: none;
       }
       .order-1 {
-        border-right: 1px solid #343b50;
+        border-right: 1px solid $adminModalTxtBgColor;
         .item {
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
           height: 200px;
         }
       }
       .order-2 {
         .item {
           height: 200px;
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
         }
       }
       .order-3 {
         .item {
           margin-top: 15px;
-          border-bottom: 1px solid #343b50;
+          border-bottom: 1px solid $adminModalTxtBgColor;
         }
       }
     }
@@ -104,12 +105,12 @@
     .item {
       text-align: center;
       svg {
-        color: #fff;
+        color: $txtColor-light;
         font-size: 32px;
         margin-bottom: 20px;
       }
       h4 {
-        color: #fff;
+        color: darken($txtColor-light, 15%);
         text-transform: uppercase;
         font-size: 24px;
         font-weight: 500;
@@ -117,11 +118,9 @@
           font-size: 22px;
         }
         @include small {
-          color: #c7cde1;
           font-size: 26px;
         }
         @include extraSmall {
-          color: #c7cde1;
           font-size: 6.5vmin;
         }
       }
@@ -131,7 +130,7 @@
       }
       li {
         font-size: 16px;
-        color: #afafaf;
+        color: $primaryTxtColor;
         @include medium {
           height: 21px;
           line-height: 21px;
@@ -151,7 +150,7 @@
         }
         a {
           font-weight: 300;
-          color: #afafaf;
+          color: $primaryTxtColor;
           transition: $setTransition;
           &:hover {
             color: $primaryColor;

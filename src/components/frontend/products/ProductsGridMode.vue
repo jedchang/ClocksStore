@@ -18,10 +18,16 @@
       class="product-img"
       title="View"
     >
-      <div v-if="!productData.is_enabled" class="sold-out-mask">
+      <div
+        v-if="!productData.is_enabled"
+        class="sold-out-mask"
+      >
         <div class="sold-out-text">Sold out</div>
       </div>
-      <img :src="productData.imageUrl" alt="Product img" />
+      <img
+        :src="productData.imageUrl"
+        alt="Product img"
+      >
     </router-link>
     <div class="product-content">
       <span> {{ productData.category }} </span>
@@ -32,8 +38,7 @@
             params: { id: productData.id }
           }"
           class="name"
-          >{{ productData.title }}</router-link
-        >
+        >{{ productData.title }}</router-link>
       </h4>
       <div class="product-price-wrapper">
         <span class="money">
@@ -50,7 +55,7 @@
       </div>
     </div>
     <div class="product-action">
-      <ProductRating :product-stars="productData.stars"></ProductRating>
+      <ProductRating :product-stars="productData.stars" />
       <p class="product-desc">
         {{ productData.description }}
       </p>
@@ -74,7 +79,10 @@
             :icon="['fas', 'spinner']"
             spin
           />
-          <font-awesome-icon v-else :icon="['fas', 'shopping-cart']" />
+          <font-awesome-icon
+            v-else
+            :icon="['fas', 'shopping-cart']"
+          />
           <span class="text">Add to Cart</span>
         </a>
         <a
@@ -88,7 +96,10 @@
             :icon="['fas', 'spinner']"
             spin
           />
-          <font-awesome-icon v-else :icon="['fas', 'heart']" />
+          <font-awesome-icon
+            v-else
+            :icon="['fas', 'heart']"
+          />
         </a>
         <a
           v-else
@@ -101,7 +112,10 @@
             :icon="['fas', 'spinner']"
             spin
           />
-          <font-awesome-icon v-else :icon="['far', 'heart']" />
+          <font-awesome-icon
+            v-else
+            :icon="['far', 'heart']"
+          />
         </a>
       </div>
     </div>

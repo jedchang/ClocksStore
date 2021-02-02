@@ -105,7 +105,7 @@
           }
         }
         p {
-          color: #afafaf;
+          color: $primaryTxtColor;
           @include small {
             font-size: 16px;
             font-weight: 300;
@@ -213,7 +213,7 @@
         }
       }
       p {
-        color: #afafaf;
+        color: $primaryTxtColor;
         @include small {
           font-size: 16px;
           font-weight: 300;

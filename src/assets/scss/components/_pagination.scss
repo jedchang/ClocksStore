@@ -43,7 +43,7 @@
       text-align: center;
       line-height: 32px;
       color: #fff;
-      background-color: #363d50;
+      background-color: $adminModalTxtBgColor;
       z-index: 1;
       transition: $setTransition;
       &:hover {

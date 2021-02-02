@@ -8,7 +8,7 @@
   height: 40px;
   bottom: 30px;
   right: -65px;
-  background-color: #a6b0cf;
+  background-color: $txtColor;
   z-index: 100;
   border-radius: 3px;
   box-shadow: 1px 2px 6px 4px rgba(53, 57, 68, 0.2);
@@ -27,7 +27,7 @@
   }
   svg {
     transition: $setTransition;
-    color: #161a2e;
+    color: $tableBgColor;
   }
   &.show {
     opacity: 1;

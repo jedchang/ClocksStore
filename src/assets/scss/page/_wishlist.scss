@@ -36,13 +36,13 @@
       width: 100%;
       border: none;
       border-radius: 0px;
-      color: #afafaf;
+      color: $primaryTxtColor;
       table-layout: fixed;
       white-space: nowrap;
       tr.line {
         color: $txtColor;
-        border-top: 1px solid #394465;
-        border-bottom: 1px solid #394465;
+        border-top: 1px solid $adminModalTxtBgColor;
+        border-bottom: 1px solid $adminModalTxtBgColor;
         th {
           font-size: 13px;
           line-height: 25px;
@@ -78,7 +78,7 @@
         }
       }
       tr.wishlist-item {
-        border-bottom: 1px solid #394465;
+        border-bottom: 1px solid $adminModalTxtBgColor;
         &:last-child {
           border-bottom: none;
         }
@@ -98,14 +98,8 @@
           td.product-cart > .btn-add-cart {
             cursor: default;
             pointer-events: none;
-            background-color: #0f111a;
-            color: #4f566f;
-            @include small {
-              background-color: #222838;
-            }
-            @include extraSmall {
-              background-color: #222838;
-            }
+            background-color: $btnColor-dark;
+            color: darken($txtColor-dark, 20%);
           }
         }
         td {
@@ -116,7 +110,7 @@
             display: table-cell;
             .product-img {
               display: inline-block;
-              border: 1px solid #1e2230;
+              border: 1px solid$tableBgColor;
               transition: $setTransition;
               &:hover {
                 border: 1px solid $primaryColor;
@@ -146,8 +140,8 @@
             .in-stock {
               width: 60%;
               padding: 5px 15px;
-              color: #34c38f;
-              background-color: rgba(52, 195, 143, 0.18);
+              color: $badgeColor-success;
+              background-color: $badgeBgColor-success;
               text-transform: uppercase;
               font-weight: 400;
               @include large {
@@ -166,8 +160,8 @@
             .out-stock {
               width: 60%;
               padding: 5px 15px;
-              color: #f46a6a;
-              background-color: rgba(244, 106, 106, 0.18);
+              color: $badgeColor-danger;
+              background-color: $badgeBgColor-danger;
               text-transform: uppercase;
               font-weight: 400;
               @include large {
@@ -234,19 +228,19 @@
               @include small {
                 width: 100%;
                 padding: 10px 15px;
-                background-color: #343e5a;
+                background-color: $btnColor-add;
               }
               @include extraSmall {
                 width: 100%;
                 padding: 10px 15px;
-                background-color: #343e5a;
+                background-color: $btnColor-add;
               }
             }
             .btn-view-cart {
               width: 80%;
               padding: 10px 35px;
-              background-color: #151a2c;
-              color: #6c789c;
+              background-color: $btnColor-view;
+              color: lighten($btnColor-view, 50%);
               @include large {
                 padding: 10px 15px;
               }
@@ -255,17 +249,17 @@
                 padding: 10px 15px;
               }
               @include small {
-                color: #a6b0cf;
+                color: $txtColor;
                 width: 100%;
                 padding: 10px 15px;
               }
               @include extraSmall {
-                color: #a6b0cf;
+                color: $txtColor;
                 width: 100%;
                 padding: 10px 15px;
               }
               &:hover {
-                background-color: #151a2c;
+                background-color: $btnColor-view;
                 color: $primaryColor;
               }
               svg {
@@ -284,13 +278,13 @@
               width: 20px;
               height: 20px;
               margin: 0 auto;
-              color: darken(#afafaf, 30%);
+              color: darken($primaryTxtColor, 30%);
               transition: $setTransition;
               &:hover {
-                color: #ef2323;
+                color: $btnColor-remove;
               }
               .icon-spinner {
-                color: #ef2323;
+                color: $btnColor-remove;
               }
             }
           }
@@ -323,16 +317,16 @@
         font-size: 16px;
         font-weight: 400;
         text-align: center;
-        color: #afafaf;
+        color: $primaryTxtColor;
         text-transform: uppercase;
         padding: 14px 30px;
         border-radius: 25px;
         margin-top: 20px;
-        background-color: #32394f;
+        background-color: darken($tableBorderColor-dark, 15%);
         transition: $setTransition;
         &:hover {
           color: #fff;
-          background-color: #3c455e;
+          background-color: darken($tableBorderColor-dark, 15%);
         }
         svg {
           margin-right: 5px;

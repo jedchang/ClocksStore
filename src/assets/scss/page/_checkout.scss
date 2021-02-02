@@ -35,13 +35,13 @@
       border: none;
       width: 100%;
       border-radius: 0px;
-      color: #afafaf;
+      color: $primaryTxtColor;
       table-layout: fixed;
       white-space: nowrap;
       tr.line {
         color: $txtColor;
-        border-top: 1px solid #394465;
-        border-bottom: 1px solid #394465;
+        border-top: 1px solid $adminModalTxtBgColor;
+        border-bottom: 1px solid $adminModalTxtBgColor;
         th {
           font-size: 14px;
           line-height: 25px;
@@ -73,7 +73,7 @@
         }
       }
       tr.cart-item {
-        border-bottom: 1px solid #394465;
+        border-bottom: 1px solid $adminModalTxtBgColor;
         &:last-child {
           border-bottom: none;
         }
@@ -122,7 +122,7 @@
         }
       }
       tfoot {
-        border-top: 4px solid #2b3042;
+        border-top: 4px solid $tableBorderColor;
       }
       .cart-total {
         color: $primaryColor;
@@ -163,11 +163,11 @@
       width: 100%;
       margin: 50px auto;
       border-radius: 0px;
-      color: #afafaf;
+      color: $primaryTxtColor;
       .info-item {
-        border-top: 1px dashed #394465;
+        border-top: 1px dashed $adminModalTxtBgColor;
         &:last-child {
-          border-bottom: 1px dashed #394465;
+          border-bottom: 1px dashed $adminModalTxtBgColor;
         }
       }
       th {
@@ -176,7 +176,7 @@
         line-height: 25px;
         font-weight: 500;
         text-transform: uppercase;
-        color: #a6b0cf;
+        color: $txtColor;
         @include small {
           width: 60%;
           font-size: 16px;
@@ -228,8 +228,8 @@
         }
       }
       .badge-danger {
-        color: #f46a6a;
-        background-color: rgba(244, 106, 106, 0.18);
+        color: $badgeColor-danger;
+        background-color: $badgeBgColor-danger;
       }
     }
 
@@ -291,11 +291,11 @@
       }
       .btn-cancel {
         background-color: transparent;
-        border: 1px solid #646e94;
-        color: #646e94;
+        border: 1px solid lighten($tableBorderColor-dark, 5%);
+        color: lighten($tableBorderColor-dark, 5%);
         &:hover {
-          background-color: #32394f;
-          border: 1px solid #32394f;
+          background-color: darken($tableBorderColor-dark, 15%);
+          border: 1px solid darken($tableBorderColor-dark, 15%);
           color: #fff;
         }
       }
@@ -366,9 +366,9 @@
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          color: #afafaf;
+          color: $primaryTxtColor;
           padding: 15px 40px;
-          background-color: #303548;
+          background-color: darken($tableBorderColor-dark, 15%);
           margin-bottom: 50px;
           @include small {
             width: 90%;
@@ -386,8 +386,8 @@
           }
         }
         .badge-success {
-          color: #34c38f;
-          background-color: rgba(52, 195, 143, 0.18);
+          color: $badgeColor-success;
+          background-color: $badgeBgColor-success;
         }
         .thanks-text {
           font-size: 28px;

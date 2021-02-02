@@ -31,7 +31,7 @@
     .el-tabs__nav-wrap {
       &:after {
         height: 2px;
-        background-color: #343b50;
+        background-color: $adminModalTxtBgColor;
       }
     }
     .el-tabs__nav-scroll {
@@ -58,7 +58,7 @@
         font-size: 20px;
         text-transform: uppercase;
         font-weight: 500;
-        color: darken(#afafaf, 20%);
+        color: darken($primaryTxtColor, 20%);
         &.is-active {
           color: #ffffff;
         }
@@ -67,7 +67,7 @@
   }
 
   /deep/ .el-tabs__content {
-    color: #afafaf;
+    color: $primaryTxtColor;
     padding-top: 10px;
     @include small {
       padding-top: 0;
@@ -78,12 +78,12 @@
   }
 
   .shop_attributes {
-    border-bottom: 1px solid #343b50;
-    border-left: 1px solid #343b50;
+    border-bottom: 1px solid $adminModalTxtBgColor;
+    border-left: 1px solid $adminModalTxtBgColor;
     width: 100%;
     tr {
-      border-top: 1px solid #343b50;
-      border-right: 1px solid #343b50;
+      border-top: 1px solid $adminModalTxtBgColor;
+      border-right: 1px solid $adminModalTxtBgColor;
     }
     th {
       width: 20%;
@@ -91,7 +91,7 @@
       font-size: 16px;
       font-weight: 400;
       padding: 20px 30px;
-      border-right: 1px solid #343b50;
+      border-right: 1px solid $adminModalTxtBgColor;
       text-transform: uppercase;
       @include small {
         width: 40%;
@@ -104,7 +104,7 @@
     }
     td {
       width: 150px;
-      color: #afafaf;
+      color: $primaryTxtColor;
       font-size: 16px;
       padding: 20px 30px;
       @include small {
@@ -126,7 +126,7 @@
     margin-bottom: 16px;
     line-height: 1.6;
     font-weight: 300;
-    color: lighten(#afafaf, 40%);
+    color: lighten($primaryTxtColor, 40%);
     @include small {
       font-size: 3vmin;
     }
@@ -138,12 +138,12 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 1.6;
-    color: lighten(#afafaf, 5%);
+    color: lighten($primaryTxtColor, 5%);
   }
   li {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.6;
-    color: lighten(#afafaf, 5%);
+    color: lighten($primaryTxtColor, 5%);
   }
 }

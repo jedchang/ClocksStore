@@ -22,7 +22,7 @@
     }
 
     .user-order {
-      background-color: #1e2230;
+      background-color: $tableBgColor;
       padding: 40px 30px;
       @include medium {
         padding: 30px 20px;
@@ -37,13 +37,13 @@
       }
       .order-form {
         padding: 20px 0 0 0;
-        color: #afafaf;
+        color: $primaryTxtColor;
         .order-title {
           text-transform: uppercase;
-          color: #a6b0cf;
+          color: $txtColor;
           font-size: 24px;
           font-weight: 600;
-          border-bottom: 4px solid #2b3042;
+          border-bottom: 4px solid $tableBorderColor;
           padding: 0 0 10px 0;
           margin: 0 0 25px 0;
         }
@@ -51,7 +51,7 @@
         .form-group {
           height: 102px;
           .required {
-            color: #dc3545;
+            color: $txtColor-required;
           }
           &:last-child {
             height: auto;
@@ -67,9 +67,9 @@
             color: #fff;
           }
           .form-control {
-            color: #bfc8e2;
-            background-color: #39425a;
-            border: 1px solid #39425a;
+            color: $adminModalTxtColor;
+            background-color: $adminModalTxtBgColor;
+            border: 1px solid $adminModalTxtBgColor;
             font-size: 14px;
             padding: 12px;
             height: auto;
@@ -83,8 +83,8 @@
 
     .order-review {
       padding: 20px;
-      color: #afafaf;
-      background-color: #171c29;
+      color: $primaryTxtColor;
+      background-color: darken($tableBgColor, 3%);
       border-radius: 6px;
       @include medium {
         margin-left: -15px;
@@ -103,10 +103,10 @@
       }
       .order-heading {
         text-transform: uppercase;
-        color: #a6b0cf;
+        color: $txtColor;
         font-size: 24px;
         font-weight: 600;
-        border-bottom: 4px solid #2b3042;
+        border-bottom: 4px solid $tableBorderColor;
         padding: 0 0 10px 0;
         margin: 0 0 25px 0;
       }
@@ -117,10 +117,10 @@
         border-radius: 0px;
       }
       table {
-        color: #afafaf;
+        color: $primaryTxtColor;
         tr {
           color: $txtColor;
-          border-bottom: 1px solid #2b3042;
+          border-bottom: 1px solid $tableBorderColor;
           th {
             padding-top: 17px;
             padding-bottom: 10px;
@@ -207,7 +207,7 @@
             text-transform: uppercase;
             font-size: 14px;
             font-weight: 400;
-            color: #afafaf;
+            color: $primaryTxtColor;
           }
         }
         .shipping {
@@ -219,7 +219,7 @@
             text-transform: uppercase;
             font-size: 14px;
             font-weight: 400;
-            color: #afafaf;
+            color: $primaryTxtColor;
           }
           .shipping-method {
             list-style: none;
@@ -233,7 +233,6 @@
               margin-bottom: 0;
               display: flex;
               justify-content: flex-start;
-              align-items: center;
               @include small {
                 justify-content: flex-end;
               }
@@ -242,37 +241,35 @@
               }
               &.is-checked {
                 .el-radio__label {
-                  color: $primaryColor;
+                  color: #fff;
                   font-size: 14px;
                 }
                 .el-radio__inner {
-                  border-color: $primaryColor;
-                  background: $primaryColor;
+                  border-color: lighten($tableBorderColor-dark, 30%);
+                  background: lighten($tableBorderColor-dark, 30%);
+                  &:after {
+                    background-color: darken($tableBgColor, 3%);
+                  }
                 }
                 & + .el-radio__label {
-                  color: $primaryColor;
+                  color: #fff;
                 }
-              }
-              .el-radio__inner {
-                border: 1px solid #dcdfe6;
-                background-color: #fff;
-                font-size: 14px;
               }
               &.is-disabled {
                 cursor: default;
                 pointer-events: none;
                 .el-radio__label {
-                  color: #4e556f;
+                  color: $tableBorderColor-dark;
                   font-size: 14px;
                 }
                 .el-radio__inner {
-                  border: 1px solid #4e556f;
-                  background-color: #4e556f;
+                  border: 1px solid $tableBorderColor-dark;
+                  background-color: $tableBorderColor-dark;
                   pointer-events: none;
                   cursor: default;
                 }
                 & + .el-radio__label {
-                  color: #4e556f;
+                  color: $tableBorderColor-dark;
                   pointer-events: none;
                   cursor: default;
                 }
@@ -283,7 +280,7 @@
         .cart-total {
           color: #fff;
           border-bottom: none;
-          border-top: 4px solid #2b3042;
+          border-top: 4px solid $tableBorderColor;
           font-size: 20px;
           text-shadow: 0px 0px 5px $primaryColor;
           @include small {
@@ -296,13 +293,13 @@
             text-transform: uppercase;
             font-size: 18px;
             &.discount-title {
-              color: #6f758e;
+              color: $tableBorderColor-dark;
               text-shadow: none;
             }
           }
           .discount {
             text-decoration: line-through;
-            color: #6f758e;
+            color: $tableBorderColor-dark;
             text-shadow: none;
           }
         }
@@ -346,7 +343,7 @@
         .btn {
           padding: 12px 40px;
           border-radius: 3px;
-          background-color: #cb9400;
+          background-color: $primaryColor;
           color: #fff;
           width: 100%;
           margin-bottom: 10px;
@@ -355,15 +352,15 @@
           &:disabled {
             pointer-events: none;
             cursor: default;
-            background-color: #32394f;
+            background-color: darken($tableBorderColor-dark, 15%);
           }
           &.disabled {
             pointer-events: none;
             cursor: default;
-            background-color: #32394f;
+            background-color: $tableBorderColor-dark;
           }
           &:hover {
-            background-color: darken($primaryColor, 10%);
+            background-color: darken($primaryColor, 15%);
           }
           p {
             margin: 0;

@@ -22,7 +22,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in cart.carts" :key="item.id" class="cart-item">
+              <tr
+                v-for="item in cart.carts"
+                :key="item.id"
+                class="cart-item"
+              >
                 <td class="product-thumbnail">
                   <router-link
                     :to="{
@@ -32,7 +36,10 @@
                     class="product-img"
                     title="View"
                   >
-                    <img :src="item.product.imageUrl" alt="Product img" />
+                    <img
+                      :src="item.product.imageUrl"
+                      alt="Product img"
+                    >
                   </router-link>
                 </td>
                 <td class="product-name">
@@ -73,22 +80,31 @@
                         :icon="['fas', 'spinner']"
                         spin
                       />
-                      <font-awesome-icon v-else :icon="['far', 'trash-alt']" />
+                      <font-awesome-icon
+                        v-else
+                        :icon="['far', 'trash-alt']"
+                      />
                     </a>
                   </el-tooltip>
                 </td>
               </tr>
             </tbody>
           </table>
-          <div v-else class="shop-table-empty">
-            <div class="empty-img"></div>
+          <div
+            v-else
+            class="shop-table-empty"
+          >
+            <div class="empty-img" />
             <p class="empty-text">Your cart is currently empty.</p>
           </div>
         </simplebar>
-        <CouponCode></CouponCode>
+        <CouponCode />
       </div>
       <div class="action-wrap">
-        <router-link to="/watches" class="btn-action btn-continue">
+        <router-link
+          to="/watches"
+          class="btn-action btn-continue"
+        >
           <font-awesome-icon :icon="['fas', 'chevron-left']" />
           Continue Shopping
         </router-link>
@@ -98,7 +114,10 @@
       <div class="cart-totals-wrap">
         <div class="cart-totals">
           <h2>Cart Totals</h2>
-          <table class="totals-table" cellspacing="0">
+          <table
+            class="totals-table"
+            cellspacing="0"
+          >
             <tbody>
               <tr class="cart-subtotal">
                 <th>Subtotal</th>
@@ -113,14 +132,17 @@
                 <td>
                   <ul class="shipping-method">
                     <li>
-                      <el-radio v-model="radio" label="1"
-                        >Free Shipping</el-radio
-                      >
+                      <el-radio
+                        v-model="radio"
+                        label="1"
+                      >Free Shipping</el-radio>
                     </li>
                     <li>
-                      <el-radio v-model="radio" disabled label="2"
-                        >Flat Rate：$100</el-radio
-                      >
+                      <el-radio
+                        v-model="radio"
+                        disabled
+                        label="2"
+                      >Flat Rate：$100</el-radio>
                     </li>
                   </ul>
                 </td>
@@ -139,11 +161,13 @@
                     :class="{
                       discount: cart.final_total !== cart.total
                     }"
-                    >{{ cart.total | currency }}</span
-                  >
+                  >{{ cart.total | currency }}</span>
                 </td>
               </tr>
-              <tr v-if="cart.final_total !== cart.total" class="final-total">
+              <tr
+                v-if="cart.final_total !== cart.total"
+                class="final-total"
+              >
                 <th>Discount price</th>
                 <td>
                   <span class="price-amount">{{

@@ -1,5 +1,8 @@
 <template>
-  <div v-if="cart.carts.length !== 0" class="coupon-code">
+  <div
+    v-if="cart.carts.length !== 0"
+    class="coupon-code"
+  >
     <input
       v-if="!cart.carts[0].hasOwnProperty('coupon')"
       v-model="couponCode"
@@ -7,7 +10,7 @@
       class="input-coupon"
       value
       placeholder="Coupon code"
-    />
+    >
     <input
       v-else
       type="text"
@@ -15,7 +18,7 @@
       :value="cart.carts[0].coupon.code"
       placeholder="Coupon code"
       disabled="disabled"
-    />
+    >
     <button
       v-if="!cart.carts[0].hasOwnProperty('coupon')"
       type="submit"
@@ -25,7 +28,11 @@
       @click="addCouponCode"
     >
       <p v-if="status.loadingCoupon === ''">Apply coupon</p>
-      <font-awesome-icon v-else :icon="['fas', 'spinner']" spin />
+      <font-awesome-icon
+        v-else
+        :icon="['fas', 'spinner']"
+        spin
+      />
     </button>
     <button
       v-else

@@ -14,17 +14,17 @@
   .star {
     display: inline-block;
     font-size: 13px;
-    color: #c7cde1;
+    color: darken($txtColor-light, 15%);
     margin-right: 5px;
     &:last-child {
       margin-right: 0;
     }
     &.fill,
     &.half {
-      color: #c7cde1;
+      color: darken($txtColor-light, 15%);
     }
     &.empty {
-      color: darken(#c7cde1, 40%);
+      color: darken($txtColor-dark, 15%);
     }
   }
 }

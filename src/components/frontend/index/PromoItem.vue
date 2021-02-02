@@ -20,10 +20,16 @@
         class="product-img"
         title="View"
       >
-        <div v-if="!product.is_enabled" class="sold-out-mask">
+        <div
+          v-if="!product.is_enabled"
+          class="sold-out-mask"
+        >
           <div class="sold-out-text">Sold out</div>
         </div>
-        <img :src="product.imageUrl" alt="Product img url" />
+        <img
+          :src="product.imageUrl"
+          alt="Product img url"
+        >
       </router-link>
       <div class="product-content">
         <span>{{ product.category }}</span>
@@ -34,11 +40,10 @@
               params: { id: product.id }
             }"
             class="name"
-            >{{ product.title }}</router-link
-          >
+          >{{ product.title }}</router-link>
         </h4>
         <div class="product-action">
-          <ProductRating :product-stars="product.stars"></ProductRating>
+          <ProductRating :product-stars="product.stars" />
         </div>
         <div class="product-price-wrapper">
           <span class="money">{{ product.price | currency }}</span>

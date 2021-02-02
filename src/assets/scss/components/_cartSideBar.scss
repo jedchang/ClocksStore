@@ -30,11 +30,15 @@
       }
     }
 
+    .simplebar {
+      height: 100%;
+    }
+
     .cart-header {
       position: relative;
       padding: 20px 0 10px 0;
       margin: 20px 20px 0 20px;
-      border-bottom: 4px solid #394465;
+      border-bottom: 4px solid $adminModalTxtBgColor;
       @include small {
         margin: 0 15px;
       }
@@ -190,7 +194,7 @@
         width: 100%;
         padding: 0;
         margin: 0;
-        border-bottom: 1px solid #2b3656;
+        border-bottom: 1px solid $txtColor-dark-blue;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -215,7 +219,7 @@
         img {
           width: 100%;
           height: auto;
-          border: 1px solid #222736;
+          border: 1px solid $primaryBgColor;
         }
         @include small {
           width: 30%;
@@ -306,7 +310,7 @@
           padding: 2px 12px;
           color: lighten(#222736, 25%);
           &:hover {
-            color: #ef3636;
+            color: $btnColor-remove;
           }
           @include small {
             font-size: 20px;
@@ -317,14 +321,14 @@
             height: auto;
           }
           .icon-spinner {
-            color: #ef3636;
+            color: $btnColor-remove;
           }
         }
       }
 
       .cart-actions {
         padding: 20px 0px;
-        border-top: 4px solid #394465;
+        border-top: 4px solid $adminModalTxtBgColor;
         .total {
           display: flex;
           justify-content: space-between;
@@ -378,18 +382,18 @@
             margin-bottom: 0;
           }
           &.disabled {
-            background-color: #151a2c;
-            color: #6c789c;
+            background-color: $btnColor-view;
+            color: lighten($btnColor-view, 50%);
           }
         }
         .btn-checkout {
-          background-color: lighten(#282e3f, 5%);
+          background-color: lighten($btnColor-add, 5%);
           &:hover {
-            background-color: lighten(#282e3f, 10%);
+            background-color: lighten($btnColor-add, 10%);
           }
           &.disabled {
-            background-color: #151a2c;
-            color: #6c789c;
+            background-color: $btnColor-view;
+            color: lighten($btnColor-view, 50%);
           }
         }
       }
@@ -403,11 +407,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        svg {
-          font-size: 82px;
-          color: #32384c;
-          margin-top: 20px;
-        }
       }
       .empty-img {
         width: 140px;

@@ -181,7 +181,6 @@ export default {
       isOpen: (state) => state.isOpen
     })
   },
-  created() {},
   methods: {
     closeCart() {
       this.$store.commit('cartModules/OPEN_CART', false)

@@ -1,8 +1,8 @@
 .card {
   margin-bottom: 14px;
-  background-color: #2a3042;
+  background-color: $adminPrimaryBgColor;
   background-clip: border-box;
-  border: 0 solid #32394e;
+  border: 0 solid $adminModalTxtBgColor;
   border-radius: 0 0 4px 4px;
   @include small {
     margin-left: -15px;
@@ -68,21 +68,52 @@
   }
 }
 
-.el-checkbox__input.is-checked {
-  .el-checkbox__inner {
-    background-color: #409eff;
-    border-color: #409eff;
+/deep/ .el-checkbox {
+  color: $txtColor;
+  .el-checkbox__input {
+    line-height: 1.6;
+    .el-checkbox__inner {
+      border: 1px solid $txtColor;
+      background-color: $txtColor;
+    }
+    &.is-checked {
+      .el-checkbox__inner {
+        &:after {
+          border: 1px solid $txtColor-dark-blue;
+          border-left: 0;
+          border-top: 0;
+        }
+      }
+    }
+    .el-checkbox__inner {
+      &:after {
+        border: 1px solid $txtColor-dark-blue;
+        border-left: 0;
+        border-top: 0;
+      }
+    }
   }
-}
-.el-checkbox__inner {
-  border: 1px solid #454d61;
-  background-color: #2e3548;
+  &.is-checked {
+    color: $primaryColor;
+    .el-checkbox__input.is-checked .el-checkbox__inner {
+      border: 1px solid $primaryColor;
+      background-color: $primaryColor;
+    }
+    .el-checkbox__label {
+      color: $primaryColor;
+    }
+  }
+  .el-checkbox__label {
+    line-height: 1.6;
+    transition: $setTransition;
+    color: $txtColor;
+  }
 }
 
 .table {
   table-layout: fixed;
   white-space: nowrap;
-  color: #a6b0cf;
+  color: $txtColor;
   margin-bottom: 10px;
   @include medium {
     margin-bottom: 10px;
@@ -96,7 +127,7 @@
 
   tr {
     vertical-align: middle;
-    border-top: 1px solid #32394e;
+    border-top: 1px solid $adminModalTxtBgColor;
     padding: 18px;
     @include medium {
       padding: 12px;
@@ -106,7 +137,7 @@
     text-transform: uppercase;
     th {
       color: #c3cbe4;
-      border-color: #32394e;
+      border-color: $adminModalTxtBgColor;
       background-color: rgba(195, 203, 228, 0.05);
       font-weight: 500;
       padding: 18px;
@@ -179,7 +210,7 @@
 
   td {
     vertical-align: middle;
-    border-top: 1px solid #32394e;
+    border-top: 1px solid $adminModalTxtBgColor;
     padding: 18px;
     text-align: left;
     @include medium {
@@ -223,32 +254,32 @@
     padding: 5px 15px;
   }
   .badge-success {
-    color: #34c38f;
-    background-color: rgba(52, 195, 143, 0.18);
+    color: $badgeColor-success;
+    background-color: $badgeBgColor-success;
   }
   .badge-danger {
-    color: #f46a6a;
-    background-color: rgba(244, 106, 106, 0.18);
+    color: $badgeColor-danger;
+    background-color: $badgeBgColor-danger;
   }
 
   .btn-edit {
-    color: #556ee6;
+    color: $badgeColor-normal;
     width: 34px;
     display: flex;
     justify-content: center;
     display: inline-block;
     text-align: center;
     &:hover {
-      color: #1f3dd0;
+      color: darken($badgeColor-normal, 8%);
     }
   }
   .btn-remove {
-    color: #f46a6a;
+    color: $badgeColor-danger;
     width: 34px;
     display: inline-block;
     text-align: center;
     &:hover {
-      color: #ef2323;
+      color: darken($badgeColor-danger, 10%);
     }
     @include medium {
       width: 20px;

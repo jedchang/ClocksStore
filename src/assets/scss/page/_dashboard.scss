@@ -7,7 +7,7 @@
   margin-left: 250px;
   overflow: hidden;
   background-color: $primaryBgColor;
-  color: #a6b0cf;
+  color: $txtColor;
   @include medium {
     margin-left: 160px;
   }
@@ -21,7 +21,7 @@
 
 .admin-footer {
   padding-top: 15px;
-  color: #a6b0cf;
+  color: $txtColor;
   height: 60px;
   position: absolute;
   bottom: 0;
