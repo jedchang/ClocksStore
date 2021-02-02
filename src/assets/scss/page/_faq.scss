@@ -50,6 +50,7 @@
       border-bottom: none;
     }
     /deep/ .el-collapse-item {
+      border: 1px solid transparent;
       margin-bottom: 10px;
       @include small {
         margin-bottom: 15px;

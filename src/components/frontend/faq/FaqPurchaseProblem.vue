@@ -39,7 +39,7 @@
         <template slot="title">
           <font-awesome-icon :icon="['far', 'question-circle']" />
           <h4>
-            Do you sell secondhand watches? ?
+            Do you sell secondhand watches?
           </h4>
         </template>
         <p>

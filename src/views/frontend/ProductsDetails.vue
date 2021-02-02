@@ -318,5 +318,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/components/_productsDetails.scss';
+@import '@/assets/scss/page/_productsDetails.scss';
 </style>

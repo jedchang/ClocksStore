@@ -366,8 +366,8 @@
         width: 160px;
         order: 1;
         margin-right: 20px;
-        background-color: $btnColor-view;
         color: lighten($btnColor-view, 50%);
+        background-color: $btnColor-view;
         &:hover {
           background-color: $btnColor-view;
           color: $primaryColor;
@@ -417,6 +417,7 @@
       .btn-wishlisted {
         width: 46px;
         order: 2;
+        color: lighten($btnColor-view, 50%);
         background-color: $btnColor-view;
         @include small {
           width: 11%;
