@@ -1,10 +1,12 @@
 .product-rating {
   margin-bottom: 15px;
   @include small {
+    text-align: center;
     margin-top: 15px;
     margin-bottom: 5px;
   }
   @include extraSmall {
+    text-align: center;
     margin-top: 15px;
     margin-bottom: 5px;
   }

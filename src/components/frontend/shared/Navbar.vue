@@ -77,11 +77,11 @@
                     <li>
                       <a
                         href="#"
-                        class="nav-link btn-dashboard"
+                        class="nav-link btn-admin"
                         @click.prevent="goAdmin"
                       >
                         <font-awesome-icon :icon="['fas', 'chart-line']" />
-                        <span>Dashboard</span>
+                        <span>Administrator</span>
                       </a>
                     </li>
                     <li>

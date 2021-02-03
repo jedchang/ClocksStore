@@ -10,7 +10,7 @@ import Cart from '../views/frontend/Cart.vue'
 import Wishlist from '../views/frontend/Wishlist.vue'
 import Order from '../views/frontend/Order.vue'
 import Checkout from '../views/frontend/Checkout.vue'
-import Dashboard from '../views/backend/Dashboard.vue'
+import Administrator from '../views/backend/Administrator.vue'
 import AdminProducts from '@/components/backend/AdminProducts.vue'
 import AdminOrders from '@/components/backend/AdminOrders.vue'
 import AdminCoupons from '@/components/backend/AdminCoupons.vue'
@@ -84,8 +84,8 @@ const routes = [
   },
   {
     path: '/admin',
-    name: 'Dashboard',
-    component: Dashboard,
+    name: 'Administrator',
+    component: Administrator,
     children: [
       {
         path: 'products',

@@ -125,10 +125,10 @@
             >
               <a
                 href="#"
-                class="navbar-item btn-dashboard"
+                class="navbar-item btn-admin"
                 @click.prevent="goAdmin"
               >
-                Dashboard
+                Administrator
               </a>
               <a
                 href="#"

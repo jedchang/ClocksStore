@@ -6,7 +6,7 @@
   }
 
   .page-container {
-    padding: 80px 0 140px 0;
+    padding: 80px 0 0 0;
     @include medium {
       padding: 80px 0 40px 0;
     }
@@ -84,6 +84,9 @@
               right: 3.5%;
               font-size: 4.5vmin;
             }
+          }
+          img {
+            width: 100%;
           }
         }
       }

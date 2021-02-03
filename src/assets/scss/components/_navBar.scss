@@ -38,7 +38,7 @@
       margin: 0;
     }
     .logo {
-      width: 188px;
+      width: 100%;
       height: 45px;
     }
   }
@@ -233,7 +233,7 @@
             color: $txtColor-dark-blue;
             display: block;
           }
-          .btn-dashboard {
+          .btn-admin {
             color: $txtColor-dark-blue;
             font-weight: 500;
             padding: 0;

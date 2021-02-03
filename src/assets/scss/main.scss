@@ -162,10 +162,6 @@ body {
     }
   }
 
-  img {
-    width: 100%;
-  }
-
   tbody {
     .empty {
       color: $emptyTxtColor;
@@ -176,7 +172,7 @@ body {
     z-index: 9998;
   }
 
-  .dashboard-content,
+  .admin-content,
   .customer-orders-content {
     a.nav-link.router-link-exact-active.router-link-active {
       color: #333333;

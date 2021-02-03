@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-wrapper">
+  <div class="admin-wrapper">
     <AdminMobileMenu />
     <AdminNavbar />
     <AlertMessage />
@@ -37,7 +37,7 @@ import AdminMobileMenu from '@/components/backend/shared/AdminMobileMenu'
 import AlertMessage from '@/components/frontend/shared/AlertMessage'
 
 export default {
-  name: 'Dashboard',
+  name: 'Administrator',
   components: {
     AdminSidebar,
     AdminNavbar,
@@ -55,5 +55,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/page/_dashboard.scss';
+@import '@/assets/scss/page/_administrator.scss';
 </style>
