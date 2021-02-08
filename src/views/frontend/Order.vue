@@ -141,105 +141,103 @@
                   <div class="col-lg-5 col-md-6 col-12">
                     <div class="order-review">
                       <h3 class="order-heading">Your Order</h3>
-                      <simplebar class="simplebar">
-                        <table
-                          v-if="cart.carts.length !== 0"
-                          class="order-table"
-                          cellspacing="0"
-                        >
-                          <thead>
-                            <tr>
-                              <th class="product-name-thead">Item</th>
-                              <th class="product-price-thead">Price</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr
-                              v-for="item in cart.carts"
-                              :key="item.id"
-                              class="cart-item"
+                      <table
+                        v-if="cart.carts.length !== 0"
+                        class="order-table"
+                        cellspacing="0"
+                      >
+                        <thead>
+                          <tr>
+                            <th class="product-name-thead">Item</th>
+                            <th class="product-price-thead">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr
+                            v-for="item in cart.carts"
+                            :key="item.id"
+                            class="cart-item"
+                          >
+                            <td class="product-name">
+                              {{ item.product.title }}
+                              <span class="product-quantity">x <span>{{ item.qty }}</span></span>
+                            </td>
+                            <td class="product-subtotal">
+                              {{ item.total | currency }}
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr class="cart-subtotal">
+                            <th>Subtotal</th>
+                            <td>
+                              <span class="price-amount">
+                                {{ cart.total | currency }}
+                              </span>
+                            </td>
+                          </tr>
+                          <tr class="shipping">
+                            <th>Shipping</th>
+                            <td>
+                              <ul class="shipping-method">
+                                <li>
+                                  <el-radio
+                                    v-model="radio"
+                                    label="1"
+                                  >Free Shipping</el-radio>
+                                </li>
+                                <li>
+                                  <el-radio
+                                    v-model="radio"
+                                    disabled
+                                    label="2"
+                                  >Flat Rate：$100</el-radio>
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr class="cart-total">
+                            <th
+                              :class="{
+                                'discount-title':
+                                  cart.final_total !== cart.total
+                              }"
                             >
-                              <td class="product-name">
-                                {{ item.product.title }}
-                                <span class="product-quantity">x <span>{{ item.qty }}</span></span>
-                              </td>
-                              <td class="product-subtotal">
-                                {{ item.total | currency }}
-                              </td>
-                            </tr>
-                          </tbody>
-                          <tfoot>
-                            <tr class="cart-subtotal">
-                              <th>Subtotal</th>
-                              <td>
-                                <span class="price-amount">
-                                  {{ cart.total | currency }}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr class="shipping">
-                              <th>Shipping</th>
-                              <td>
-                                <ul class="shipping-method">
-                                  <li>
-                                    <el-radio
-                                      v-model="radio"
-                                      label="1"
-                                    >Free Shipping</el-radio>
-                                  </li>
-                                  <li>
-                                    <el-radio
-                                      v-model="radio"
-                                      disabled
-                                      label="2"
-                                    >Flat Rate：$100</el-radio>
-                                  </li>
-                                </ul>
-                              </td>
-                            </tr>
-                            <tr class="cart-total">
-                              <th
+                              Total
+                            </th>
+                            <td>
+                              <span
+                                class="price-amount"
                                 :class="{
-                                  'discount-title':
-                                    cart.final_total !== cart.total
+                                  discount: cart.final_total !== cart.total
                                 }"
                               >
-                                Total
-                              </th>
-                              <td>
-                                <span
-                                  class="price-amount"
-                                  :class="{
-                                    discount: cart.final_total !== cart.total
-                                  }"
-                                >
-                                  {{ cart.total | currency }}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr
-                              v-if="cart.final_total !== cart.total"
-                              class="cart-final-total"
-                            >
-                              <th>Final Total</th>
-                              <td>
-                                <span class="price-amount">
-                                  {{ cart.final_total | currency }}
-                                </span>
-                              </td>
-                            </tr>
-                          </tfoot>
-                        </table>
-                        <div
-                          v-else
-                          class="order-table-empty"
-                        >
-                          <div class="empty-img" />
-                          <p class="empty-text">
-                            Your cart is currently empty.
-                          </p>
-                        </div>
-                      </simplebar>
+                                {{ cart.total | currency }}
+                              </span>
+                            </td>
+                          </tr>
+                          <tr
+                            v-if="cart.final_total !== cart.total"
+                            class="cart-final-total"
+                          >
+                            <th>Final Total</th>
+                            <td>
+                              <span class="price-amount">
+                                {{ cart.final_total | currency }}
+                              </span>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <div
+                        v-else
+                        class="order-table-empty"
+                      >
+                        <div class="empty-img" />
+                        <p class="empty-text">
+                          Your cart is currently empty.
+                        </p>
+                      </div>
                       <div class="order-button">
                         <button
                           class="btn btn-submit"

@@ -1,0 +1,102 @@
+/deep/ .el-input-number {
+  width: 100%;
+  line-height: 48px;
+  outline: none;
+  @include large {
+    width: 40%;
+  }
+  @include medium {
+    width: 40%;
+  }
+  @include small {
+    width: 100%;
+    line-height: 46px;
+  }
+  @include extraSmall {
+    width: 100%;
+    line-height: 46px;
+  }
+  // &.disabled {
+  //   pointer-events: none;
+  //   cursor: default;
+  //   .el-input-number__decrease {
+  //     background: $btnColor-view;
+  //     border-right: 1px solid $primaryBgColor;
+  //     color: lighten($btnColor-view, 50%);
+  //   }
+  //   .el-input-number__increase {
+  //     background: $btnColor-view;
+  //     border-left: 1px solid $primaryBgColor;
+  //     color: lighten($btnColor-view, 50%);
+  //   }
+  //   .el-input__inner {
+  //     background-color: $btnColor-view;
+  //     border: 1px solid $btnColor-view;
+  //     color: lighten($btnColor-view, 50%);
+  //   }
+  // }
+
+  .el-input-number__decrease {
+    width: 50px;
+    color: $txtColor;
+    background: $primaryBgColor;
+    border-right: 1px solid $adminModalTxtBgColor;
+    &.is-disabled {
+      color: $txtColor;
+    }
+    @include small {
+      width: 50px;
+      height: 48px;
+    }
+    @include extraSmall {
+      width: 50px;
+      height: 48px;
+    }
+  }
+  .el-input-number__increase {
+    width: 50px;
+    color: $txtColor;
+    background: $primaryBgColor;
+    border-left: 1px solid $adminModalTxtBgColor;
+    &.is-disabled {
+      color: $txtColor;
+    }
+    @include small {
+      width: 50px;
+      height: 48px;
+    }
+    @include extraSmall {
+      width: 50px;
+      height: 48px;
+    }
+  }
+  .el-icon-minus,
+  .el-icon-plus {
+    @include small {
+      line-height: 48px;
+    }
+    @include extraSmall {
+      line-height: 48px;
+    }
+  }
+  .el-input__inner {
+    background-color: $adminModalTxtBgColor;
+    border: 1px solid $adminModalTxtBgColor;
+    color: #ffffff;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .el-input-number__decrease:hover:not(.is-disabled)
+    ~ .el-input
+    .el-input__inner:not(.is-disabled),
+  .el-input-number__increase:hover:not(.is-disabled)
+    ~ .el-input
+    .el-input__inner:not(.is-disabled) {
+    border-color: $adminModalTxtBgColor;
+  }
+
+  .el-input {
+    outline: none;
+  }
+}

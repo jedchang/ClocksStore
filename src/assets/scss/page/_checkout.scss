@@ -18,7 +18,7 @@
     }
 
     .cart-inner {
-      padding: 30px 20px;
+      padding: 30px 30px;
       background-color: darken($primaryBgColor, 2%);
       border-radius: 6px;
       @include small {
@@ -50,26 +50,65 @@
           text-transform: uppercase;
           text-align: center;
           &.product-thumbnail-thead {
-            width: 180px;
+            width: 200px;
+            @include large {
+              width: 200px;
+            }
+            @include medium {
+              width: 160px;
+            }
+            @include small {
+              width: 100%;
+            }
+            @include extraSmall {
+              width: 100%;
+            }
           }
           &.product-name-thead {
-            width: 150px;
+            width: 300px;
+            @include large {
+              width: 300px;
+            }
+            @include medium {
+              width: 160px;
+            }
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
           }
           &.product-price-thead {
-            width: 140px;
+            width: 300px;
+            @include large {
+              width: auto;
+            }
+            @include medium {
+              width: auto;
+            }
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
           }
           &.product-quantity-thead {
-            width: 70px;
+            width: 200px;
+            @include large {
+              width: 200px;
+            }
+            @include medium {
+              width: 100px;
+            }
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
           }
-          &.product-subtotal-thead {
-            width: 140px;
-          }
-        }
-        .show-for-desktop {
-          display: block;
-        }
-        .show-for-mobile {
-          display: none;
         }
       }
       tr.cart-item {
@@ -84,21 +123,98 @@
           &.product-thumbnail {
             padding-right: 20px;
             display: table-cell;
+            @include large {
+              padding-right: 10px;
+            }
+            @include medium {
+              padding-right: 10px;
+            }
+            @include small {
+              display: block;
+              padding: 40px 10px 20px 10px;
+            }
+            @include extraSmall {
+              display: block;
+              padding: 40px 10px 20px 10px;
+            }
             img {
               width: 60%;
               margin: 0 auto;
-              @include medium {
+              @include large {
                 width: 85%;
+              }
+              @include medium {
+                width: 80%;
               }
               @include small {
-                width: 85%;
+                width: 80%;
               }
               @include extraSmall {
-                width: 85%;
+                width: 80%;
+              }
+            }
+            .m-lists {
+              display: none;
+              @include small {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: normal;
+                list-style: none;
+                padding: 20px 30px 0px 30px;
+                width: 90%;
+                margin: 0 auto;
+              }
+              @include extraSmall {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: normal;
+                list-style: none;
+                padding: 20px 30px 0px 30px;
+                width: 100%;
+                margin: 0 auto;
+              }
+              li {
+                display: flex;
+                justify-content: space-between;
+                line-height: 1.8;
+                padding: 10px 0;
+                border-bottom: 1px dashed $adminModalTxtBgColor;
+                &:last-child {
+                  border-bottom: none;
+                }
+                span {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 60px;
+                  font-weight: 600;
+                  text-align: left;
+                  text-transform: uppercase;
+                  color: $primaryTxtColor;
+                  font-size: 14px;
+                  @include extraSmall {
+                    font-size: 4.5vmin;
+                  }
+                }
+                p {
+                  margin-bottom: 0;
+                  color: #fff;
+                  font-size: 14px;
+                  @include extraSmall {
+                    font-size: 4.5vmin;
+                  }
+                }
               }
             }
           }
           &.product-name {
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
             a {
               font-size: 16px;
               font-weight: 600;
@@ -111,13 +227,21 @@
           }
           &.product-price {
             font-size: 16px;
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
           }
           &.product-quantity {
             font-size: 16px;
-          }
-          &.product-subtotal {
-            font-size: 16px;
-            font-weight: 600;
+            @include small {
+              display: none;
+            }
+            @include extraSmall {
+              display: none;
+            }
           }
         }
       }
@@ -127,22 +251,38 @@
       .cart-total {
         color: $primaryColor;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: bold;
+        @include small {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        @include extraSmall {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 6vmin;
+        }
         .cart-total-thead {
-          padding: 12px 0;
+          padding: 40px 20px 40px 0;
           text-transform: uppercase;
           text-align: right;
+          font-weight: 500;
+          @include large {
+            margin-right: 30px;
+            padding: 12px 25px 12px 0;
+          }
           @include medium {
             margin-right: 30px;
             padding: 12px 10px 12px 0;
           }
           @include small {
-            margin-right: 30px;
-            padding: 12px 10px 12px 0;
+            margin-right: 0;
+            padding: 30px 0 30px 15px;
           }
           @include extraSmall {
-            margin-right: 30px;
-            padding: 12px 10px 12px 0;
+            margin-right: 0;
+            padding: 30px 0 30px 15px;
           }
         }
         td {
@@ -183,37 +323,37 @@
         }
         @include extraSmall {
           width: 55%;
-          font-size: 3.9vmin;
+          font-size: 4vmin;
         }
       }
       .info-email-thead {
         padding: 15px 0 15px 15px;
         @include extraSmall {
-          padding: 15px 0 15px 5px;
+          padding: 15px 0 15px 0;
         }
       }
       .info-name-thead {
         padding: 15px 0 15px 15px;
         @include extraSmall {
-          padding: 15px 0 15px 5px;
+          padding: 15px 0 15px 0;
         }
       }
       .info-tel-thead {
         padding: 15px 0 15px 15px;
         @include extraSmall {
-          padding: 15px 0 15px 5px;
+          padding: 15px 0 15px 0;
         }
       }
       .info-address-thead {
         padding: 15px 0 15px 15px;
         @include extraSmall {
-          padding: 15px 0 15px 5px;
+          padding: 15px 0 15px 0;
         }
       }
       .info-payment-thead {
         padding: 15px 0 15px 15px;
         @include extraSmall {
-          padding: 15px 0 15px 5px;
+          padding: 15px 0 15px 0;
         }
       }
       td {
@@ -224,7 +364,7 @@
           font-size: 16px;
         }
         @include extraSmall {
-          font-size: 4vmin;
+          font-size: 4.3vmin;
         }
       }
       .badge-danger {
@@ -236,8 +376,8 @@
     .badge {
       text-transform: uppercase;
       font-weight: 400;
-      padding: 5px 15px;
-      margin-bottom: 3px;
+      padding: 8px 15px;
+      margin-bottom: 0px;
       width: 200px;
       @include small {
         width: 170px;

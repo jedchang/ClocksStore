@@ -23,6 +23,7 @@
       v-if="!cart.carts[0].hasOwnProperty('coupon')"
       type="submit"
       class="btn btn-submit"
+      :class="{ disabled: couponCode === '' }"
       name="apple-coupon"
       value="Apply coupon"
       @click="addCouponCode"
@@ -66,7 +67,6 @@ export default {
   },
   methods: {
     addCouponCode() {
-      if (!this.couponCode) return
       this.$store
         .dispatch('orderModules/addCouponCode', this.couponCode)
         .then(() => {

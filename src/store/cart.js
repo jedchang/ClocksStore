@@ -106,6 +106,38 @@ export default {
           context.commit('LOADING_ITEM', '', { root: true })
         }
       })
+    },
+    changeCartQty(context, { id, qty }) {
+      const idx = $.map(context.state.cart.carts, function(item) {
+        return item.product_id
+      }).indexOf(id)
+      const currentId = context.state.cart.carts[idx].id
+      const cartIdApi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${currentId}`
+      const cartApi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const cart = {
+        product_id: id,
+        qty
+      }
+      context.commit('LOADING', true, { root: true })
+      axios.delete(cartIdApi).then(response => {
+        if (response.data.success) {
+          axios.post(cartApi, { data: cart }).then(response => {
+            if (response.data.success) {
+              context.dispatch(
+                'alertModules/pushMessages',
+                Message({
+                  showClose: true,
+                  message: 'Modified product quantity',
+                  type: 'success'
+                }),
+                { root: true }
+              )
+              context.commit('LOADING', false, { root: true })
+              context.dispatch('getCart')
+            }
+          })
+        }
+      })
     }
   },
   getters: {

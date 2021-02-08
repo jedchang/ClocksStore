@@ -75,6 +75,12 @@
     &:hover {
       background-color: $primaryColor;
     }
+    &.disabled {
+      pointer-events: none;
+      cursor: default;
+      background-color: darken($tableBorderColor-dark, 15%);
+      border: 1px solid darken($tableBorderColor-dark, 15%);
+    }
     p {
       margin: 0;
     }

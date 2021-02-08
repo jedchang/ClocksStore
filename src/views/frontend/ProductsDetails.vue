@@ -318,5 +318,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/assets/scss/components/_inputNumber.scss';
 @import '@/assets/scss/page/_productsDetails.scss';
 </style>

@@ -37,64 +37,69 @@
                 v-if="order.is_paid === false"
                 @submit.prevent="payOrder"
               >
-                <simplebar class="simplebar">
-                  <table
-                    class="shop-table"
-                    cellspacing="0"
-                  >
-                    <thead>
-                      <tr class="line">
-                        <th class="product-thumbnail-thead">Product</th>
-                        <th class="product-name-thead">Name</th>
-                        <th class="product-price-thead">Price</th>
-                        <th class="product-quantity-thead">
-                          <span class="show-for-desktop">Qty</span>
-                          <span class="show-for-mobile">Qty</span>
-                        </th>
-                        <th class="product-subtotal-thead">Subtotal</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr
-                        v-for="item in order.products"
-                        :key="item.id"
-                        class="cart-item"
-                      >
-                        <td class="product-thumbnail">
-                          <img
-                            :src="item.product.imageUrl"
-                            alt="Product img"
-                          >
-                        </td>
-                        <td class="product-name">
-                          {{ item.product.title }}
-                        </td>
-                        <td class="product-price">
-                          <span> {{ item.product.price | currency }} </span>
-                        </td>
-                        <td class="product-quantity">
-                          <span>{{ item.qty }}</span>
-                        </td>
-                        <td class="product-subtotal">
-                          <span> {{ item.total | currency }} </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr class="cart-total">
-                        <th
-                          class="cart-total-thead"
-                          colspan="4"
-                        >Total</th>
-                        <td>
-                          <span class="price-amount">{{
-                            order.total | currency
-                          }}</span>
-                        </td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </simplebar>
+                <table
+                  class="shop-table"
+                  cellspacing="0"
+                >
+                  <thead>
+                    <tr class="line">
+                      <th class="product-thumbnail-thead">Product</th>
+                      <th class="product-name-thead">Name</th>
+                      <th class="product-price-thead">Price</th>
+                      <th class="product-quantity-thead">Qty</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="item in order.products"
+                      :key="item.id"
+                      class="cart-item"
+                    >
+                      <td class="product-thumbnail">
+                        <img
+                          :src="item.product.imageUrl"
+                          alt="Product img"
+                        >
+                        <ul class="m-lists">
+                          <li class="m-product-name">
+                            <span>Name<b>：</b></span>
+                            <p>{{ item.product.title }}</p>
+                          </li>
+                          <li class="m-product-price">
+                            <span>Price<b>：</b></span>
+                            <p>{{ item.product.price | currency }}</p>
+                          </li>
+                          <li class="m-product-qty">
+                            <span>Qty<b>：</b></span>
+                            <p>{{ item.qty }}</p>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="product-name">
+                        <span>{{ item.product.title }}</span>
+                      </td>
+                      <td class="product-price">
+                        <span> {{ item.product.price | currency }}</span>
+                      </td>
+                      <td class="product-quantity">
+                        <span> {{ item.qty }}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr class="cart-total">
+                      <th
+                        class="cart-total-thead"
+                        colspan="3"
+                      >Total</th>
+                      <td>
+                        <span class="price-amount">{{
+                          order.total | currency
+                        }}</span>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
                 <table
                   class="info-table"
                   cellspacing="0"

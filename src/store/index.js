@@ -12,6 +12,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     isLoading: false,
+    setOpacity: 1,
     status: {
       loadingItem: '',
       loadingWishlist: '',
@@ -19,7 +20,6 @@ export default new Vuex.Store({
       loadingOrder: '',
       fileUploading: false
     },
-    setOpacity: 1,
     banners: [
       {
         direction: 'content-left',
