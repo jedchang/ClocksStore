@@ -145,12 +145,12 @@
         background-position: -25px -25px;
       }
     }
-    .wishlist-icon {
+    .wishLists-icon {
       background-position: 0px 0px;
       &:hover {
         background-position: -25px 0px;
       }
-      .wishlist-total {
+      .wishLists-total {
         background: $primaryColor;
         border-radius: 100%;
         color: #ffffff;
@@ -426,7 +426,7 @@
       margin-left: 0;
     }
   }
-  .navbar-wishlist {
+  .navbar-wishLists {
     background-position: 0px 0px;
     &:hover {
       background-position: -25px 0px;
@@ -435,7 +435,7 @@
       opacity: 0;
       visibility: hidden;
     }
-    .wishlist-total {
+    .wishLists-total {
       background: $primaryColor;
       border-radius: 100%;
       color: #ffffff;

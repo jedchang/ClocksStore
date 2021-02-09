@@ -111,13 +111,13 @@
                         Add to Cart
                       </a>
                       <a
-                        v-if="wishlist.indexOf(newProduct.id) !== -1"
+                        v-if="wishLists.indexOf(newProduct.id) !== -1"
                         href="#"
-                        class="btn btn-wishlisted"
-                        @click.stop="removeWishlist(newProduct.id)"
+                        class="btn btn-wishListsed"
+                        @click.prevent="removeWishLists(newProduct.id)"
                       >
                         <font-awesome-icon
-                          v-if="status.loadingWishlist === newProduct.id"
+                          v-if="status.loadingWishLists === newProduct.id"
                           :icon="['fas', 'spinner']"
                           spin
                         />
@@ -129,11 +129,11 @@
                       <a
                         v-else
                         href="#"
-                        class="btn btn-add-wishlist"
-                        @click.prevent="addToWishlist(newProduct.id)"
+                        class="btn btn-add-wishLists"
+                        @click.prevent="addToWishLists(newProduct.id)"
                       >
                         <font-awesome-icon
-                          v-if="status.loadingWishlist === newProduct.id"
+                          v-if="status.loadingWishLists === newProduct.id"
                           :icon="['fas', 'spinner']"
                           spin
                         />
@@ -254,8 +254,8 @@ export default {
       newProducts: (state) => state.newProducts,
       productTitle: (state) => state.productTitle
     }),
-    ...mapState('wishlistModules', {
-      wishlist: (state) => state.wishlist
+    ...mapState('wishListsModules', {
+      wishLists: (state) => state.wishLists
     }),
     ...mapGetters('productsModules', ['newProducts']),
     ...mapGetters('cartModules', ['filterAddedCart']),
@@ -299,19 +299,19 @@ export default {
     addToCart(id, qty = 1) {
       this.$store.dispatch('cartModules/addToCart', { id, qty })
     },
-    addToWishlist(id) {
+    addToWishLists(id) {
       $('#' + id).addClass('adding-status')
       setTimeout(() => {
         $('#' + id).removeClass('adding-status')
       }, 1500)
-      this.$store.dispatch('wishlistModules/addToWishlist', id)
+      this.$store.dispatch('wishListsModules/addToWishLists', id)
     },
-    removeWishlist(id) {
+    removeWishLists(id) {
       $('#' + id).addClass('adding-status')
       setTimeout(() => {
         $('#' + id).removeClass('adding-status')
       }, 1500)
-      this.$store.dispatch('wishlistModules/removeWishlist', id)
+      this.$store.dispatch('wishListsModules/removeWishLists', id)
     }
   }
 }

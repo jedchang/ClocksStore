@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper wishlist-wrapper">
+  <div class="wrapper wishLists-wrapper">
     <div class="vld-parent">
       <loading
         :active.sync="isLoading"
@@ -25,11 +25,11 @@
       <div class="container page-container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-12">
-            <div class="wishlist-inner">
+            <div class="wishLists-inner">
               <simplebar class="simplebar">
                 <table
-                  v-if="wishlist.length !== 0"
-                  class="wishlist-table"
+                  v-if="wishLists.length !== 0"
+                  class="wishLists-table"
                   cellspacing="0"
                 >
                   <thead>
@@ -44,9 +44,9 @@
                   </thead>
                   <tbody>
                     <tr
-                      v-for="product in wishlistProducts"
+                      v-for="product in wishListsProducts"
                       :key="product.id"
-                      class="wishlist-item"
+                      class="wishLists-item"
                       :class="{ 'sold-out': product.is_enabled === 0 }"
                     >
                       <td class="product-thumbnail">
@@ -131,10 +131,10 @@
                           <a
                             href="#"
                             class="btn-remove"
-                            @click.prevent="removeWishlist(product.id)"
+                            @click.prevent="removeWishLists(product.id)"
                           >
                             <font-awesome-icon
-                              v-if="status.loadingWishlist === product.id"
+                              v-if="status.loadingWishLists === product.id"
                               class="icon-spinner"
                               :icon="['fas', 'spinner']"
                               spin
@@ -151,10 +151,10 @@
                 </table>
                 <div
                   v-else
-                  class="wishlist-table-empty"
+                  class="wishLists-table-empty"
                 >
                   <div class="empty-img" />
-                  <p class="empty-text">Your wishlist is currently empty.</p>
+                  <p class="empty-text">Your wish lists is currently empty.</p>
                   <router-link
                     to="/watches"
                     class="btn-action btn-continue"
@@ -190,7 +190,7 @@ import openModal from '@/utils/openModal.js'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
-  name: 'Wishlist',
+  name: 'WishLists',
   components: {
     CartSideBar,
     Navbar,
@@ -213,18 +213,18 @@ export default {
     ...mapState('cartModules', {
       cart: (state) => state.cart
     }),
-    ...mapState('wishlistModules', {
-      wishlist: (state) => state.wishlist
+    ...mapState('wishListsModules', {
+      wishLists: (state) => state.wishLists
     }),
     ...mapGetters('cartModules', ['filterAddedCart']),
-    ...mapGetters('wishlistModules', ['wishlistProducts'])
+    ...mapGetters('wishListsModules', ['wishListsProducts'])
   },
   created() {
     this.$store.dispatch('updateLoading', true)
     this.$store.dispatch('cartModules/getCart')
-    this.$store.commit('productsModules/TITLE_NAME', 'Wishlist')
+    this.$store.commit('productsModules/TITLE_NAME', 'WishLists')
     this.$store.dispatch('productsModules/getProducts')
-    this.$store.commit('wishlistModules/GET_WISHLIST')
+    this.$store.commit('wishListsModules/GET_WISHLISTS')
     setTimeout(() => {
       this.$store.dispatch('updateLoading', false)
     }, 800)
@@ -234,19 +234,19 @@ export default {
     addToCart(id, qty = 1) {
       $('#' + id).addClass('adding-status')
       this.$store.dispatch('cartModules/addToCart', { id, qty })
-      this.$store.commit('wishlistModules/GET_WISHLIST')
+      this.$store.commit('wishListsModules/GET_WISHLISTS')
       setTimeout(() => {
         $('#' + id).removeClass('adding-status')
-        this.$store.commit('wishlistModules/REMOVE_WISHLIST', id)
+        this.$store.commit('wishListsModules/REMOVE_WISHLISTS', id)
       }, 1500)
     },
-    removeWishlist(id) {
-      this.$store.dispatch('wishlistModules/removeWishlist', id)
+    removeWishLists(id) {
+      this.$store.dispatch('wishListsModules/removeWishLists', id)
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/page/_wishlist.scss';
+@import '@/assets/scss/page/_wishLists.scss';
 </style>

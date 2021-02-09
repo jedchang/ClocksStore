@@ -4,7 +4,7 @@ import productsModules from './products'
 import cartModules from './cart'
 import orderModules from './order'
 import alertModules from './alert'
-import wishlistModules from './wishlist'
+import wishListsModules from './wishLists'
 
 Vue.use(Vuex)
 
@@ -15,7 +15,7 @@ export default new Vuex.Store({
     setOpacity: 1,
     status: {
       loadingItem: '',
-      loadingWishlist: '',
+      loadingWishLists: '',
       loadingCoupon: '',
       loadingOrder: '',
       fileUploading: false
@@ -70,8 +70,8 @@ export default new Vuex.Store({
     LOADING_ITEM(state, payload) {
       state.status.loadingItem = payload
     },
-    LOADING_WISHLIST(state, payload) {
-      state.status.loadingWishlist = payload
+    LOADING_WISHLISTS(state, payload) {
+      state.status.loadingWishLists = payload
     },
     LOADING_COUPON(state, payload) {
       state.status.loadingCoupon = payload
@@ -93,6 +93,6 @@ export default new Vuex.Store({
     cartModules,
     orderModules,
     alertModules,
-    wishlistModules
+    wishListsModules
   }
 })

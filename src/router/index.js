@@ -7,7 +7,7 @@ import ProductsDetails from '../views/frontend/ProductsDetails.vue'
 import Faq from '../views/frontend/Faq.vue'
 import Contact from '../views/frontend/Contact.vue'
 import Cart from '../views/frontend/Cart.vue'
-import Wishlist from '../views/frontend/Wishlist.vue'
+import WishLists from '../views/frontend/WishLists.vue'
 import Order from '../views/frontend/Order.vue'
 import Checkout from '../views/frontend/Checkout.vue'
 import Administrator from '../views/backend/Administrator.vue'
@@ -65,10 +65,10 @@ const routes = [
     meta: { title: 'Cart | CLOCKS Store' }
   },
   {
-    path: '/wishlist',
-    name: 'Wishlist',
-    component: Wishlist,
-    meta: { title: 'Wishlist | CLOCKS Store' }
+    path: '/wishLists',
+    name: 'WishLists',
+    component: WishLists,
+    meta: { title: 'WishLists | CLOCKS Store' }
   },
   {
     path: '/order',

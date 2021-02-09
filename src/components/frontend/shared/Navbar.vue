@@ -98,14 +98,14 @@
                   </ul>
                 </div>
                 <router-link
-                  class="wishlist-icon icon"
-                  to="/wishlist"
+                  class="wishLists-icon icon"
+                  to="/wishLists"
                 >
                   <span
-                    v-if="wishlist.length > 0"
-                    class="wishlist-total count"
+                    v-if="wishLists.length > 0"
+                    class="wishLists-total count"
                   >
-                    {{ wishlist.length }}
+                    {{ wishLists.length }}
                   </span>
                 </router-link>
                 <a
@@ -165,14 +165,14 @@
       </router-link>
       <div class="other-menu">
         <router-link
-          class="navbar-wishlist wishlist-icon icon"
-          to="/wishlist"
+          class="navbar-wishLists wishLists-icon icon"
+          to="/wishLists"
         >
           <span
-            v-if="wishlist.length > 0"
-            class="wishlist-total count"
+            v-if="wishLists.length > 0"
+            class="wishLists-total count"
           >
-            {{ wishlist.length }}
+            {{ wishLists.length }}
           </span>
         </router-link>
         <a
@@ -230,8 +230,8 @@ export default {
       cart: (state) => state.cart,
       isOpen: (state) => state.isOpen
     }),
-    ...mapState('wishlistModules', {
-      wishlist: (state) => state.wishlist
+    ...mapState('wishListsModules', {
+      wishLists: (state) => state.wishLists
     }),
     ...mapGetters('productsModules', ['products'])
   },
@@ -239,7 +239,7 @@ export default {
     this.getCookie()
   },
   created() {
-    this.$store.commit('wishlistModules/GET_WISHLIST')
+    this.$store.commit('wishListsModules/GET_WISHLISTS')
   },
   methods: {
     openModal() {
@@ -275,7 +275,7 @@ export default {
       $('.main-panel').toggleClass('open')
       $('.navbar-brand').toggleClass('hidden')
       $('.navbar-cart').toggleClass('hidden')
-      $('.navbar-wishlist').toggleClass('hidden')
+      $('.navbar-wishLists').toggleClass('hidden')
       $('.navbar-toggle').toggleClass('fixed')
     },
     setCookie,

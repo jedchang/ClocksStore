@@ -7,7 +7,7 @@ export default function removeSettings() {
   $('.navbar-brand').removeClass('hidden')
   $('.navbar-store').removeClass('hidden')
   $('.navbar-cart').removeClass('hidden')
-  $('.navbar-wishlist').removeClass('hidden')
+  $('.navbar-wishLists').removeClass('hidden')
   $('.login-panel').removeClass('open')
   $('.navbar-toggle').removeClass('fixed')
   this.$store.commit('cartModules/OPEN_CART', false)

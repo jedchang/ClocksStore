@@ -533,7 +533,7 @@
             padding: 10px;
           }
         }
-        .btn-add-wishlist {
+        .btn-add-wishLists {
           color: $txtColor-light;
           background-color: $btnColor-add;
           @include medium {
@@ -549,7 +549,7 @@
             height: 50px;
           }
         }
-        .btn-wishlisted {
+        .btn-wishListsed {
           background-color: $btnColor-view;
           color: lighten($btnColor-view, 50%);
           &:hover {

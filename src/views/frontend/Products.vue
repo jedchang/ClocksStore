@@ -98,6 +98,7 @@
                     <a
                       href="#"
                       class="btn-view grid"
+                      title="Grid"
                       :class="{ active: currentMode === 'grid' }"
                       @click.prevent="toggleViewMode('grid')"
                     >
@@ -106,6 +107,7 @@
                     <a
                       href="#"
                       class="btn-view list"
+                      title="List"
                       :class="{ active: currentMode === 'list' }"
                       @click.prevent="toggleViewMode('list')"
                     >

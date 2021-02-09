@@ -427,7 +427,7 @@
           padding: 14px 35px;
         }
       }
-      .btn-add-wishlist {
+      .btn-add-wishLists {
         width: 46px;
         @include small {
           padding: 10px 10px;
@@ -452,7 +452,7 @@
           width: 16px;
         }
       }
-      .btn-wishlisted {
+      .btn-wishListsed {
         width: 46px;
         color: lighten($btnColor-view, 50%);
         background-color: $btnColor-view;

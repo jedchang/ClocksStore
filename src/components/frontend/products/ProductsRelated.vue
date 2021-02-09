@@ -99,13 +99,13 @@
                     </a>
                     <!-- 判斷有無加入願望清單，加入按鈕顯示狀態 -->
                     <a
-                      v-if="wishlist.indexOf(product.id) !== -1"
+                      v-if="wishLists.indexOf(product.id) !== -1"
                       href="#"
-                      class="btn btn-wishlisted"
-                      @click.stop="removeWishlist(product.id)"
+                      class="btn btn-wishListsed"
+                      @click.prevent="removeWishLists(product.id)"
                     >
                       <font-awesome-icon
-                        v-if="status.loadingWishlist === product.id"
+                        v-if="status.loadingWishLists === product.id"
                         :icon="['fas', 'spinner']"
                         spin
                       />
@@ -117,11 +117,11 @@
                     <a
                       v-else
                       href="#"
-                      class="btn btn-add-wishlist"
-                      @click.prevent="addToWishlist(product.id)"
+                      class="btn btn-add-wishLists"
+                      @click.prevent="addToWishLists(product.id)"
                     >
                       <font-awesome-icon
-                        v-if="status.loadingWishlist === product.id"
+                        v-if="status.loadingWishLists === product.id"
                         :icon="['fas', 'spinner']"
                         spin
                       />
@@ -203,8 +203,8 @@ export default {
     ...mapState('cartModules', {
       cart: (state) => state.cart
     }),
-    ...mapState('wishlistModules', {
-      wishlist: (state) => state.wishlist
+    ...mapState('wishListsModules', {
+      wishLists: (state) => state.wishLists
     }),
     ...mapGetters('productsModules', ['filterCategory']),
     ...mapGetters('cartModules', ['filterAddedCart'])
@@ -224,19 +224,19 @@ export default {
       }, 1500)
       this.$store.dispatch('cartModules/addToCart', { id, qty })
     },
-    addToWishlist(id) {
+    addToWishLists(id) {
       $('#' + id).addClass('adding-status')
       setTimeout(() => {
         $('#' + id).removeClass('adding-status')
       }, 1500)
-      this.$store.dispatch('wishlistModules/addToWishlist', id)
+      this.$store.dispatch('wishListsModules/addToWishLists', id)
     },
-    removeWishlist(id) {
+    removeWishLists(id) {
       $('#' + id).addClass('adding-status')
       setTimeout(() => {
         $('#' + id).removeClass('adding-status')
       }, 1500)
-      this.$store.dispatch('wishlistModules/removeWishlist', id)
+      this.$store.dispatch('wishListsModules/removeWishLists', id)
     }
   }
 }
