@@ -150,6 +150,9 @@
         border: 1px solid $primaryBgColor;
       }
     }
+    img {
+      width: 100%;
+    }
   }
   .product-content {
     flex-basis: 60%;
@@ -360,33 +363,6 @@
           padding: 14px 35px;
           margin-right: 0;
           background-color: $btnColor-add;
-        }
-      }
-      .btn-view-cart {
-        width: 160px;
-        order: 1;
-        margin-right: 20px;
-        color: lighten($btnColor-view, 50%);
-        background-color: $btnColor-view;
-        &:hover {
-          background-color: $btnColor-view;
-          color: $primaryColor;
-        }
-        svg {
-          width: 16px;
-          margin-right: 5px;
-        }
-        @include small {
-          width: 85%;
-          height: 50px;
-          margin-right: 0;
-          padding: 14px 35px;
-        }
-        @include extraSmall {
-          width: calc(100% - 50px - 10%);
-          height: 50px;
-          margin-right: 0;
-          padding: 14px 35px;
         }
       }
       .btn-add-wishLists {

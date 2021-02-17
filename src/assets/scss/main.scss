@@ -19,6 +19,7 @@ html {
   }
   // Element-ui Message
   .el-message {
+    z-index: 9001 !important;
     @include small {
       min-width: 90%;
       .el-message__icon {

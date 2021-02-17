@@ -54,16 +54,7 @@
         </span>
       </div>
       <div class="product-action">
-        <router-link
-          v-if="filterAddedCart.includes(productData.id)"
-          to="/cart"
-          class="btn btn-view-cart"
-        >
-          <font-awesome-icon :icon="['fas', 'eye']" />
-          View Cart
-        </router-link>
         <a
-          v-else
           href="#"
           class="btn btn-add-cart"
           @click.prevent="addToCart(productData.id)"

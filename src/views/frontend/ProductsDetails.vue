@@ -78,23 +78,12 @@
                   <div class="details-action-wrapper">
                     <el-input-number
                       v-model="quantity"
-                      :class="{
-                        disabled: filterAddedCart.includes(newProduct.id)
-                      }"
                       :min="1"
                       :max="99"
+                      @change="changeQty(quantity)"
                     />
                     <div class="details-action-btns">
-                      <router-link
-                        v-if="filterAddedCart.includes(newProduct.id)"
-                        to="/cart"
-                        class="btn btn-view-cart"
-                      >
-                        <font-awesome-icon :icon="['fas', 'eye']" />
-                        View Cart
-                      </router-link>
                       <a
-                        v-else
                         href="#"
                         class="btn btn-add-cart"
                         @click.prevent="addToCart(newProduct.id, quantity)"
@@ -104,7 +93,7 @@
                           :icon="['fas', 'shopping-cart']"
                         />
                         <font-awesome-icon
-                          v-if="status.loadingItem === newProduct.id"
+                          v-else
                           :icon="['fas', 'spinner']"
                           spin
                         />
@@ -235,9 +224,9 @@ export default {
   },
   data() {
     return {
-      productQty: 1,
-      quantity: '1',
       activeName: 'content'
+      // productQty: 1,
+      // quantity: 1,
     }
   },
   computed: {
@@ -259,6 +248,16 @@ export default {
     }),
     ...mapGetters('productsModules', ['newProducts']),
     ...mapGetters('cartModules', ['filterAddedCart']),
+
+    // 因同時使用 vuex 和 v-model，不能直接更改 state，故需使用 get、set
+    quantity: {
+      get() {
+        return this.$store.state.cartModules.quantity
+      },
+      set(value) {
+        this.$store.commit('cartModules/CURRENT_QTY', value)
+      }
+    },
 
     newProduct() {
       const newObj = {}
@@ -296,8 +295,12 @@ export default {
   methods: {
     removeSettings,
     openModal,
+    changeQty(qty) {
+      this.quantity = qty
+    },
     addToCart(id, qty = 1) {
       this.$store.dispatch('cartModules/addToCart', { id, qty })
+      console.log('id:', id)
     },
     addToWishLists(id) {
       $('#' + id).addClass('adding-status')

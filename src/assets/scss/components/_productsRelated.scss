@@ -501,38 +501,6 @@
             padding: 10px;
           }
         }
-        .btn-view-cart {
-          padding: 10px 30px;
-          width: 167px;
-          background-color: $btnColor-view;
-          color: lighten($btnColor-view, 50%);
-          &:hover {
-            background-color: $btnColor-view;
-            color: $primaryColor;
-          }
-          svg {
-            width: 16px;
-            margin-right: 5px;
-          }
-          @include large {
-            width: 125px;
-            padding: 10px 10px;
-          }
-          @include medium {
-            width: 125px;
-            padding: 10px 10px;
-          }
-          @include small {
-            width: 40%;
-            height: 50px;
-            padding: 10px;
-          }
-          @include extraSmall {
-            width: calc(100% - 50px - 12%);
-            height: 50px;
-            padding: 10px;
-          }
-        }
         .btn-add-wishLists {
           color: $txtColor-light;
           background-color: $btnColor-add;

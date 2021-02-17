@@ -71,17 +71,7 @@
                     {{ product.description }}
                   </p>
                   <div class="product-btn">
-                    <!-- 判斷有無加入購物車，加入按鈕顯示狀態 -->
-                    <router-link
-                      v-if="filterAddedCart.includes(product.id)"
-                      to="/cart"
-                      class="btn btn-view-cart"
-                    >
-                      <font-awesome-icon :icon="['fas', 'eye']" />
-                      <span class="text">View Cart</span>
-                    </router-link>
                     <a
-                      v-else
                       href="#"
                       class="btn btn-add-cart"
                       @click.prevent="addToCart(product.id)"

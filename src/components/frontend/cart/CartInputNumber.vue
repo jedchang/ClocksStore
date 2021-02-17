@@ -34,15 +34,16 @@ export default {
     changeCartQty(id, qty) {
       const vm = this
       vm.$nextTick(() => {
-        $('.el-input-number span').off('mouseup').on('mouseup', function () {
-          vm.$store.dispatch('cartModules/changeCartQty', { id, qty })
-        })
+        $('.el-input-number span')
+          .off('click')
+          .on('click', function() {
+            vm.$store.dispatch('cartModules/changeCartQty', { id, qty })
+          })
         $('.el-input-number input').on('keyup', function() {
           vm.$store.dispatch('cartModules/changeCartQty', { id, qty })
         })
       })
     }
-
   }
 }
 </script>

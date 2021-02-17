@@ -8,7 +8,8 @@ export default {
     isOpen: false,
     cart: {
       carts: []
-    }
+    },
+    quantity: 1
   },
   mutations: {
     CART(state, payload) {
@@ -16,6 +17,9 @@ export default {
     },
     OPEN_CART(state, payload) {
       state.isOpen = payload
+    },
+    CURRENT_QTY(state, payload) {
+      state.quantity = payload
     }
   },
   actions: {
@@ -41,25 +45,68 @@ export default {
     },
     addToCart(context, { id, qty }) {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
-      const cart = {
-        product_id: id,
-        qty
+      const productId = id
+      const sameCarts = context.state.cart.carts.filter(item => {
+        return productId === item.product_id
+      })
+      const sameCartsQty = sameCarts.reduce((prev, curr) => {
+        return prev + curr.qty
+      }, 0)
+      if (sameCarts.length >= 1) {
+        for (let i = 0; i < sameCarts.length; i += 1) {
+          const item = sameCarts[i]
+          context.dispatch('removeCartItemNoAlert', item.id)
+        }
       }
       context.commit('LOADING_ITEM', id, { root: true })
-      axios.post(api, { data: cart }).then(response => {
+      axios
+        .post(api, { data: { product_id: productId, qty: qty + sameCartsQty } })
+        .then(response => {
+          if (response.data.success) {
+            context.dispatch(
+              'alertModules/pushMessages',
+              Message({
+                showClose: true,
+                message: 'Already added to shopping cart',
+                type: 'success'
+              }),
+              { root: true }
+            )
+            context.commit('LOADING_ITEM', '', { root: true })
+            context.commit('OPEN_CART', true)
+            $('#cart-total').removeClass('count')
+            context.dispatch('getCart')
+            context.commit('CURRENT_QTY', 1)
+          } else {
+            context.dispatch(
+              'alertModules/pushMessages',
+              Message({
+                duration: 0,
+                showClose: true,
+                message: 'An exception occurred, please try again later',
+                type: 'error'
+              }),
+              { root: true }
+            )
+            context.commit('LOADING_ITEM', '', { root: true })
+          }
+        })
+    },
+    removeCartItem(context, id) {
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`
+      context.commit('LOADING_ITEM', id, { root: true })
+      axios.delete(api).then(response => {
         if (response.data.success) {
           context.dispatch(
             'alertModules/pushMessages',
             Message({
               showClose: true,
-              message: 'Already added to shopping cart',
+              message: 'The item has been removed',
               type: 'success'
             }),
             { root: true }
           )
           context.commit('LOADING_ITEM', '', { root: true })
-          context.commit('OPEN_CART', true)
-          $('#cart-total').removeClass('count')
           context.dispatch('getCart')
         } else {
           context.dispatch(
@@ -76,20 +123,11 @@ export default {
         }
       })
     },
-    removeCartItem(context, id) {
+    removeCartItemNoAlert(context, id) {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`
       context.commit('LOADING_ITEM', id, { root: true })
       axios.delete(api).then(response => {
         if (response.data.success) {
-          context.dispatch(
-            'alertModules/pushMessages',
-            Message({
-              showClose: true,
-              message: 'The item has been removed',
-              type: 'success'
-            }),
-            { root: true }
-          )
           context.commit('LOADING_ITEM', '', { root: true })
           context.dispatch('getCart')
         } else {

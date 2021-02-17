@@ -295,6 +295,23 @@
           }
           /deep/ .el-input-number {
             width: 40%;
+            &.is-disabled {
+              .el-input-number__decrease {
+                color: lighten($btnColor-view, 50%);
+                border-color: $primaryBgColor;
+                background: $btnColor-view;
+              }
+              .el-input-number__increase {
+                color: lighten($btnColor-view, 50%);
+                border-color: $primaryBgColor;
+                background: $btnColor-view;
+              }
+              .el-input > .el-input__inner {
+                background-color: $btnColor-view;
+                border-color: $btnColor-view;
+                color: lighten($btnColor-view, 50%);
+              }
+            }
           }
 
           .details-action-btns {
@@ -302,12 +319,12 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
-            width: 55%;
+            width: 57%;
             @include large {
-              width: 55%;
+              width: 57%;
             }
             @include medium {
-              width: 55%;
+              width: 57%;
             }
             @include small {
               width: 100%;
@@ -370,38 +387,6 @@
               padding: 14px 14px;
               font-size: 5.2vmin;
               margin-left: 0;
-            }
-          }
-          .btn-view-cart {
-            width: calc(100% - 50px - 5%);
-            padding: 10px 30px;
-            background-color: $btnColor-view;
-            color: lighten($btnColor-view, 50%);
-            &:hover {
-              background-color: $btnColor-view;
-              color: $primaryColor;
-            }
-            @include large {
-              width: calc(100% - 15px - 50px);
-            }
-            @include medium {
-              width: calc(100% - 15px - 50px);
-            }
-            @include small {
-              width: calc(100% - 15px - 50px);
-              padding: 12px 14px;
-              font-size: 16px;
-              margin-left: 0;
-            }
-            @include extraSmall {
-              width: calc(100% - 15px - 50px);
-              padding: 14px 14px;
-              font-size: 5.2vmin;
-              margin-left: 0;
-            }
-            svg {
-              width: 16px;
-              margin-right: 5px;
             }
           }
           .btn-add-wishLists {
@@ -512,7 +497,7 @@
               align-items: center;
               padding: 10px 12px;
               border-radius: 50%;
-              background-color: transparent;
+              background-color: rgba(176, 176, 176, 0.1);
               transition: $setTransition;
               @include small {
                 width: 48px;

@@ -60,16 +60,7 @@
         {{ productData.description }}
       </p>
       <div class="product-btn">
-        <router-link
-          v-if="filterAddedCart.includes(productData.id)"
-          to="/cart"
-          class="btn btn-view-cart"
-        >
-          <font-awesome-icon :icon="['fas', 'eye']" />
-          <span class="text">View Cart</span>
-        </router-link>
         <a
-          v-else
           href="#"
           class="btn btn-add-cart"
           @click.prevent="addToCart(productData.id)"

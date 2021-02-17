@@ -266,7 +266,7 @@ export default {
   },
   methods: {
     removeCartItem(id) {
-      this.$store.dispatch('cartModules/removeCartItem', id)
+      this.$store.dispatch('cartModules/removeCartItem', id, true)
     }
   }
 }
