@@ -31,7 +31,6 @@
                   title="View"
                   @click.prevent="changeProduct(product)"
                 >
-                  <!-- Sold out -->
                   <div
                     v-if="!product.is_enabled"
                     class="sold-out-mask"
@@ -54,7 +53,6 @@
                   </h4>
                   <div class="product-price-wrapper">
                     <span class="money">{{ product.price | currency }}</span>
-                    <!-- 判斷原價若和售價一樣，就不顯示此欄位 -->
                     <span
                       v-if="product.origin_price !== product.price"
                       class="origin-price"
@@ -87,7 +85,6 @@
                       />
                       <span class="text">Add to Cart</span>
                     </a>
-                    <!-- 判斷有無加入願望清單，加入按鈕顯示狀態 -->
                     <a
                       v-if="wishLists.indexOf(product.id) !== -1"
                       href="#"

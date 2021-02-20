@@ -33,7 +33,6 @@ export default {
           context.dispatch(
             'alertModules/pushMessages',
             Message({
-              duration: 0,
               showClose: true,
               message: 'An exception occurred, please try again later',
               type: 'error'
@@ -112,7 +111,6 @@ export default {
           context.dispatch(
             'alertModules/pushMessages',
             Message({
-              duration: 0,
               showClose: true,
               message: 'An exception occurred, please try again later',
               type: 'error'
@@ -134,7 +132,6 @@ export default {
           context.dispatch(
             'alertModules/pushMessages',
             Message({
-              duration: 0,
               showClose: true,
               message: 'An exception occurred, please try again later',
               type: 'error'

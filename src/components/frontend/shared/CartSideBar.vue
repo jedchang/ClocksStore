@@ -70,7 +70,6 @@
                   alt="Cart product img"
                 >
               </router-link>
-
               <div class="cart-product-name">
                 <h4>
                   <router-link
@@ -168,19 +167,17 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'CartSideBar',
-  data() {
-    return {}
-  },
   computed: {
     ...mapState({
-      isLoading: (state) => state.isLoading,
-      status: (state) => state.status
+      isLoading: state => state.isLoading,
+      status: state => state.status
     }),
     ...mapState('cartModules', {
-      cart: (state) => state.cart,
-      isOpen: (state) => state.isOpen
+      cart: state => state.cart,
+      isOpen: state => state.isOpen
     })
   },
+  created() {},
   methods: {
     closeCart() {
       this.$store.commit('cartModules/OPEN_CART', false)

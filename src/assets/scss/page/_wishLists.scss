@@ -236,37 +236,6 @@
                 background-color: $btnColor-add;
               }
             }
-            .btn-view-cart {
-              width: 80%;
-              padding: 10px 35px;
-              background-color: $btnColor-view;
-              color: lighten($btnColor-view, 50%);
-              @include large {
-                padding: 10px 15px;
-              }
-              @include medium {
-                width: 100%;
-                padding: 10px 15px;
-              }
-              @include small {
-                color: $txtColor;
-                width: 100%;
-                padding: 10px 15px;
-              }
-              @include extraSmall {
-                color: $txtColor;
-                width: 100%;
-                padding: 10px 15px;
-              }
-              &:hover {
-                background-color: $btnColor-view;
-                color: $primaryColor;
-              }
-              svg {
-                width: 16px;
-                margin-right: 5px;
-              }
-            }
           }
           &.product-remove {
             text-align: right;

@@ -225,8 +225,6 @@ export default {
   data() {
     return {
       activeName: 'content'
-      // productQty: 1,
-      // quantity: 1,
     }
   },
   computed: {
@@ -248,8 +246,6 @@ export default {
     }),
     ...mapGetters('productsModules', ['newProducts']),
     ...mapGetters('cartModules', ['filterAddedCart']),
-
-    // 因同時使用 vuex 和 v-model，不能直接更改 state，故需使用 get、set
     quantity: {
       get() {
         return this.$store.state.cartModules.quantity
@@ -300,7 +296,6 @@ export default {
     },
     addToCart(id, qty = 1) {
       this.$store.dispatch('cartModules/addToCart', { id, qty })
-      console.log('id:', id)
     },
     addToWishLists(id) {
       $('#' + id).addClass('adding-status')

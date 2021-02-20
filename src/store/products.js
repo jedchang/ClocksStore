@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import axios from 'axios'
 import { Message } from 'element-ui'
 import router from '@/router'
@@ -52,7 +53,6 @@ export default {
           context.dispatch(
             'alertModules/pushMessages',
             Message({
-              duration: 0,
               showClose: true,
               message: 'An exception occurred, please try again later',
               type: 'error'
@@ -63,19 +63,22 @@ export default {
         }
       })
     },
+    // 取得所有產品
     getProducts(context) {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`
+      // 使用 commit 改變 mutations，加上 root: true 判斷為全域 state
       context.commit('LOADING', true, { root: true })
       axios.get(api).then(response => {
         if (response.data.success) {
           context.commit('NEW_PRODUCTS', response.data.products)
+          // context.commit('PRODUCTS', response.data.products)
           context.commit('PRODUCTS_ARRAY', response.data.products)
           context.commit('LOADING', false, { root: true })
         } else {
+          // 開始載入頁面就需執行，因為有時 API 會有問題，故需做讀取失敗效果通知
           context.dispatch(
             'alertModules/pushMessages',
             Message({
-              duration: 0,
               showClose: true,
               message: 'An exception occurred, please try again later',
               type: 'error'
@@ -186,7 +189,6 @@ export default {
         } else if (state.filterText === 'Luxury') {
           return item.category === state.filterText
         }
-        return false
       })
     },
     getCasualNum(state) {

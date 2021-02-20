@@ -79,10 +79,10 @@
                         <span>{{ item.product.title }}</span>
                       </td>
                       <td class="product-price">
-                        <span> {{ item.product.price | currency }}</span>
+                        <span> {{ item.product.price | currency }} </span>
                       </td>
                       <td class="product-quantity">
-                        <span> {{ item.qty }}</span>
+                        <span>{{ item.qty }}</span>
                       </td>
                     </tr>
                   </tbody>
@@ -228,12 +228,12 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: (state) => state.isLoading,
-      status: (state) => state.status,
-      setOpacity: (state) => state.setOpacity
+      isLoading: state => state.isLoading,
+      status: state => state.status,
+      setOpacity: state => state.setOpacity
     }),
     ...mapState('orderModules', {
-      order: (state) => state.order
+      order: state => state.order
     })
   },
   created() {
