@@ -1,5 +1,5 @@
 module.exports = {
-  // publicPath: process.env.NODE_ENV === 'production' ? '/demo-vue/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/ClocksStore/' : '/',
   chainWebpack: config => {
     config.plugin('html').tap(args => {
       args[0].description =
