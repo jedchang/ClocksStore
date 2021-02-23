@@ -19,10 +19,6 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '*',
-    redirect: '/'
-  },
-  {
     path: '/',
     name: 'Index',
     component: Index,
@@ -106,6 +102,10 @@ const routes = [
         meta: { requiresAuth: true, title: 'Coupons | Admin' }
       }
     ]
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 

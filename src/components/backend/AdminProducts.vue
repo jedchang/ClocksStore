@@ -422,7 +422,7 @@ export default {
         }
         this.isNew = true
       } else {
-        this.tempProduct = Object.assign({ ...item })
+        this.tempProduct = { ...item }
         this.isNew = false
       }
       $('#productModal').modal('show')

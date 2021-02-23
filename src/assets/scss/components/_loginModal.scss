@@ -38,6 +38,9 @@
         @include extraSmall {
           flex-direction: column;
         }
+        .input-group {
+          position: relative;
+        }
       }
       .modal-title {
         color: $txtColor-light;
@@ -212,8 +215,8 @@
       .btn-login.disabled {
         pointer-events: none;
         cursor: default;
-        background-color: darken($tableBorderColor-dark, 15%);
-        border-color: darken($tableBorderColor-dark, 15%);
+        background-color: darken($tableBorderColor-dark, 5%);
+        border-color: darken($tableBorderColor-dark, 5%);
       }
       .btn-login {
         margin-bottom: 32px;

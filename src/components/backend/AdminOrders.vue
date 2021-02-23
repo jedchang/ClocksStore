@@ -329,7 +329,7 @@ export default {
         this.tempOrder = {}
         this.isNew = true
       } else {
-        this.tempOrder = Object.assign({ ...item })
+        this.tempProduct = { ...item }
         this.isNew = false
       }
       $('#orderModal').modal('show')

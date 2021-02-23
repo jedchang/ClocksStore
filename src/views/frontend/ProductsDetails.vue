@@ -298,16 +298,16 @@ export default {
       this.$store.dispatch('cartModules/addToCart', { id, qty })
     },
     addToWishLists(id) {
-      $('#' + id).addClass('adding-status')
+      $(`#${id}`).addClass('adding-status')
       setTimeout(() => {
-        $('#' + id).removeClass('adding-status')
+        $(`#${id}`).removeClass('adding-status')
       }, 1500)
       this.$store.dispatch('wishListsModules/addToWishLists', id)
     },
     removeWishLists(id) {
-      $('#' + id).addClass('adding-status')
+      $(`#${id}`).addClass('adding-status')
       setTimeout(() => {
-        $('#' + id).removeClass('adding-status')
+        $(`#${id}`).removeClass('adding-status')
       }, 1500)
       this.$store.dispatch('wishListsModules/removeWishLists', id)
     }
