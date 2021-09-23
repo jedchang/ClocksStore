@@ -124,7 +124,7 @@ Vue.component('vue-picture-swipe', VuePictureSwipe)
 Vue.filter('currency', filterCurrency)
 Vue.filter('date', filterDate)
 
-axios.defaults.withCredentials = true
+// axios.defaults.withCredentials = true
 
 new Vue({
   router,
