@@ -1,18 +1,24 @@
 # CLOCKS STORE
 
-![image](https://img.shields.io/badge/Vue-exercise-41B883.svg) 
+![image](https://img.shields.io/badge/Vue-exercise-41B883.svg)
 ![image](https://img.shields.io/badge/SCSS-exercise-CD6799.svg)
 
-![](https://images2.imgbox.com/18/63/j6WwFz1w_o.jpg)
+![](https://raw.githubusercontent.com/jedchang/ClocksStore/refs/heads/main/preview.jpg)
+
+<!-- ![](https://github.com/jedchang/ClocksStore/blob/main/preview.jpg) -->
 
 ## Demo
+
 https://jedchang.github.io/ClocksStore/
 
 ## Introduction
+
 使用 Vue 實作手錶購物平台功能，串接後端 API 所提供資訊。
 
 ## Features
+
 - 前台
+
   - 產品 Banner
   - 產品促銷分類
   - 產品評分效果
@@ -46,4 +52,5 @@ https://jedchang.github.io/ClocksStore/
 ![](https://images2.imgbox.com/0d/a1/3VToj9fc_o.jpg)
 
 ## Remark
+
 所有圖片均為合法授權圖片，後製設計而成。
