@@ -43,13 +43,13 @@ https://jedchang.github.io/ClocksStore/
 ## Preview
 
 產品清單
-![](https://images2.imgbox.com/52/6e/AXik6piI_o.jpg)
+![](https://raw.githubusercontent.com/jedchang/ClocksStore/refs/heads/main/preview-2.jpg)
 
 購物車
-![](https://images2.imgbox.com/4e/da/D4djKiVH_o.jpg)
+![](https://raw.githubusercontent.com/jedchang/ClocksStore/refs/heads/main/preview-3.jpg)
 
 後臺管理系統
-![](https://images2.imgbox.com/0d/a1/3VToj9fc_o.jpg)
+![](https://raw.githubusercontent.com/jedchang/ClocksStore/refs/heads/main/preview-4.jpg)
 
 ## Remark
 
